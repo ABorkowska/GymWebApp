@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 
 @SpringBootApplication  //@Configuration, @EnableAutoConfiguration, @EnableWebMvc, @ComponentScan
-@EnableJpaRepositories(basePackages = {"pl.company.repository"})
+//@EnableJpaRepositories(basePackages = {"pl.company.repository"})
 public class SpringBootWebApplication extends SpringBootServletInitializer {
 	
 	@Override

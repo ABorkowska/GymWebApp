@@ -4,7 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -34,8 +33,7 @@ public class Member {
 	@NotBlank
 	private String password;
 	
-	@Column(name="user_code")
-	private Integer userCode;
+	//private String role;
 	
 	//many to many do schedule -> member podrzedny w relacji
 	@ManyToMany(mappedBy="members")
