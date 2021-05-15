@@ -30,7 +30,7 @@
     <div class="container">
         <h3 class="title">
             <span class="shape-wrapper">
-                <span class="shape"></span>rejestracja<span class="shape"></span></span>
+                <span class="shape"></span>logowanie<span class="shape"></span></span>
         </h3>
     </div>
 </section>
@@ -38,41 +38,36 @@
 <div class="breadcrumb-section">
     <div class="container">
         <div class="breadcrumb-wrapper">
-            <div class="breadcrumb-title"><h6 class="title">zarejestruj się</h6></div>
+            <div class="breadcrumb-title"><h6 class="title">zaloguj się</h6></div>
             <ul class="breadcrumb">
                 <li><a href="<c:url value="/home"/>">Home</a></li>
-                <li>Rejestracja</li>
+                <li>Logowanie</li>
             </ul>
         </div>
     </div>
 </div>
-<%-- Registration form --%>
-<section class="login-section registration-section padding-bottom padding-top">
+<!-- Login Form -->
+<section class="login-section padding-bottom padding-top">
     <div class="container">
-        <div class="login-wrapper"><h3 class="title">Załóż konto</h3>
-            <form:form action="/gym/register" method="post" modelAttribute="member" class="login-form registration-form">
+        <div class="login-wrapper"><h3 class="title">Zaloguj się</h3>
+            <div class="other-social-links text-center">
+                <a href="https://pl-pl.facebook.com/login/web/" class="facebook">Facebook</a>
+                <a href="https://myaccount.google.com/" class="google">Google</a>
+                <a href="https://twitter.com/?lang=pl" class="twitter">Twitter</a>
+            </div>
+            <div class="text-center"><h6 class="login-or">LUB</h6></div>
+            <form:form action="/gym/login" method="post" modelAttribute="member" class="login-form">
                 <div class="form-group">
-                    <form:input path="email" type="text" id="email" placeholder="E-Mail"/>
-                    <form:errors path="email" cssClass="error"/></div>
-                <div class="form-group">
-                    <form:input path="firstName" type="text" id="firstName" placeholder="Imię"/>
-                    <form:errors path="firstName" cssClass="error"/></div>
-                <div class="form-group">
-                    <form:input path="lastName" type="text" id="lastName" placeholder="Nazwisko"/>
-                    <form:errors path="lastName" cssClass="error"/></div>
-                <div class="form-group">
-                    <form:input path="login" type="text" id="login" placeholder="Nazwa użytkownika/Login"/>
+                    <form:input path="login" type="text" id="login" placeholder="Podaj login"/>
                     <form:errors path="login" cssClass="error"/></div>
                 <div class="form-group">
-                    <form:password path="password" id="password" placeholder="Hasło"/>
+                    <form:password path="password" id="password" placeholder="Podaj hasło"/>
                     <form:errors path="password" cssClass="error"/></div>
                 <div class="form-group">
-                    <input type="submit" value="Zarejestruj" class="m-0"/></div>
-                <div class="form-group m-0">
-                    <form:label path="subscribed" class="registration-checkbox d-flex">
-                        <form:checkbox path="subscribed" id="subscribed" value="yes"/>
-                        <span>Chcę otrzymywać newsletter</span>
-                    </form:label>
+                    <input type="submit" value="Zaloguj">
+                </div>
+                <div class="sign-in-option">
+                    <a href="<c:url value="/gym/register"/>">Nie masz konta? Zarejestruj się</a>
                 </div>
             </form:form>
         </div>
@@ -80,7 +75,7 @@
 </section>
 
 </body>
-<!-- Footer Section Starts Here -->
+<!-- Footer -->
 <%@ include file="./footer.jsp" %>
 <!-- /.footer -->
 

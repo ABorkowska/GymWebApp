@@ -31,7 +31,7 @@
             <div class="banner-content">
                 <h4 class="sub-title">
                     <span class="shape-wrapper"><span class="shape"></span>This is a perfect place for you<span class="shape"></span></span></h4>
-                <h4 class="title">build your body with us</h4>
+                <h5 class="title">build your body with us</h5>
 <%--                <p></p>--%>
 <%--                <div class="button-group">--%>
 <%--                    <a href="#" class="custom-button">read more</a>--%>
@@ -50,19 +50,19 @@
                     <div class="building-box">
                         <figure><img src=<c:out value="/static/images/build1.png"/>?" alt=""></figure>
                         <h4>TRENUJ Z NAMI</h4>
-                        <p>Zapraszamy na zajęcia grupowe z naszymi instruktorami</p><a href="<c:out value="register"/>" class="btn">Sczegóły</a></div>
+                        <p>Zapraszamy na zajęcia grupowe z naszymi instruktorami</p><a href="<c:out value="/gym/schedule"/>" class="btn">Sczegóły</a></div>
                 </div>
                 <div class="col-sm-4 col-xs-12">
                     <div class="building-box">
                         <figure><img src=<c:out value="/static/images/build3.png"/>?" alt=""></figure>
                         <h4>TRENUJ Z INSTRUKTOREM</h4>
-                        <p>Skorzystaj z oferty planów treningowych z trenerem personalnym </p><a href="<c:out value="plan"/>" class="btn">Sczegóły</a></div>
+                        <p>Skorzystaj z oferty planów treningowych z trenerem personalnym </p><a href="<c:out value="/gym/plan"/>" class="btn">Sczegóły</a></div>
                 </div>
                 <div class="col-sm-4 col-xs-12">
                     <div class="building-box">
                         <figure><img src=<c:out value="/static/images/build2.png"/>?" alt=""></figure>
                         <h4>TRENUJ INDYWIDUALNIE</h4>
-                        <p>Stwórz własny trening według swoich preferencji</p><a href="<c:out value="workout"/>" class="btn">Sczegóły</a></div>
+                        <p>Stwórz własny trening według swoich preferencji</p><a href="<c:out value="/gym/workout"/>" class="btn">Sczegóły</a></div>
                 </div>
             </div>
         </div>

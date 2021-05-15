@@ -1,8 +1,8 @@
 package pl.company.model;
 
-import com.sun.xml.bind.v2.TODO;
 import lombok.*;
 import org.springframework.lang.Nullable;
+import org.springframework.web.context.annotation.SessionScope;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -43,6 +43,7 @@ public class Member {
 			message="Hasło musi zawierać co najmniej 8 znaków, w tym co najmniej jedną dużą literę i co najmniej jedna cyfrę")
 	private String password;
 	
+	@Nullable
 	private String subscribed;
 	
 	//private String role;

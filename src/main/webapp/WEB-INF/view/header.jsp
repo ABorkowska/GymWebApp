@@ -35,7 +35,7 @@
                     <div class="info-item">
                         <div class="info-thumb"><i class="flaticon-placeholder"></i></div>
                         <div class="info-content">
-                            <h6 class="title">Adress</h6><span>IRON Gym</span>
+                            <h6 class="title">Adres</h6><span>IRON Gym</span>
                         </div>
                     </div>
                     <div class="info-item">
@@ -54,48 +54,49 @@
     <div class="header-bottom">
         <div class="container">
             <div class="header-bottom-wrapper">
-                <div class="logo d-xl-none"><a href="index.html"><img src="assets/images/logo/logo-two.png" alt="logo"></a>
+                <div class="logo d-xl-none">
+                    <a href=""><img src="<c:url value="/static/images/logo/logo-two.PNG"/>" alt="logo"></a>
                 </div>
                 <div class="header-bar d-xl-none"><span></span><span></span><span></span></div>
                 <ul class="menu">
-                    <li class="menu-item"><a href="index.html" class="menu-item-link">Home</a></li>
-                    <li class="menu-item"><a href="about.html" class="menu-item-link">About</a></li>
-                    <li class="menu-item"><a href="#0" class="menu-item-link">Class</a>
+                    <li class="menu-item"><a href="<c:url value="/home"/>" class="menu-item-link">Home</a></li>
+                    <li class="menu-item"><a href="about.html" class="menu-item-link">Oferta</a>
                         <ul class="sub-menu">
-                            <li class="menu-item"><a href="classes.html" class="menu-item-link">Class Page</a></li>
-                            <li class="menu-item"><a href="class-details.html" class="menu-item-link">Class Details</a>
-                            </li>
-                            <li class="menu-item"><a href="classes-schedule.html" class="menu-item-link">Class
-                                Schedule</a></li>
+                            <li class="menu-item"><a href="<c:url value="/gym/plan"/>" class="menu-item-link">Plany treningowe</a></li>
                         </ul>
                     </li>
-                    <li class="menu-item"><a href="#0" class="menu-item-link">Trainer</a>
+
+                    <li class="menu-item"><a href="#0" class="menu-item-link">Zajęcia</a>
+                        <ul class="sub-menu">
+                            <li class="menu-item"><a href="<c:url value="/gym/schedule"/>" class="menu-item-link">Grafik</a></li>
+                            <li class="menu-item"><a href="class-details.html" class="menu-item-link">Formy zajęć</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item"><a href="#0" class="menu-item-link">Instruktorzy</a>
                         <ul class="sub-menu">
                             <li class="menu-item"><a href="trainers.html" class="menu-item-link">Trainer</a></li>
                             <li class="menu-item"><a href="trainer-details.html" class="menu-item-link">Trainer
                                 Details</a></li>
                         </ul>
                     </li>
-                    <li class="menu-item"><a href="#0" class="menu-item-link">Blog</a>
+                    <li class="menu-item"><a href="#0" class="menu-item-link">Treningi</a>
                         <ul class="sub-menu">
-                            <li class="menu-item"><a href="blog.html" class="menu-item-link">BLog</a></li>
-                            <li class="menu-item"><a href="blog-details.html" class="menu-item-link">BLog Details</a>
+                            <li class="menu-item"><a href="blog.html" class="menu-item-link">Baza treningów</a></li>
+                            <li class="menu-item"><a href="blog-details.html" class="menu-item-link">Stwórz własny trening</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="menu-item"><a href="#0" class="menu-item-link">Pages</a>
+                    <li class="menu-item"><a href="#0" class="menu-item-link">Mój IRON</a>
                         <ul class="sub-menu">
-                            <li class="menu-item"><a href="#0" class="menu-item-link">Login</a></li>
-                            <li class="menu-item"><a href="registration.html" class="menu-item-link">Registration</a>
-                            </li>
+                            <li class="menu-item"><a href="<c:url value="/gym/login"/>" class="menu-item-link">Logowanie</a></li>
+                            <li class="menu-item"><a href="<c:url value="/gym/register"/>" class="menu-item-link">Rejestracja</a></li>
                             <li class="menu-item"><a href="four-not-four.html" class="menu-item-link">404</a></li>
                         </ul>
                     </li>
                     <li class="menu-item"><a href="contact.html" class="menu-item-link">Contact</a></li>
-                    <li class="menu-item"><a href="<c:out value="/home/login"/>" class="header-button">Get Started</a></li>
+                    <li class="menu-item"><a href="<c:out value="/gym/login"/>" class="header-button">START</a></li>
                 </ul>
-                <div class="header-button-wrapper d-none d-xl-inline-flex"><a class="header-button" href="<c:out value="/home/login"/>">Get
-                    Started</a></div>
+                <div class="header-button-wrapper d-none d-xl-inline-flex"><a class="header-button" href="<c:out value="/gym/login"/>">START</a></div>
             </div>
         </div>
     </div>
