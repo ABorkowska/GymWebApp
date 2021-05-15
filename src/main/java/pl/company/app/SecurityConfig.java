@@ -6,9 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.event.EventListener;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -22,8 +20,8 @@ import pl.company.service.UserDetailsServiceImpl;
 //@EnableGlobalMethodSecurity(securedEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
-	private UserDetailsServiceImpl userDetailsService;
-	private UserRepository userRepo;
+	private final UserDetailsServiceImpl userDetailsService;
+	private final UserRepository userRepo;
 	
 	@Autowired
 	public SecurityConfig(UserDetailsServiceImpl userDetailsService, UserRepository userRepo) {
@@ -61,6 +59,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		
 	}
 	
+//	@Bean
+//	public HttpFirewall looseHttpFirewall() {
+//		StrictHttpFirewall firewall = new StrictHttpFirewall();
+//		firewall.setAllowedHttpMethods(Arrays.asList("GET", "POST"));
+//		firewall.setAllowSemicolon(true);
+//		firewall.setAllowUrlEncodedSlash(true);
+//		firewall.setAllowBackSlash(true);
+//		firewall.setAllowUrlEncodedPercent(true);
+//		firewall.setAllowUrlEncodedPeriod(true);
+//		return firewall;
+//	}
 	
 }
 

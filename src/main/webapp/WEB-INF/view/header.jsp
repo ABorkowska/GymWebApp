@@ -1,5 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,18 +11,18 @@
     <link href="<c:url value="https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700&display=swap"/>" rel="stylesheet">
     <link href="<c:url value="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i&display=swap"/>"
           rel="stylesheet">
-    <link rel="stylesheet" href="<c:url value="http://cdn.bootstrapmb.com/bootstrap/4.3.1/css/bootstrap.min.css"/>"
-    <link rel="stylesheet" href="<c:url value="/static/css/all.min.css"/>"
-    <link rel="stylesheet" href="<c:url value="/static/css/animate.css"/>"
-    <link rel="stylesheet" href="<c:url value="/static/css/lightcase.css"/>"
-    <link rel="stylesheet" href="<c:url value="/static/css/flaticon.css"/>"
-    <link rel="stylesheet" href="<c:url value="/static/css/swiper.min.css"/>"
-    <link rel="stylesheet" href="<c:url value="/static/css/style.css"/>"
+    <link rel="stylesheet" href="<c:url value="http://cdn.bootstrapmb.com/bootstrap/4.3.1/css/bootstrap.min.css"/>">
+    <link rel="stylesheet" href="<c:url value="/static/css/all.min.css"/>">
+    <link rel="stylesheet" href="<c:url value="/static/css/animate.css"/>">
+    <link rel="stylesheet" href="<c:url value="/static/css/lightcase.css"/>">
+    <link rel="stylesheet" href="<c:url value="/static/css/flaticon.css"/>">
+    <link rel="stylesheet" href="<c:url value="/static/css/swiper.min.css"/>">
+    <link rel="stylesheet" href="<c:url value="/static/css/style.css"/>">
 </head>
 
 <body>
 <!-- Header Section Stars Here -->
-<%--<a href="#" class="scrollToTop"><i class="fas fa-angle-up"></i></a>--%>
+<a href="#" class="scrollToTop"><i class="fas fa-angle-up"></i></a>
 <!-- Fixed Sidebar Section Ends Here -->
 <!-- Header Section Stars Here -->
 <header>
@@ -34,7 +35,7 @@
                     <div class="info-item">
                         <div class="info-thumb"><i class="flaticon-placeholder"></i></div>
                         <div class="info-content">
-                            <h6 class="title">Adres</h6><span>IRON Gym</span>
+                            <h6 class="title">Adress</h6><span>IRON Gym</span>
                         </div>
                     </div>
                     <div class="info-item">
@@ -44,7 +45,7 @@
                     </div>
                     <div class="info-item">
                         <div class="info-thumb"><i class="flaticon-call"></i></div>
-                        <div class="info-content"><h6 class="title">Tel.</h6><span>000 000 000</span></div>
+                        <div class="info-content"><h6 class="title">Phone</h6><span>000 000 000</span></div>
                     </div>
                 </div>
             </div>
@@ -91,9 +92,9 @@
                         </ul>
                     </li>
                     <li class="menu-item"><a href="contact.html" class="menu-item-link">Contact</a></li>
-                    <li class="menu-item"><a href="login.html" class="header-button">Get Started</a></li>
+                    <li class="menu-item"><a href="<c:out value="/home/login"/>" class="header-button">Get Started</a></li>
                 </ul>
-                <div class="header-button-wrapper d-none d-xl-inline-flex"><a class="header-button" href="login.html">Get
+                <div class="header-button-wrapper d-none d-xl-inline-flex"><a class="header-button" href="<c:out value="/home/login"/>">Get
                     Started</a></div>
             </div>
         </div>

@@ -11,6 +11,8 @@ import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Positive;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Table(name = "plans")
@@ -35,8 +37,12 @@ public class Plan {
 	@Pattern(regexp="\\d{2,5}.\\d{2}")
 	private Double price;
 	
+	//todo jak ma wygladac relacja member-plan?
 	@Nullable
-	@ManyToOne
-	private Member member;
+	@OneToMany
+	@JoinTable(name="plan_member",
+			joinColumns=@JoinColumn(name="plan_id_"),
+			inverseJoinColumns=@JoinColumn(name="member_id"))
+	private List<Member> members = new ArrayList<>();
 	}
 	

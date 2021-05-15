@@ -1,9 +1,8 @@
 package pl.company.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.sun.xml.bind.v2.TODO;
+import lombok.*;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
@@ -16,22 +15,35 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode
 public class Member {
 	@Id
 	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private Integer id;
 	
-	@Email
 	@NotBlank
+	@Size(min=3, max=20)
+	private String firstName;
+	
+	@NotBlank
+	@Size(min=3, max=20)
+	private String lastName;
+	
+	@NotBlank
+	@Email (message="Niepoprawny format adresu e-mail")
 	private String email;
 	
-	@Size(min=3, max=20)
 	@NotBlank
+	@Size(min=3, max=20)
+	@Column(unique=true)
 	private String login;
 	
-	@Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$", message="......")
 	@NotBlank
+	@Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$",
+			message="Hasło musi zawierać co najmniej 8 znaków, w tym co najmniej jedną dużą literę i co najmniej jedna cyfrę")
 	private String password;
+	
+	private String subscribed;
 	
 	//private String role;
 	
@@ -39,9 +51,12 @@ public class Member {
 	@ManyToMany(mappedBy="members")
 	private List<Schedule> classes = new ArrayList<>();
 	
-	//one to many do plan
-	@OneToMany(mappedBy="member")
-	private List<Plan> plans = new ArrayList<>();
+	@Nullable
+	@ManyToOne
+	private Plan plan;
 	
-	
+	//TODO relacja member-workout???
+	//one to many do workouts -> jednokierunkowa
+//	@OneToMany(mappedBy="member")
+//	private List<Plan> workouts = new ArrayList<>();
 }
