@@ -1,0 +1,126 @@
+
+.timetable
+{
+	padding-top: 316px;
+	padding-bottom: 100px;
+	overflow: hidden;
+}
+.tt_overlay
+{
+	position: absolute;
+	top: -270px;
+	right: 0;
+	transform-origin: right bottom;
+	width: 130%;
+	height: 270px;
+	background: #420902;
+	transform: rotate(-8deg);
+}
+.timetable .section_title
+{
+	color: #420902;
+}
+.timetable_filtering
+{
+	margin-top: 69px;
+}
+.timetable_filtering ul li
+{
+	position: relative;
+	font-size: 16px;
+	font-weight: 500;
+	color: #0a0100;
+	cursor: pointer;
+	white-space: nowrap;
+	margin-bottom: 30px;
+}
+.timetable_filtering ul li:not(:last-of-type)
+{
+	margin-right: 59px;
+}
+.timetable_filtering ul li.active,
+.timetable_filtering ul li:hover
+{
+	color: #0a0a0a;
+}
+.timetable_filtering ul li.active::after
+{
+	display: block;
+	position: absolute;
+	left: -5px;
+	bottom: -8px;
+	width: calc(100% + 10px);
+	height: 2px;
+	background: #cf0202;
+	content: '';
+}
+.timetable_container
+{
+	margin-top: 62px;
+	width: calc(100% + 156px);
+	left: -78px;
+}
+.tt_day
+{
+	width: calc((100% - 48px) / 7);
+}
+
+.tt_title
+{
+	width: 100%;
+	height: 46px;
+	background: #030000;
+	text-align: center;
+	line-height: 46px;
+	font-size: 14px;
+	font-weight: 600;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	margin-bottom: 17px;
+}
+.tt_class
+{
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 120px;
+	background: #dbd9d9;
+}
+
+.tt_class:not(:last-child)
+{
+	margin-bottom: 8px;
+}
+.tt_class.empty
+{
+	background: #dbd9d9;
+}
+.tt_class_title
+{
+	font-size: 17px;
+	font-weight: 700;
+	color: #080000;
+	line-height: 0.75;
+}
+.tt_class_instructor
+{
+	font-size: 15px;
+	font-weight: 500;
+	color: #535353;
+	line-height: 0.75;
+	margin-top: 15px;
+}
+.tt_class_time
+{
+	font-size: 16px;
+	font-weight: 550;
+	color: #8c0101;
+	line-height: 0.75;
+	margin-top: 15px;
+}

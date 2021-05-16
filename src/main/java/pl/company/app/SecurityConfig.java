@@ -33,8 +33,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
 				.antMatchers("/home").permitAll()
-
-				.antMatchers("/admin").hasRole("ADMIN")
+				.antMatchers("/gym/**").permitAll()
+				.antMatchers("/admin/**").hasRole("ADMIN")
 				.and()
 				.formLogin().permitAll();     //przekierowuje na strone logowania
 				//.loginPage("/login");       //adres strony logowania

@@ -22,7 +22,6 @@
     <link rel="stylesheet" href="<c:url value="/static/css/services.css"/>">
 
 </head>
-
 <body>
 <!-- Header -->
 <%@ include file="./header.jsp" %>
@@ -37,13 +36,14 @@
         </h3>
     </div>
 </section>
+
 <!-- Breadcrumb Section -->
 <div class="breadcrumb-section">
     <div class="container">
         <div class="breadcrumb-wrapper">
             <div class="breadcrumb-title"><h6 class="title">zajęcia grupowe</h6></div>
             <ul class="breadcrumb">
-                <li><a href="<c:url value="/home"/>">Home</a></li>
+                <li><a href="<c:url value="./home"/>">Home</a></li>
                 <li><a href="">Zajęcia</a></li>
                 <li> Grafik zajęć</li>
             </ul>
@@ -62,42 +62,17 @@
                 <div class="tt_day">
                     <div class="tt_title">poniedziałek</div>
                     <div class="tt_day_content grid">
-
                         <!-- Class -->
+                        <c:forEach items="${classes}" var="class" begin="0" end="4">
                         <div class="tt_class grid-item">
-                            <div class="tt_class_title">Body Shape</div>
-                            <div class="tt_class_instructor">Ruslana Sayek</div>
-                            <div class="tt_class_time">16:00</div>
+                            <div class="tt_class_title">${class.name}</div>
+                            <div class="tt_class_instructor">${class.nameOfTrainer}</div>
+                            <div class="tt_class_time">${class.hour}</div>
+                            <div class="tt_class_instructor">
+                                <a href="<c:out value="/gym/schedule/${class.id}"/>">Zapisz się</a>
+                            </div>
                         </div>
-
-                        <!-- Class -->
-                        <div class="tt_class grid-item">
-                            <div class="tt_class_title">Kettlebells</div>
-                            <div class="tt_class_instructor">Mariusz Kabacki</div>
-                            <div class="tt_class_time">17:00</div>
-                        </div>
-
-                        <!-- Class -->
-                        <div class="tt_class grid-item">
-                            <div class="tt_class_title">Body Workout</div>
-                            <div class="tt_class_instructor">Mariusz Kabacki</div>
-                            <div class="tt_class_time">18:00</div>
-                        </div>
-
-                        <!-- Class -->
-                        <div class="tt_class grid-item">
-                            <div class="tt_class_title">Circuit Training</div>
-                            <div class="tt_class_instructor">Karol Bardo</div>
-                            <div class="tt_class_time">19:00</div>
-                        </div>
-
-                        <!-- Class -->
-                        <div class="tt_class grid-item">
-                            <div class="tt_class_title">Weight Lifting</div>
-                            <div class="tt_class_instructor">Kamil Woliński</div>
-                            <div class="tt_class_time">20:00</div>
-                        </div>
-
+                        </c:forEach>
                     </div>
                 </div>
 
@@ -105,40 +80,17 @@
                 <div class="tt_day">
                     <div class="tt_title">wtorek</div>
                     <div class="tt_day_content grid">
-
                         <!-- Class -->
-                        <div class="tt_class grid-item">
-                            <div class="tt_class_title">Upper-Body</div>
-                            <div class="tt_class_instructor">Mariusz Kabacki</div>
-                            <div class="tt_class_time">16:00</div>
-                        </div>
-
-                        <!-- Class -->
-                        <div class="tt_class grid-item">
-                            <div class="tt_class_title">Resistance Bands</div>
-                            <div class="tt_class_instructor">Mariusz Kabacki</div>
-                            <div class="tt_class_time">17:00</div>
-                        </div>
-
-                        <!-- Class -->
-                        <div class="tt_class grid-item">
-                            <div class="tt_class_title">Iron Power</div>
-                            <div class="tt_class_instructor">Kamil Woliński</div>
-                            <div class="tt_class_time">18:00</div>
-                        </div>
-
-                        <!-- Class -->
-                        <div class="tt_class grid-item">
-                            <div class="tt_class_title">Fighter Training</div>
-                            <div class="tt_class_instructor">Jessica Smith</div>
-                            <div class="tt_class_time">13:00</div>
-                        </div>
-                        <!-- Class -->
-                        <div class="tt_class grid-item">
-                            <div class="tt_class_title">Weight Loss</div>
-                            <div class="tt_class_instructor">Jessica Smith</div>
-                            <div class="tt_class_time">8:00</div>
-                        </div>
+                        <c:forEach items="${classes}" var="class" begin="5" end="9">
+                            <div class="tt_class grid-item">
+                                <div class="tt_class_title">${class.name}</div>
+                                <div class="tt_class_instructor">${class.nameOfTrainer}</div>
+                                <div class="tt_class_time">${class.hour}</div>
+                                <div class="tt_class_instructor">
+                                    <a href="<c:out value="/gym/schedule/${class.id}"/>">Zapisz się</a>
+                                </div>
+                            </div>
+                        </c:forEach>
                     </div>
                 </div>
 
@@ -146,41 +98,17 @@
                 <div class="tt_day">
                     <div class="tt_title">środa</div>
                     <div class="tt_day_content grid">
-
                         <!-- Class -->
-                        <div class="tt_class grid-item">
-                            <div class="tt_class_title">Crossfit</div>
-                            <div class="tt_class_instructor">Jessica Smith</div>
-                            <div class="tt_class_time">9:00</div>
-                        </div>
-
-                        <!-- Class -->
-                        <div class="tt_class grid-item">
-                            <div class="tt_class_title">Aerobics</div>
-                            <div class="tt_class_instructor">Jessica Smith</div>
-                            <div class="tt_class_time">10:00</div>
-                        </div>
-
-                        <!-- Class -->
-                        <div class="tt_class grid-item">
-                            <div class="tt_class_title">Aerobics</div>
-                            <div class="tt_class_instructor">Jessica Smith</div>
-                            <div class="tt_class_time">10:00</div>
-                        </div>
-
-                        <!-- Class -->
-                        <div class="tt_class grid-item">
-                            <div class="tt_class_title">Aerobics</div>
-                            <div class="tt_class_instructor">Jessica Smith</div>
-                            <div class="tt_class_time">13:00</div>
-                        </div>
-
-                        <!-- Class -->
-                        <div class="tt_class grid-item">
-                            <div class="tt_class_title">Aerobics</div>
-                            <div class="tt_class_instructor">Jessica Smith</div>
-                            <div class="tt_class_time">17:00</div>
-                        </div>
+                        <c:forEach items="${classes}" var="class" begin="10" end="14">
+                            <div class="tt_class grid-item">
+                                <div class="tt_class_title">${class.name}</div>
+                                <div class="tt_class_instructor">${class.nameOfTrainer}</div>
+                                <div class="tt_class_time">${class.hour}</div>
+                                <div class="tt_class_instructor">
+                                    <a href="<c:out value="/gym/schedule/${class.id}"/>">Zapisz się</a>
+                                </div>
+                            </div>
+                        </c:forEach>
                     </div>
                 </div>
 
@@ -188,39 +116,16 @@
                 <div class="tt_day">
                     <div class="tt_title">czwartek</div>
                     <div class="tt_day_content grid">
-
-                        <!-- Class -->
-                        <div class="tt_class grid-item">
-                            <div class="tt_class_title">Fitness</div>
-                            <div class="tt_class_instructor">Jessica Smith</div>
-                            <div class="tt_class_time">9:00</div>
-                        </div>
-
-                        <!-- Class -->
-                        <div class="tt_class grid-item">
-                            <div class="tt_class_title">Aerobics</div>
-                            <div class="tt_class_instructor">Jessica Smith</div>
-                            <div class="tt_class_time">10:00</div>
-                        </div>
-
-                        <!-- Class -->
-                        <div class="tt_class grid-item">
-                            <div class="tt_class_title">Yoga</div>
-                            <div class="tt_class_instructor">Jessica Smith</div>
-                            <div class="tt_class_time">12:00</div>
-                        </div>
-
-                        <!-- Class -->
-                        <div class="tt_class grid-item">
-                            <div class="tt_class_title">Pilates</div>
-                            <div class="tt_class_instructor">Jessica Smith</div>
-                            <div class="tt_class_time">13:00</div>
-                        </div>
-                        <div class="tt_class grid-item">
-                            <div class="tt_class_title">Aerobics</div>
-                            <div class="tt_class_instructor">Jessica Smith</div>
-                            <div class="tt_class_time">10:00</div>
-                        </div>
+                        <c:forEach items="${classes}" var="class" begin="15" end="19">
+                            <div class="tt_class grid-item">
+                                <div class="tt_class_title">${class.name}</div>
+                                <div class="tt_class_instructor">${class.nameOfTrainer}</div>
+                                <div class="tt_class_time">${class.hour}</div>
+                                <div class="tt_class_instructor">
+                                    <a href="<c:out value="/gym/schedule/${class.id}"/>">Zapisz się</a>
+                                </div>
+                            </div>
+                        </c:forEach>
                     </div>
                 </div>
 
@@ -228,38 +133,18 @@
                 <div class="tt_day">
                     <div class="tt_title">piątek</div>
                     <div class="tt_day_content grid">
-
-                        <!-- Class -->
-                        <div class="tt_class grid-item">
-                            <div class="tt_class_title">Yoga</div>
-                            <div class="tt_class_instructor">Jessica Smith</div>
-                            <div class="tt_class_time">9:00</div>
-                        </div>
-
-                        <!-- Class -->
-                        <div class="tt_class grid-item">
-                            <div class="tt_class_title">Aerobics</div>
-                            <div class="tt_class_instructor">Jessica Smith</div>
-                            <div class="tt_class_time">10:00</div>
-                        </div>
-
-                        <!-- Class -->
-                        <div class="tt_class grid-item">
-                            <div class="tt_class_title">Aerobics</div>
-                            <div class="tt_class_instructor">Jessica Smith</div>
-                            <div class="tt_class_time">10:00</div>
-                        </div>
-
-                        <!-- Class -->
-                        <div class="tt_class grid-item">
-                            <div class="tt_class_title">Aerobics</div>
-                            <div class="tt_class_instructor">Jessica Smith</div>
-                            <div class="tt_class_time">13:00</div>
-                        </div>
-                        <!-- Class -->
-                        <div class="tt_class empty grid-item">
-
-                        </div>
+                        <c:forEach items="${classes}" var="class" begin="20" end="23">
+                            <div class="tt_class grid-item">
+                                <div class="tt_class_title">${class.name}</div>
+                                <div class="tt_class_instructor">${class.nameOfTrainer}</div>
+                                <div class="tt_class_time">${class.hour}</div>
+                                <div class="tt_class_instructor">
+                                    <a href="<c:out value="/gym/schedule/${class.id}"/>">Zapisz się</a>
+                                </div>
+                            </div>
+                        </c:forEach>
+<%--                        <!-- No Class -->--%>
+<%--                        <div class="tt_class empty grid-item"></div>--%>
                     </div>
                 </div>
 
@@ -267,35 +152,16 @@
                 <div class="tt_day">
                     <div class="tt_title">sobota</div>
                     <div class="tt_day_content grid">
-
-                        <!-- Class -->
-                        <div class="tt_class grid-item">
-                            <div class="tt_class_title">Weight Loss</div>
-                            <div class="tt_class_instructor">Jessica Smith</div>
-                            <div class="tt_class_time">9:00</div>
-                        </div>
-
-                        <!-- Class -->
-                        <div class="tt_class grid-item pilates">
-                            <div class="tt_class_title">Pilates</div>
-                            <div class="tt_class_instructor">Jessica Smith</div>
-                            <div class="tt_class_time">10:00</div>
-                        </div>
-
-                        <!-- Class -->
-                        <div class="tt_class grid-item">
-                            <div class="tt_class_title">Aerobics</div>
-                            <div class="tt_class_instructor">Jessica Smith</div>
-                            <div class="tt_class_time">13:00</div>
-                        </div>
-                        <!-- Class -->
-                        <div class="tt_class empty grid-item">
-                        </div>
-
-                        <!-- Class -->
-                        <div class="tt_class empty grid-item">
-                        </div>
-
+                        <c:forEach items="${classes}" var="class" begin="24" end="26">
+                            <div class="tt_class grid-item">
+                                <div class="tt_class_title">${class.name}</div>
+                                <div class="tt_class_instructor">${class.nameOfTrainer}</div>
+                                <div class="tt_class_time">${class.hour}</div>
+                                <div class="tt_class_instructor">
+                                    <a href="<c:out value="/gym/schedule/${class.id}"/>">Zapisz się</a>
+                                </div>
+                            </div>
+                        </c:forEach>
                     </div>
                 </div>
 
@@ -303,33 +169,16 @@
                 <div class="tt_day">
                     <div class="tt_title">niedziela</div>
                     <div class="tt_day_content grid">
-
-                        <!-- Class -->
-                        <div class="tt_class grid-item">
-                            <div class="tt_class_title">Stretching</div>
-                            <div class="tt_class_instructor">Jessica Smith</div>
-                            <div class="tt_class_time">9:00</div>
-                        </div>
-
-                        <!-- Class -->
-                        <div class="tt_class grid-item">
-                            <div class="tt_class_title">Aerobics</div>
-                            <div class="tt_class_instructor">Jessica Smith</div>
-                            <div class="tt_class_time">10:00</div>
-                        </div>
-
-                        <!-- Class -->
-                        <div class="tt_class empty grid-item">
-                        </div>
-
-                        <!-- Class -->
-                        <div class="tt_class empty grid-item">
-                        </div>
-
-                        <!-- Class -->
-                        <div class="tt_class empty grid-item">
-                        </div>
-
+                        <c:forEach items="${classes}" var="class" begin="27" end="29">
+                            <div class="tt_class grid-item">
+                                <div class="tt_class_title">${class.name}</div>
+                                <div class="tt_class_instructor">${class.nameOfTrainer}</div>
+                                <div class="tt_class_time">${class.hour}</div>
+                                <div class="tt_class_instructor">
+                                    <a href="<c:out value="/gym/schedule/${class.id}"/>">Zapisz się</a>
+                                </div>
+                            </div>
+                        </c:forEach>
                     </div>
                 </div>
             </div>
@@ -337,13 +186,9 @@
     </div>
     <p></p>
 </div>
-
-
 </div>
 
-
 </body>
-<!-- Footer Section Starts Here -->
+<!-- Footer Section -->
 <%@ include file="./footer.jsp" %>
-
 </html>

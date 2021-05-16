@@ -33,7 +33,10 @@ public class Workout {
 //	@Enumerated(EnumType.STRING)
 //	private MuscleGroup muscleGroup;
 	
-	@OneToMany(mappedBy = "workout")
+	@OneToMany(mappedBy="workout")
 	private List<Exercise> exercises = new ArrayList<>();
+	
+	@ManyToMany(mappedBy="workouts")
+	private List<Member> members = new ArrayList<>();
 	
 }

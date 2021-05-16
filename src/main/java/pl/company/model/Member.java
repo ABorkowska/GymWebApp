@@ -56,8 +56,9 @@ public class Member {
 	@ManyToOne
 	private Plan plan;
 	
-	//TODO relacja member-workout???
-	//one to many do workouts -> jednokierunkowa
-//	@OneToMany(mappedBy="member")
-//	private List<Plan> workouts = new ArrayList<>();
+	@ManyToMany
+	@JoinTable(name="members_workouts",
+			joinColumns = @JoinColumn(name="member_id"),
+			inverseJoinColumns = @JoinColumn(name="workout_id"))
+	private List<Workout> workouts = new ArrayList<>();
 }
