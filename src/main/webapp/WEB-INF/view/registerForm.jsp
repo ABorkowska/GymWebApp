@@ -47,7 +47,7 @@
     </div>
 </div>
 <%-- Registration form --%>
-<section class="login-section registration-section padding-bottom padding-top">
+<section class="login-section registration-section padding-bottom padding-top bg_img" data-background="/static/images/home/gallery-2.jpg" no-repeat center center>"
     <div class="container">
         <div class="login-wrapper"><h3 class="title">Załóż konto</h3>
             <form:form action="/gym/register" method="post" modelAttribute="member" class="login-form registration-form">

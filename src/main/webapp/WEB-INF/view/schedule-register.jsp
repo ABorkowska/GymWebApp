@@ -44,7 +44,7 @@
         <div class="breadcrumb-wrapper">
             <div class="breadcrumb-title"><h6 class="title">Zapisy na zajęcia</h6></div>
             <ul class="breadcrumb">
-                <li><a href="<c:url value="./home"/>">Home</a></li>
+                <li><a href="<c:url value="/home"/>">Home</a></li>
                 <li><a href="">Zajęcia</a></li>
                 <li>Zapisy</li>
             </ul>
@@ -79,10 +79,10 @@
                                     <input type="text" id="phone">
                                 </div>
                                 <div class="col-lg-6">
-                                    <button type="submit" class="register-btn">Wyślij</button>
+                                    <input type="button" class="register-btn" onclick="location.href='/home';" value="Wyślij"/>
                                 </div>
                                 <div class="col-lg-6">
-                                    <button type="submit" class="register-btn-2">Wróć do grafiku</button>
+                                    <input type="button" class="register-btn-2" onclick="location.href='/gym/schedule';" value="Wróć do grafiku"/>
                                 </div>
                             </div>
                         </form:form>

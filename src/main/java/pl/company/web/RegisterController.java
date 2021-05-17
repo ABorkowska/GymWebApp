@@ -1,28 +1,24 @@
 package pl.company.web;
 
-import org.springframework.data.repository.query.Param;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.server.ResponseStatusException;
 import pl.company.model.Member;
 import pl.company.repository.MemberRepository;
+import pl.company.service.MemberService;
 
 import javax.validation.Valid;
-import java.util.List;
 
 @Controller
 public class RegisterController {
 	
-	private final MemberRepository memberRepo;
+	private final MemberService memberService;
 	
-	public RegisterController(MemberRepository memberRepo) {
-		this.memberRepo = memberRepo;
+	public RegisterController(MemberService memberService) {
+		this.memberService = memberService;
 	}
 	
 	@GetMapping("/gym/register")
@@ -31,29 +27,24 @@ public class RegisterController {
 		model.addAttribute("member", member);
 		return "registerForm";
 	}
-
-//	@GetMapping("/gym/register")
-//	public String showRegisterForm(Member member){
-//		return "registerForm";
-//	}
 	
 	@PostMapping("gym/register")
-	public String registerMember(@Valid @ModelAttribute Member member, BindingResult result) {
+	public String registerMember(@Valid @ModelAttribute Member member, BindingResult result) throws LoginException {
 		if (result.hasErrors()) {
 			return "registerForm";
 		}
 		//jesli podany login juz jest w bazie
-		if (memberRepo.getMemberByLogin(member.getLogin()) != null) {
-			throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Użytkownik o podanym loginie już istnieje");
+		if (memberService.findByLogin(member.getLogin()) != null) {
+			throw new LoginException();
+			
 		}
-		
 		if (member.getSubscribed() == null) {
 			member.setSubscribed(null);
 		}
 		else if (member.getSubscribed().equals("yes")) {
 			member.setSubscribed("yes");
 		}
-		memberRepo.save(member);
+		memberService.addMember(member);
 		return "redirect:/gym/login";
 	}
 	
@@ -65,18 +56,21 @@ public class RegisterController {
 	}
 	
 	//todo: nie dziala walidacja logowania
+	
 	@PostMapping("/gym/login")
 	public String loginMember(@Valid @ModelAttribute Member member, BindingResult result) {
 		if (result.hasErrors()) {
 			return "loginForm";
 		}
-		if (!member.getLogin().equals(memberRepo.getMemberByLogin(member.getLogin())) &&
-				!member.getPassword().equals(memberRepo.getMemberByPassword(member.getPassword()))) {
+		Member user = memberService.findByLogin(member.getLogin());
+		if (user != null &&
+				user.getPassword().equals(member.getPassword())) {
+			return "redirect:/home";
+		}
+		else {
 			return "loginForm";
 		}
-		return "redirect:/home";
 	}
-	
 }
 
 

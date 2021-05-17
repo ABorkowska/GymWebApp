@@ -13,7 +13,11 @@ public class HomeController {
 		return "home";
 		
 	}
-	
+	@GetMapping("/class")
+	public String showTest() {
+		return "schedule-register";
+	}
+
 	@GetMapping("/admin")
 	@ResponseBody
 	public String restricted() {

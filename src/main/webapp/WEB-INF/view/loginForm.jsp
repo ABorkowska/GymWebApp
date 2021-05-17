@@ -35,7 +35,7 @@
     </div>
 </section>
 <!-- Breadcrumb Section -->
-<div class="breadcrumb-section">
+<div class="breadcrumb-section" >
     <div class="container">
         <div class="breadcrumb-wrapper">
             <div class="breadcrumb-title"><h6 class="title">zaloguj się</h6></div>
@@ -47,7 +47,7 @@
     </div>
 </div>
 <!-- Login Form -->
-<section class="login-section padding-bottom padding-top">
+<section class="login-section padding-bottom padding-top bg_img" data-background="/static/images/home/gallery-2.jpg" no-repeat center center>
     <div class="container">
         <div class="login-wrapper"><h3 class="title">Zaloguj się</h3>
             <div class="other-social-links text-center">

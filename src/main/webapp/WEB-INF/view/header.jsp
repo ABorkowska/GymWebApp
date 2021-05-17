@@ -55,7 +55,7 @@
         <div class="container">
             <div class="header-bottom-wrapper">
                 <div class="logo d-xl-none">
-                    <a href=""><img src="<c:url value="/static/images/logo/logo-two.PNG"/>" alt="logo"></a>
+                    <a href=""><img src="<c:url value="/static/images/logo/logo-tt.PNG"/>" alt="logo"></a>
                 </div>
                 <div class="header-bar d-xl-none"><span></span><span></span><span></span></div>
                 <ul class="menu">
