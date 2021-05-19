@@ -7,10 +7,8 @@ import lombok.Setter;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
-import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Positive;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,9 +38,9 @@ public class Plan {
 	//todo jak ma wygladac relacja member-plan?
 	@Nullable
 	@OneToMany
-	@JoinTable(name="plan_member",
+	@JoinTable(name="plan_user",
 			joinColumns=@JoinColumn(name="plan_id_"),
-			inverseJoinColumns=@JoinColumn(name="member_id"))
-	private List<Member> members = new ArrayList<>();
+			inverseJoinColumns=@JoinColumn(name="user_id"))
+	private List<User> users = new ArrayList<>();
 	}
 	

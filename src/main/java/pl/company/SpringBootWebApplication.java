@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.security.web.firewall.HttpFirewall;
 import org.springframework.security.web.firewall.StrictHttpFirewall;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
@@ -15,8 +14,8 @@ import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import javax.validation.Validator;
 import java.util.Locale;
 
-
 @SpringBootApplication  //@Configuration, @EnableAutoConfiguration, @EnableWebMvc, @ComponentScan
+
 public class SpringBootWebApplication extends SpringBootServletInitializer {
 	
 	@Override

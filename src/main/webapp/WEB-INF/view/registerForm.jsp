@@ -25,6 +25,7 @@
 <%@ include file="./header.jsp" %>
 <!-- /.header -->
 <a href="#" class="scrollToTop"><i class="fas fa-angle-up"></i></a>
+
 <!-- Page Header -->
 <section class="page-header bg_img" data-background="/static/images/banner/05.jpg">
     <div class="container">
@@ -34,6 +35,7 @@
         </h3>
     </div>
 </section>
+
 <!-- Breadcrumb Section -->
 <div class="breadcrumb-section">
     <div class="container">
@@ -46,11 +48,13 @@
         </div>
     </div>
 </div>
+
 <%-- Registration form --%>
 <section class="login-section registration-section padding-bottom padding-top bg_img" data-background="/static/images/home/gallery-2.jpg" no-repeat center center>"
     <div class="container">
         <div class="login-wrapper"><h3 class="title">Załóż konto</h3>
-            <form:form action="/gym/register" method="post" modelAttribute="member" class="login-form registration-form">
+
+            <form:form action="/gym/register" method="post" modelAttribute="user" class="login-form registration-form">
                 <div class="form-group">
                     <form:input path="email" type="text" id="email" placeholder="E-Mail"/>
                     <form:errors path="email" cssClass="error"/></div>
@@ -61,8 +65,8 @@
                     <form:input path="lastName" type="text" id="lastName" placeholder="Nazwisko"/>
                     <form:errors path="lastName" cssClass="error"/></div>
                 <div class="form-group">
-                    <form:input path="login" type="text" id="login" placeholder="Nazwa użytkownika/Login"/>
-                    <form:errors path="login" cssClass="error"/></div>
+                    <form:input path="username" type="text" id="username" placeholder="Nazwa użytkownika/Login"/>
+                    <form:errors path="username" cssClass="error"/></div>
                 <div class="form-group">
                     <form:password path="password" id="password" placeholder="Hasło"/>
                     <form:errors path="password" cssClass="error"/></div>
@@ -75,6 +79,7 @@
                     </form:label>
                 </div>
             </form:form>
+
         </div>
     </div>
 </section>

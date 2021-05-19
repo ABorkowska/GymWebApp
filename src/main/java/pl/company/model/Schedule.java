@@ -47,7 +47,7 @@ public class Schedule {
 			joinColumns = @JoinColumn(name="schedule_id"),
 			inverseJoinColumns = @JoinColumn(name="member_id"))
 	
-	private List<Member> members = new ArrayList<>();
+	private List<User> users = new ArrayList<>();
 	
 	
 	}

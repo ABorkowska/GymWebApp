@@ -1,0 +1,53 @@
+@Controller
+public class GreetingController {
+
+    @Autowired
+    private UserRepository userRepository;
+
+    @RequestMapping("/")
+    public String greeting(@RequestParam(value="name", required=false, defaultValue="World") String name, Model model) {
+        model.addAttribute("name", name);
+        for(User user: userRepository.findAll()){
+        	model.addAttribute("retrievedName", user.getUserName());
+        	break;
+        }
+        return "index";
+    }
+
+}
+
+
+
+
+@RestController
+@RequestMapping("/admin")
+class AdminController {
+
+  @Secured("ROLE_ADMIN")
+  @PostMapping("/data")
+  public void initialize() {
+    // ...
+  }
+}
+
+
+@RestController
+@RequestMapping("/orders")
+class OrdersController {
+
+  @Secured({"ROLE_ADMIN", "ROLE_USER"})
+  @GetMapping
+  public ResponseEntity<Order> getOrders() {
+    // ...
+  }
+}
+
+JSP
+
+<sec:authorize access="hasRole('ADMIN')"> MAM ROLE ADMIN
+</sec:authorize>
+
+<sec:authorize access="isAuthenticated()">
+<p>Zalogowany jako: <sec:authentication property="username"/></p>
+<p>Posiada role: <sec:authentication property="authorities"/></p>
+</sec:authorize>

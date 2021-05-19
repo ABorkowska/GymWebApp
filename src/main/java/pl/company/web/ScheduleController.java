@@ -5,7 +5,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import pl.company.model.Schedule;
-import pl.company.repository.MemberRepository;;
+import pl.company.repository.UserRepository;;
 import pl.company.repository.TrainerRepository;
 import pl.company.service.ScheduleService;
 
@@ -16,9 +16,9 @@ public class ScheduleController {
 	
 	private final ScheduleService scheduleService;
 	private final TrainerRepository trainerRepo;
-	private final MemberRepository memberRepo;
+	private final UserRepository memberRepo;
 	
-	public ScheduleController(ScheduleService scheduleService, TrainerRepository trainerRepo, MemberRepository memberRepo) {
+	public ScheduleController(ScheduleService scheduleService, TrainerRepository trainerRepo, UserRepository memberRepo) {
 		this.scheduleService = scheduleService;
 		this.trainerRepo = trainerRepo;
 		this.memberRepo = memberRepo;

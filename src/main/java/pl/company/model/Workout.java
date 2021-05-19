@@ -6,10 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 
 @Table(name = "workouts")
@@ -37,6 +34,6 @@ public class Workout {
 	private List<Exercise> exercises = new ArrayList<>();
 	
 	@ManyToMany(mappedBy="workouts")
-	private List<Member> members = new ArrayList<>();
+	private List<User> users = new ArrayList<>();
 	
 }
