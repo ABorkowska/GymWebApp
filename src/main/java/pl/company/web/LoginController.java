@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 import pl.company.model.User;
 import pl.company.service.SecurityService;
 import pl.company.service.UserService;
@@ -32,7 +33,6 @@ public class LoginController {
 	
 	@PostMapping("/gym/register")
 	public String registerMember(@Valid @ModelAttribute User user, BindingResult result) throws LoginException {
-		System.out.println(user);
 		if (result.hasErrors()) {
 			return "registerForm";
 		}
@@ -51,42 +51,26 @@ public class LoginController {
 		//securityService.autoLogin(user.getUsername(), user.getPassword());
 		
 		return "redirect:/gym/login";
-		//return "redirect:/home";
 	}
 	
-//	@GetMapping("/gym/login")
-//	public String login(){
-//		return "loginForm";
-//	}
-	
 	@GetMapping("/gym/login")
-	public String showLoginForm(Model model, @RequestParam(defaultValue="") String error) {
+	public String showLoginForm(Model model, @RequestParam(required = false) String error) {
 		User user = new User();
-
-		if (!error.equals("")){
+		if (error != null) {
 			model.addAttribute("error", "Nieprawidłowy login i/lub hasło");
 		}
 		model.addAttribute("user", user);
 		return "loginForm";
 	}
 	
-	//todo: nie dziala walidacja logowania
-	//todo post mappping jest w ramach SpringSecurity
-	
-//	@PostMapping("/gym/login")
-//	public String loginMember(@Valid @ModelAttribute("user") User member, BindingResult result) {
-//		if (result.hasErrors()) {
-//			return "loginForm";
+	//todo czy tak zadziala?
+//	@GetMapping("/gym/login")
+//	public ModelAndView login(@RequestParam(value = "error", required = false) String error) {
+//		ModelAndView model = new ModelAndView("/gym/login");
+//		if (error != null) {
+//			model.addObject("error", "Niepoprawna nazwa użytkownika lub hasło");
 //		}
-//		User user = userService.findByLogin(member.getUsername());
-//		if (user != null &&
-//				user.getPassword().equals(member.getPassword())) {
-//			return "redirect:/home";
-//		}
-//		else {
-//			return "loginForm";
-//		}
+//		return model;
 //	}
 }
-
 

@@ -9,7 +9,9 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import pl.company.model.Admin;
 import pl.company.service.SecurityService;
 import pl.company.service.UserDetailsServiceImpl;
 
@@ -18,30 +20,34 @@ import pl.company.service.UserDetailsServiceImpl;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
-	@Bean
-	public UserDetailsServiceImpl userDataService() {
-		return new UserDetailsServiceImpl();
-	}
+	@Autowired
+	public UserDetailsService userDetailsService;
+	
 	
 	@Bean
 	public BCryptPasswordEncoder passEncoder() {
 		return new BCryptPasswordEncoder();
 	}
 	
+	protected void configure(AuthenticationManagerBuilder auth) throws Exception{
+		auth
+				.userDetailsService(userDetailsService)
+				.passwordEncoder(passEncoder());
+	}
+	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-				.antMatchers("/home", "/login").permitAll()
+				.antMatchers("/home").permitAll()
 				.antMatchers("/gym/**").permitAll()
 				.antMatchers("/admin/**").hasRole("ADMIN")
-				//.antMatchers("/about/**").hasAnyRole("USER", "ADMIN")
 				.and().formLogin()
-				//.permitAll();     //przekierowuje na strone logowania
 				.loginPage("/gym/login")        //adres naszej strony logowania (nadpisuje domyslny formularz)
 				.defaultSuccessUrl("/home")
 				.usernameParameter("username")
 				.passwordParameter("password")
 				.failureUrl("/gym/login?error=true");
+	}
 	}
 
 //	@Override
@@ -70,11 +76,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //	public void get(){
 //		Admin user = new Admin(1L,"BartoszB", passEncoder().encode("Iron44"), "ROLE_ADMIN");
 //		Admin user1 = new Admin(2L,"kamil", passEncoder().encode("Iron33"), "ROLE_USER");
-//		userRepo.save(user);
-//		userRepo.save(user1);
-//
-	}
-	
+//		adminRepo.save(user);
+//		adminRepo.save(user1);
+
 //	@Bean
 //	public HttpFirewall looseHttpFirewall() {
 //		StrictHttpFirewall firewall = new StrictHttpFirewall();

@@ -62,7 +62,7 @@
                     <li class="menu-item"><a href="<c:url value="/home"/>" class="menu-item-link">Home</a></li>
                     <li class="menu-item"><a href="about.html" class="menu-item-link">Oferta</a>
                         <ul class="sub-menu">
-                            <li class="menu-item"><a href="<c:url value="/gym/plan"/>" class="menu-item-link">Plany treningowe</a></li>
+                            <li class="menu-item"><a href="<c:url value="/gym/plans"/>" class="menu-item-link">Plany treningowe</a></li>
                         </ul>
                     </li>
 

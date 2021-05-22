@@ -41,14 +41,14 @@ public class User {
 	private String username;
 	
 	@NotBlank
-	@Length(min = 5, message = "*Your password must have at least 5 characters")
 //	@Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$",
-			//message = "Hasło musi zawierać co najmniej 8 znaków, w tym co najmniej jedną dużą literę i co najmniej jedna cyfrę")
+	@Size(min=8, message = "Hasło musi zawierać co najmniej 8 znaków")
 	private String password;
 	
 	@Nullable
 	private String subscribed;
 	
+	@NotNull
 	private int enabled;
 	
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)     //cascade = CascadeType.MERG
@@ -61,6 +61,7 @@ public class User {
 	//many to many do schedule -> member podrzedny w relacji
 	@ManyToMany(mappedBy = "users")
 	private List<Schedule> classes = new ArrayList<>();
+	
 	
 	@Nullable
 	@ManyToOne

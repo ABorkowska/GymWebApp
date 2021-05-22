@@ -15,7 +15,6 @@ import javax.validation.Validator;
 import java.util.Locale;
 
 @SpringBootApplication  //@Configuration, @EnableAutoConfiguration, @EnableWebMvc, @ComponentScan
-
 public class SpringBootWebApplication extends SpringBootServletInitializer {
 	
 	@Override

@@ -24,11 +24,9 @@ public class SecurityServiceImpl implements SecurityService {
 	// aktualnie zalogowany uzytkownik
 	@Override
 	public String findLoggedInUser() {
-		
-		Object userData = SecurityContextHolder.getContext().getAuthentication().getDetails();
-		
-		if (userData instanceof UserDetails) {
-			return ((UserDetails) userData).getUsername();
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		if (principal instanceof UserDetails) {
+			return ((UserDetails) principal).getUsername();
 		}
 		return null;
 	}

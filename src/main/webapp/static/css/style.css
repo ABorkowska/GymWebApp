@@ -323,13 +323,17 @@ input[type="submit"] {
 
 .section-header {
     text-align: center;
+    weight: 300;
     max-width: 550px;
     margin: 0 auto 32px;
+    color:#000000
+
 }
 
 @media (min-width: 992px) {
     .section-header {
         margin: 0 auto 62px;
+
     }
 }
 
@@ -341,6 +345,7 @@ input[type="submit"] {
     margin-bottom: 20px;
     position: relative;
     text-transform: capitalize;
+
 }
 
 @media (min-width: 768px) {
@@ -3085,11 +3090,15 @@ template {
 }
 
 /*Package Section*/
+
+
+
 .package-item {
     margin-bottom: 30px;
     position: relative;
     text-align: center;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
 }
 
 .package-item::after, .package-item::before {
@@ -3126,7 +3135,7 @@ template {
     display: block;
     color: #d72323;
     margin-bottom: 3px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .package-item .package-content {
@@ -3134,8 +3143,9 @@ template {
 }
 
 .package-item .package-content ul {
-    text-transform: capitalize;
+    /*text-transform: capitalize;*/
     margin-bottom: 26px;
+    color: #050505;
 }
 
 .package-item .package-content ul li {
@@ -3143,42 +3153,50 @@ template {
 }
 
 .package-item .package-content .custom-button {
-    background: transparent;
-    color: #777777;
+    background: #ff6969;
+    color: #ffffff;
     border-color: #777777;
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
     border-radius: 25px;
 }
 
-.package-item:hover::after {
+.plan-custom-button:hover::after {
     right: 100%;
     -webkit-transform: translateX(100%);
     -ms-transform: translateX(100%);
     transform: translateX(100%);
 }
 
-.package-item:hover::before {
+.plan-custom-button:hover::before {
     left: 100%;
     -webkit-transform: translateX(-100%);
     -ms-transform: translateX(-100%);
     transform: translateX(-100%);
 }
 
-.package-item:hover .custom-button {
-    color: #d72323;
-    border-color: #d72323;
+.package-item .plan-custom-button {
+    margin-bottom: 40px;
+    color: #0a0a0a;
+    line-height: 30px;
+    background: #e04848;
+    color: #ffffff;
+    padding: 0 40px;
+    font-weight: 700;
+    border: 1px solid #d72323;
+    text-transform: capitalize;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
 }
 
 @media screen and (max-width: 400px) {
     .package-item .package-header {
         padding: 28px 10px 16px;
     }
-
     .package-item .package-content {
         padding: 17px 10px 35px;
     }
-
     .package-item .package-content ul {
         margin-bottom: 16px;
     }
@@ -3543,6 +3561,7 @@ template {
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
+
     -webkit-appearance: none;
     padding: 0;
 }

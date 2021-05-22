@@ -48,6 +48,4 @@ public class Schedule {
 			inverseJoinColumns = @JoinColumn(name="member_id"))
 	
 	private List<User> users = new ArrayList<>();
-	
-	
 	}

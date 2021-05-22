@@ -45,10 +45,10 @@
             <div class="breadcrumb-title"><h6 class="title">Zapisy na zajęcia</h6></div>
             <ul class="breadcrumb">
                 <li><a href="<c:url value="/home"/>">Home</a></li>
-                <li><a href="">Zajęcia</a></li>
+                <li><a href="<c:url value="/gym/schedule"/>">Zajęcia</a></li>
                 <li>Zapisy</li>
             </ul>
-        </div>
+
     </div>
 </div>
 
@@ -61,9 +61,9 @@
                     <div class="register-text">
                         <div class="section-title">
                             <h2>Formularz zapisu</h2>
-                            <p>Zapisujesz się na .... " </p>
+                            <p>Zapisujesz się na: <b>${training.name}</b> - ${training.day}, godz. ${training.hour}</p>
                         </div>
-                            <form:form action="/gym/schedule" method="post" modelAttribute="training" class="register-form">
+                            <form:form action="/gym/schedule/${training.id}" method="post" modelAttribute="training" class="register-form">
                             <div class="row">
                                 <p hidden><form:input path="id"/></p>
                                 <p hidden><form:input path="day"/></p>
@@ -79,16 +79,43 @@
                                     <input type="text" id="phone">
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="button" class="register-btn" onclick="location.href='/home';" value="Wyślij"/>
+                                    <input type="submit" class="register-btn" value="Zapisz się"/>
                                 </div>
                                 <div class="col-lg-6">
                                     <input type="button" class="register-btn-2" onclick="location.href='/gym/schedule';" value="Wróć do grafiku"/>
                                 </div>
                             </div>
                         </form:form>
+
+<%--                        <form:form action="/gym/schedule" method="post" modelAttribute="training" class="register-form">--%>
+<%--                            <div class="row">--%>
+<%--                                <p hidden><form:input path="id"/></p>--%>
+<%--                                <p hidden><form:input path="day"/></p>--%>
+<%--                                <p hidden><form:input path="hour"/></p>--%>
+<%--                                <p hidden><form:input path="name"/></p>--%>
+<%--                                <p hidden><form:input path="nameOfTrainer"/>--%>
+<%--                                <div class="col-lg-6">--%>
+<%--                                    <form:label for="login" path="login">Login*</form:label>--%>
+<%--                                    <form:input path="login" type="text" id="login"/>--%>
+<%--                                    <form:errors path="login" cssClass="error"/>--%>
+<%--                                </div>--%>
+<%--                                <div class="col-lg-6">--%>
+<%--                                    <form:label for="phoneNumber" path="phoneNumber">Numer telefonu*</form:label>--%>
+<%--                                    <form:input path="phoneNumber" type="text" id="phoneNumber"/>--%>
+<%--                                    <form:errors path="phoneNumber" cssClass="error"/>--%>
+<%--                                </div>--%>
+<%--                                <div class="col-lg-6">--%>
+<%--                                    <input type="submit" class="register-btn" value="Wyślij"/>--%>
+<%--                                </div>--%>
+<%--                                <div class="col-lg-6">--%>
+<%--                                    <input type="button" class="register-btn-2" onclick="location.href='/gym/schedule';" value="Wróć do grafiku"/>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </form:form>--%>
+
+
                     </div>
                 </div>
-
                 <div class="col-lg-4">
                     <div class="register-pic">
                         <img src="<c:url value="/static/images/feature/quote.PNG"/>" alt="">

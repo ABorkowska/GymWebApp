@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import pl.company.model.Schedule;
 import pl.company.repository.UserRepository;;
 import pl.company.repository.TrainerRepository;
@@ -16,12 +17,12 @@ public class ScheduleController {
 	
 	private final ScheduleService scheduleService;
 	private final TrainerRepository trainerRepo;
-	private final UserRepository memberRepo;
+	private final UserRepository userRepo;
 	
-	public ScheduleController(ScheduleService scheduleService, TrainerRepository trainerRepo, UserRepository memberRepo) {
+	public ScheduleController(ScheduleService scheduleService, TrainerRepository trainerRepo, UserRepository userRepo) {
 		this.scheduleService = scheduleService;
 		this.trainerRepo = trainerRepo;
-		this.memberRepo = memberRepo;
+		this.userRepo = userRepo;
 	}
 	
 	@GetMapping("/gym/schedule")
@@ -37,4 +38,9 @@ public class ScheduleController {
 		model.addAttribute("training", training);
 		return "schedule-register";
 	}
+	@PostMapping
+	public String registerToClass(){
+		return "home";
+	}
+	
 }

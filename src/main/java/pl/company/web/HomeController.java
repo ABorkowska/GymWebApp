@@ -13,6 +13,15 @@ public class HomeController {
 		return "home";
 		
 	}
+	@GetMapping("/plan")
+	public String showplans() {
+		return "plan-list";
+	}
+	@GetMapping("/buy")
+	public String buyPlan(){
+		return "plan-buy";
+	}
+	
 	@GetMapping("/class")
 	public String showTest() {
 		return "schedule-register";

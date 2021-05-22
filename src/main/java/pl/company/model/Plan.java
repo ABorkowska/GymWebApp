@@ -35,7 +35,14 @@ public class Plan {
 	@Pattern(regexp="\\d{2,5}.\\d{2}")
 	private Double price;
 	
-	//todo jak ma wygladac relacja member-plan?
+	@Nullable
+	@ManyToMany
+	@JoinTable(name="plan_trainer",
+			joinColumns=@JoinColumn(name="plan_id_"),
+			inverseJoinColumns=@JoinColumn(name="trainer_id"))
+	private List<Trainer> trainers = new ArrayList<>();
+	
+	
 	@Nullable
 	@OneToMany
 	@JoinTable(name="plan_user",

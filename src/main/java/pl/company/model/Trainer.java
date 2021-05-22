@@ -24,14 +24,22 @@ public class Trainer {
 	private Long id;
 	@NotBlank
 	private String name;
-	@NotBlank
-	private String surname;
 	@Email
 	private String email;
 	
 	@OneToMany(mappedBy="trainer")
 	private List<Schedule> classes = new ArrayList<>();
 	
+	@ManyToMany(mappedBy="trainers")
+	private List<Plan> plans = new ArrayList<>();
 	
-	
+	@Override
+	public String toString() {
+		return "Trainer{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", email='" + email + '\'' +
+				", classes=" + classes +
+				'}';
+	}
 }
