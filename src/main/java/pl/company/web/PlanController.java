@@ -1,19 +1,14 @@
 package pl.company.web;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.company.model.Plan;
 import pl.company.model.Trainer;
-import pl.company.model.User;
+
 import pl.company.repository.UserRepository;
 import pl.company.service.PlanService;
-import pl.company.service.SecurityServiceImpl;
 import pl.company.service.TrainerService;
-import pl.company.service.UserDetailsServiceImpl;
-
-import javax.servlet.http.HttpServletRequest;
 import java.util.Collection;
 import java.util.List;
 
