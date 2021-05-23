@@ -126,7 +126,7 @@
 }
 /*=====================================================================*//*checkbox-section start from here*//*=============================== ======================================*/
 h3.check-heading {
-	font-family: 'Poppins', sans-serif;
+	font-family: sans-serif;
 	padding-top: 50px;
 	padding-bottom: 50px;
 	font-weight: 700;
@@ -137,12 +137,14 @@ h3.check-heading {
 .checkout-form {
 	width: 100%;
 	float: left;
+	font-family: sans-serif;
 }
 
 .checkout-form .form-field {
 	width: 100%;
 	float: left;
 	margin: 2px 0px;
+	font-family: sans-serif;
 }
 
 .checkout-form .form-field.field-49 {
@@ -161,10 +163,11 @@ h3.check-heading {
 	width: 100%;
 	float: left;
 	font-size: 15px;
-	color: #696969;
+	color: #1f1e1e;
 	font-weight: 400;
 	margin-bottom: 0px;
 	padding-top: 14px;
+	font-family: sans-serif;
 }
 
 .checkout-form .form-field .form-input, .checkout-form .form-field .form-select, .checkout-form .form-field .form-msg {
@@ -174,7 +177,7 @@ h3.check-heading {
 	border: 1px solid #ccc;
 	padding: 14px;
 	font-size: 15px;
-	color: #969696;
+	color: #242323;
 }
 
 .input-marginbtm {
@@ -184,15 +187,14 @@ h3.check-heading {
 .checkout-form .form-field .checkbox_label {
 	width: auto;
 	cursor: pointer;
-
 }
 
 .checkout-form .form-field .checkbox_label input[type=checkbox], input[type=radio] {
-	/*margin-left:5px;*/
+	margin-left:0;
 	width:40%;
 }
 .product-orderlst {
-	background: #f6f6f6;
+	background: #e3e1e1;
 	width: 100%;
 	float: left;
 	padding: 20px 35px 30px;
@@ -209,7 +211,7 @@ h3.check-heading {
 	float: left;
 	width: 100%;
 	font-size: 15px;
-	color: #7e7e7e;
+	color: #3d3d3d;
 	padding: 14px 0px;
 }
 
@@ -234,19 +236,18 @@ h3.check-heading {
 }
 
 .paypal-img img {
-	padding-top: 15px;
+	padding-top: 5px;
 }
 
 .paypal-img {
 	float: left;
-	margin: -13px 20px 0px;
+	margin: -13px 10px 10px 0;
 }
 
 .main-h {
 	padding-top: 35px;
 	padding-bottom: 35px;
 }
-
 
 .checkout-form .form-field .form-msg {
 	height: 95px;
@@ -259,6 +260,6 @@ h3.check-heading {
 .wdt-100 {
 	width: 100%;
 	float: left;
-	padding-bottom: 60px;
+	padding-bottom: 100px;
 }
 

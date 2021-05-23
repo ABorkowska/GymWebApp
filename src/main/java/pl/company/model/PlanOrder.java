@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.jetbrains.annotations.Nullable;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -24,6 +25,8 @@ public class PlanOrder {
 	
 	private boolean nutrition;
 	
+	private boolean ordered;
+	
 	@ManyToOne
 	private Plan plan;
 	
@@ -32,6 +35,9 @@ public class PlanOrder {
 	
 	@ManyToOne
 	private User user;
+	
+	@Transient
+	private Double price;
 	
 	@Override
 	public String toString() {
@@ -42,5 +48,9 @@ public class PlanOrder {
 				", trainer=" + trainer +
 				", user=" + user +
 				'}';
+	}
+	
+	public boolean getNutrition() {
+		return true;
 	}
 }

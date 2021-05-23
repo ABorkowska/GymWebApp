@@ -1,6 +1,7 @@
 package pl.company.service;
 
 import org.springframework.stereotype.Service;
+import pl.company.model.Plan;
 import pl.company.model.PlanOrder;
 import pl.company.repository.PlanOrderRepository;
 
@@ -19,5 +20,8 @@ public class PlanOrderService {
 	
 	public PlanOrder findById(Long id){
 		return planOrderRepo.getPlanOrderById(id);
+	}
+	public Long findPlanForPlanOrder(Long id){
+		return planOrderRepo.findPlanForPlanOrder(id);
 	}
 }

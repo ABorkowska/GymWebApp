@@ -54,73 +54,63 @@
 </div>
 <!-- Pay Form -->
 <section class="pad95-100-top-bottom checkout_01">
-    <div class="container">
-        <div><h3 class="check-heading">Formularz płatności</h3></div>
-        <div class="row">
-            <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12 billing-left"><h4 class="billing">Dane osobowe</h4>
-                <div class="checkout-form">
-                    <div class="wdt-100">
-
-                        <div class="form-field field-49"><label>Login *</label>
-                            <input name="name" type="text" class="form-input">
-                        </div>
-                        <div class="form-field field-49 field-fr"><label>E-Mail *</label>
-                            <input name="name" type="text" class="form-input">
-                        </div>
-
+    <form:form action="/gym/plans/order/${planOrder.id}" method="post" modelAttribute="planOrder">
+        <div class="container">
+            <div><h3 class="check-heading">Formularz płatności</h3></div>
+            <div class="row">
+                <div class="col-lg-7 col-md-7 col-sm-6 col-xs-12 billing-left"><h4 class="billing">Dane osobowe</h4>
+                    <div class="checkout-form">
                         <div class="wdt-100">
-                            <div class="form-field field-49"><label>Imię *</label>
-                                <input name="name" type="text" class="form-input"></div>
-                            <div class="form-field field-49 field-fr"><label>Nazwisko *</label>
-                                <input name="name" type="text" class="form-input"></div>
-                            <div class="form-field"><label>Adres *</label>
-                                <input name="name" type="text" class="form-input input-marginbtm"
-                                       value="Ulica, numer / numer mieszkania"></div>
-                            <div class="form-field field-49"><label>Miejscowość *</label>
-                                <input name="name" type="text" class="form-input"></div>
-                            <div class="form-field field-49 field-fr"><label>Kod pocztowy *</label>
-                                <input name="name" type="text" class="form-input"></div>
+                            <div class="wdt-100">
+                                <p hidden><form:input path="id"/></p>
+                                <div class="form-field field-49 "><label>Imię *</label>
+                                    <input name="name" type="text" class="form-input" required></div>
+                                <div class="form-field field-49 field-fr"><label>Nazwisko *</label>
+                                    <input name="name" type="text" class="form-input" required></div>
+                                <div class="form-field"><label>Adres *</label>
+                                    <input name="name" type="text" class="form-input input-marginbtm" required></div>
+                                <div class="form-field field-49"><label>Miejscowość *</label>
+                                    <input name="name" type="text" class="form-input" required></div>
+                                <div class="form-field field-49 field-fr"><label>Kod pocztowy *</label>
+                                    <input name="name" type="text" class="form-input" required></div>
+                                <div class="form-field"><label>E-Mail *</label>
+                                    <input name="name" type="text" class="form-input" required></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!--========= Order details ============-->
-            <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 order-rght">
-                <h4 class="your">Twoje zamówienie</h4>
-                <div class="product-orderlst">
-                    <ul>
-                        <li><span class="left-txt">Plan treningowy:   </span><span
-                                class="rght-txt">&nbsp &nbsp - </span></li>
-                        <li><span class="left-txt">Plan żywieniowy</span><span class="rght-txt">&nbsp &nbsp - </span>
-                        </li>
-                        <li><span class="left-txt"><strong>SUMA</strong></span>
-                            <span class="rght-txt"><strong>&nbsp &nbsp - </strong></span></li>
-                    </ul>
-                </div>
-
-                <div class="checkout-form">
-                    <div class="form-field"><label class="checkbox_label">
-                        <div class="form-field paypal-margin main-h">
-                            <label class="checkbox_label">
-                                <input type="radio" name="hosting" value="yes">PayPal</label>
-                            <span class="paypal-img">
-                                <img src="${pageContext.request.contextPath}/static/images/feature/paypal-img.png"
-                                     alt="">
-                            </span>
+                <!--========= Order details ============-->
+                <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 order-rght"><h4 class="your">Twoje zamówienie</h4>
+                    <div class="product-orderlst">
+                        <ul>
+                            <li><span class="left-txt">Plan treningowy:</span>
+                                <span class="rght-txt">&nbsp &nbsp - </span></li>
+                            <li><span class="left-txt">Plan żywieniowy</span>
+                                <span class="rght-txt">&nbsp &nbsp - </span></li>
+                            <li><span class="left-txt"><strong>SUMA</strong></span>
+                                <span class="rght-txt"><strong>&nbsp &nbsp - </strong></span></li>
+                        </ul>
+                    </div>
+                    <div class="checkout-form">
+                        <div class="form-field"><label class="checkbox_label">
+                            <div class="form-field paypal-margin main-h">
+                                <label class="checkbox_label">
+                                    <input type="radio" name="hosting" checked value="yes">PayPal</label>
+                                <span class="paypal-img">
+                                    <img src="${pageContext.request.contextPath}/static/images/feature/paypal-img.png" alt=""></span>
+                            </div>
+                            <div class="botton-secound">
+                                <input type="submit" value="Zapłać">
+                                <div class="col-lg-8"><p></p></div>
+                            </div>
+                        </label>
                         </div>
-
-                        <div class="botton-secound">
-                            <input type="submit" value="Zapłać">
-                            <div class="col-lg-8"><p></p></div>
-<%--                            <a href="https://www.paypal.com/pl/signin?returnUri=https%3A%2F%2Fwww.paypal.com%2Fmyaccount%2Ftransfer&state=%2F"></a>--%>
-                        </div>
-                    </label>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </form:form>
 </section>
 
 </body>
