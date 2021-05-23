@@ -67,7 +67,7 @@
                     </div>
                 </div>
                 <div class="section-title">
-                    <form:form method="post" action="/gym/plans/${plan.id}/buy" modelAttribute="plan" class="register-form">
+                    <form:form method="post" action="/gym/plans/${plan.id}" modelAttribute="plan" class="register-form">
                     <div class="col-lg-6">
                         <div class="form-row">
                             <div class="name"></div>
@@ -86,6 +86,8 @@
                                         <form:option value="" label="Wybierz z listy"/>
                                         <form:options itemValue="id" itemLabel="name" name="trainer" items="${trainers}"/>
                                     </form:select>
+<%--                                    <form:select itemValue="id" itemLabel="name" multiple="false"--%>
+<%--                                                 path="trainers" items="${trainers}"/>--%>
                                     <div class="select-dropdown"></div>
                                 </div>
                             </div>
@@ -94,11 +96,11 @@
                             <label class="label label--block">Dołączam plan żywieniowy (+150.00 zł)</label>
                             <div class="p-t-15">
                                 <label class="radio-container m-r-55">Tak
-                                    <input type="radio" name="exist">
+                                    <input type="radio" name="exists" value="yes">
                                     <span class="checkmark"></span>
                                 </label>
                                 <label class="radio-container">Nie
-                                    <input type="radio" checked="checked" name="exist">
+                                    <input type="radio" checked="checked" name="exists" value="no">
                                     <span class="checkmark"></span>
                                 </label>
                             </div>

@@ -7,4 +7,5 @@ import pl.company.model.PlanOrder;
 @Repository
 public interface PlanOrderRepository extends JpaRepository<PlanOrder, Long> {
 
+	PlanOrder getPlanOrderById(Long id);
 }

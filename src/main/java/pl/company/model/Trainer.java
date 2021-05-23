@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -30,6 +31,7 @@ public class Trainer {
 	@OneToMany(mappedBy="trainer")
 	private List<Schedule> classes = new ArrayList<>();
 	
+	@Nullable
 	@OneToMany(mappedBy="trainer")
 	private List<PlanOrder> planOrder = new ArrayList<>();
 	

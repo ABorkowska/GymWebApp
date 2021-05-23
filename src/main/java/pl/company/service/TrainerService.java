@@ -21,7 +21,10 @@ public class TrainerService {
 		return list;
 	}
 	
-	public Trainer findFirstByName(String name) {
-		return trainerRepo.findFirstByName(name);
+	public Trainer findTrainerByName(String name) {
+		return trainerRepo.findByName(name);
+	}
+	public Trainer findTrainerById(Long id) {
+		return trainerRepo.findById(id).get();
 	}
 }

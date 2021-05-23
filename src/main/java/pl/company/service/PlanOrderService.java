@@ -16,4 +16,8 @@ public class PlanOrderService {
 	public PlanOrder savePlanOrder(PlanOrder planOrder) {
 		return planOrderRepo.save(planOrder);
 	}
+	
+	public PlanOrder findById(Long id){
+		return planOrderRepo.getPlanOrderById(id);
+	}
 }

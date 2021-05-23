@@ -33,4 +33,14 @@ public class PlanOrder {
 	@ManyToOne
 	private User user;
 	
+	@Override
+	public String toString() {
+		return "PlanOrder{" +
+				"id=" + id +
+				", nutrition=" + nutrition +
+				", plan=" + plan +
+				", trainer=" + trainer +
+				", user=" + user +
+				'}';
+	}
 }
