@@ -124,3 +124,141 @@
 	line-height: 0.75;
 	margin-top: 15px;
 }
+/*=====================================================================*//*checkbox-section start from here*//*=============================== ======================================*/
+h3.check-heading {
+	font-family: 'Poppins', sans-serif;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	font-weight: 700;
+	color: #242424;
+	font-size: 32px;
+}
+
+.checkout-form {
+	width: 100%;
+	float: left;
+}
+
+.checkout-form .form-field {
+	width: 100%;
+	float: left;
+	margin: 2px 0px;
+}
+
+.checkout-form .form-field.field-49 {
+	width: 49%;
+}
+
+.checkout-form .form-field.field-55 {
+	width: 55%;
+}
+
+.checkout-form .form-field.field-fr {
+	float: right;
+}
+
+.checkout-form .form-field label {
+	width: 100%;
+	float: left;
+	font-size: 15px;
+	color: #696969;
+	font-weight: 400;
+	margin-bottom: 0px;
+	padding-top: 14px;
+}
+
+.checkout-form .form-field .form-input, .checkout-form .form-field .form-select, .checkout-form .form-field .form-msg {
+	width: 100%;
+	float: left;
+	background: #fff;
+	border: 1px solid #ccc;
+	padding: 14px;
+	font-size: 15px;
+	color: #969696;
+}
+
+.input-marginbtm {
+	margin-bottom: 8px;
+}
+
+.checkout-form .form-field .checkbox_label {
+	width: auto;
+	cursor: pointer;
+
+}
+
+.checkout-form .form-field .checkbox_label input[type=checkbox], input[type=radio] {
+	/*margin-left:5px;*/
+	width:40%;
+}
+.product-orderlst {
+	background: #f6f6f6;
+	width: 100%;
+	float: left;
+	padding: 20px 35px 30px;
+	margin: 20px 0px;
+}
+
+.product-orderlst ul {
+	margin: 0px;
+	padding: 0px;
+}
+
+.product-orderlst ul li {
+	list-style: none;
+	float: left;
+	width: 100%;
+	font-size: 15px;
+	color: #7e7e7e;
+	padding: 14px 0px;
+}
+
+.product-orderlst ul li .left-txt {
+	width: 45%;
+	float: left;
+}
+
+.product-orderlst ul li .rght-txt {
+	width: 25%;
+	float: right;
+}
+
+.product-orderlst ul li:first-child {
+	font-weight: 700;
+	font-size: 18px;
+}
+
+.product-orderlst ul li:last-child {
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+
+.paypal-img img {
+	padding-top: 15px;
+}
+
+.paypal-img {
+	float: left;
+	margin: -13px 20px 0px;
+}
+
+.main-h {
+	padding-top: 35px;
+	padding-bottom: 35px;
+}
+
+
+.checkout-form .form-field .form-msg {
+	height: 95px;
+}
+
+.paypal-margin {
+	margin: 40px 0px;
+}
+
+.wdt-100 {
+	width: 100%;
+	float: left;
+	padding-bottom: 60px;
+}
+

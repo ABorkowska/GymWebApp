@@ -3162,7 +3162,7 @@ template {
 }
 
 .package-item:hover .custom-button {
-    color: #d72323;
+    color: #0a0a0a;
     border-color: #d72323;
 }
 

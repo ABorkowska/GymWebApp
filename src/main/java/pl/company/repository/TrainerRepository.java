@@ -10,4 +10,7 @@ public interface TrainerRepository extends JpaRepository<Trainer, Long> {
 
 	@Query(value = "select (name, surname) from trainers", nativeQuery = true)
 	List<Trainer> findTrainerNames();
+	
+//	@Query("select t from Trainer t where t.name like :?1")
+	Trainer findFirstByName(String name);
 }

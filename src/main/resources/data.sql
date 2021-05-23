@@ -45,13 +45,13 @@ values (1, 'Mass', 4, 450.00),
 
 INSERT INTO roles VALUES (1, 'ROLE_USER');
 
-insert into users(id, email, enabled,first_name, last_name, password, subscribed, username, plan_id)
-values (1,'margaret@gmail.com',1, 'Małgorzata','Sosnowska','margo',null,'Margo123',null),
-       (2,'groomy14@wp.pl',1,'Grzegorz','Górny','Gniewko',null,'Gugudolls1',null),
-       (3,'s.jasinski@prc.com',1,'Sławomir','Jasiński','jasion','yes','99Jasson99',4),
-       (4,'kamil.baranowski@o2.pl',1,'Kamil','Baranowski','Kamson','yes','Kukuruku40',1),
-       (5,'marco_schumann@gmail.com',1,'Marco','Schumann','Marcovsky',null,'Rabbit55',null),
-       (6,'andrea.sch@o2.pl',1,'Andrea','Szefler','Andrea',null,'Andrea333',null);
+insert into users(id, email, enabled,first_name, last_name, password, subscribed, username)
+values (1,'margaret@gmail.com',1, 'Małgorzata','Sosnowska','margo',null,'Margo123'),
+       (2,'groomy14@wp.pl',1,'Grzegorz','Górny','Gniewko',null,'Gugudolls1'),
+       (3,'s.jasinski@prc.com',1,'Sławomir','Jasiński','jasion','yes','99Jasson99'),
+       (4,'kamil.baranowski@o2.pl',1,'Kamil','Baranowski','Kamson','yes','Kukuruku40'),
+       (5,'marco_schumann@gmail.com',1,'Marco','Schumann','Marcovsky',null,'Rabbit55'),
+       (6,'andrea.sch@o2.pl',1,'Andrea','Szefler','Andrea',null,'Andrea333');
 
 insert into trainers
 values (1, 'artur.czajka@irongym.com', 'Artur Czajka'),
@@ -106,31 +106,29 @@ values (1, 3, 8, 'Mass'),
        (2, 5, 4, 'Strength'),
        (3, 15, 4, 'Shape');
 
-insert into plan_user
-values (4, 4),
-       (1, 1);
+INSERT INTO plan_order VALUES (1, false, 1, 4, 2);
 
 insert into user_role values(1,1),(2,1),(3,1),(4,1),(5,1),(6,1)
-
-# # #
+#
 # # # # # #
-# # # # # # # create table SPRING_SESSION(
-# # # # # # #     primary_id            CHAR(36) NOT NULL,
-# # # # # # #     session_id            CHAR(36) NOT NULL,
-# # # # # # #     creation_time         BIGINT   NOT NULL,
-# # # # # # #     last_access_time      BIGINT   NOT NULL,
-# # # # # # #     max_inactive_interval INT      NOT NULL,
-# # # # # # #     expiry_time           BIGINT   NOT NULL,
-# # # # # # #     principal_name        VARCHAR(100),
-# # # # # # #     CONSTRAINT spring_session_pk PRIMARY KEY (primary_id)
-# # # # # # # );
-# # # # # # #
-# # # # # # # create table SPRING_SESSION_ATTRIBUTES(
-# # # # # # #     session_primary_id CHAR(36)     NOT NULL,
-# # # # # # #     attribute_name     VARCHAR(200) NOT NULL,
-# # # # # # #     attribute_bytes    BLOB         NOT NULL,
-# # # # # # #     CONSTRAINT spring_session_attributes_pk PRIMARY KEY (session_primary_id, attribute_name),
-# # # # # # #     CONSTRAINT spring_session_attributes_fk FOREIGN KEY (session_primary_id) REFERENCES SPRING_SESSION (primary_id) ON DELETE CASCADE
-# # # # # # # );
-# # # # # #
-# # # # # #
+# # # # # # # # #
+# # # # # # # # # # create table SPRING_SESSION(
+# # # # # # # # # #     primary_id            CHAR(36) NOT NULL,
+# # # # # # # # # #     session_id            CHAR(36) NOT NULL,
+# # # # # # # # # #     creation_time         BIGINT   NOT NULL,
+# # # # # # # # # #     last_access_time      BIGINT   NOT NULL,
+# # # # # # # # # #     max_inactive_interval INT      NOT NULL,
+# # # # # # # # # #     expiry_time           BIGINT   NOT NULL,
+# # # # # # # # # #     principal_name        VARCHAR(100),
+# # # # # # # # # #     CONSTRAINT spring_session_pk PRIMARY KEY (primary_id)
+# # # # # # # # # # );
+# # # # # # # # # #
+# # # # # # # # # # create table SPRING_SESSION_ATTRIBUTES(
+# # # # # # # # # #     session_primary_id CHAR(36)     NOT NULL,
+# # # # # # # # # #     attribute_name     VARCHAR(200) NOT NULL,
+# # # # # # # # # #     attribute_bytes    BLOB         NOT NULL,
+# # # # # # # # # #     CONSTRAINT spring_session_attributes_pk PRIMARY KEY (session_primary_id, attribute_name),
+# # # # # # # # # #     CONSTRAINT spring_session_attributes_fk FOREIGN KEY (session_primary_id) REFERENCES SPRING_SESSION (primary_id) ON DELETE CASCADE
+# # # # # # # # # # );
+# # # # # # # # #
+# # # # # # # # #

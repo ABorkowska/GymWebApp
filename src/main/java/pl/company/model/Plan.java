@@ -36,18 +36,15 @@ public class Plan {
 	private Double price;
 	
 	@Nullable
+	@OneToMany(mappedBy="plan")
+	private List<PlanOrder> planOrders = new ArrayList<>();
+	
+	@Nullable
 	@ManyToMany
 	@JoinTable(name="plan_trainer",
 			joinColumns=@JoinColumn(name="plan_id_"),
 			inverseJoinColumns=@JoinColumn(name="trainer_id"))
 	private List<Trainer> trainers = new ArrayList<>();
 	
-	
-	@Nullable
-	@OneToMany
-	@JoinTable(name="plan_user",
-			joinColumns=@JoinColumn(name="plan_id_"),
-			inverseJoinColumns=@JoinColumn(name="user_id"))
-	private List<User> users = new ArrayList<>();
 	}
 	

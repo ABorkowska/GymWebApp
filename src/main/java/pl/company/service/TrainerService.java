@@ -20,4 +20,8 @@ public class TrainerService {
 		List<Trainer> list = trainerRepo.findAll();
 		return list;
 	}
+	
+	public Trainer findFirstByName(String name) {
+		return trainerRepo.findFirstByName(name);
+	}
 }

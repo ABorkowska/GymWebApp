@@ -43,7 +43,7 @@
 <div class="breadcrumb-section">
     <div class="container">
         <div class="breadcrumb-wrapper">
-            <div class="breadcrumb-title"><h6 class="title">Formularz zakupu</h6></div>
+            <div class="breadcrumb-title"><h6 class="title">Zakup online</h6></div>
             <ul class="breadcrumb">
                 <li><a href="<c:url value="/home"/>">Home</a></li>
                 <li><a href="<c:url value="/gym/plans"/>">Plany Treningowe</a></li>
@@ -67,7 +67,7 @@
                     </div>
                 </div>
                 <div class="section-title">
-                    <form:form method="post" action="/gym/plans/${plan.id}" modelAttribute="plan" class="register-form">
+                    <form:form method="post" action="/gym/plans/${plan.id}/buy" modelAttribute="plan" class="register-form">
                     <div class="col-lg-6">
                         <div class="form-row">
                             <div class="name"></div>
@@ -91,7 +91,7 @@
                             </div>
                         </div>
                         <div class="form-row p-t-20">
-                            <label class="label label--block">Dołaczam plan żywieniowy (+150.00 zł)</label>
+                            <label class="label label--block">Dołączam plan żywieniowy (+150.00 zł)</label>
                             <div class="p-t-15">
                                 <label class="radio-container m-r-55">Tak
                                     <input type="radio" name="exist">
@@ -105,7 +105,9 @@
                         </div>
                     </div>
                     <div class="col-lg-8">
-                        <input type="submit" class="register-btn" value="Kupuję"/>
+                        <input type="submit" class="register-btn" value="Zamawiam"/>
+                        <p>* Po zamówieniu zostaniesz przekierowany do strony płatności.
+                           Odwiedż nas, jeśli chcesz dokonać zakupu bezpośrednio w klubie.
                         <div class="form-row p-t-10">
                             <input type="button" class="btn btn--radius-2" onclick="location.href='/gym/plans';"
                                    value="Powrót do oferty"/>
@@ -135,5 +137,5 @@
 <script src="<c:url value="/static/js/lightcase.js"/>"></script>
 <script src="<c:url value="/static/js/wow.min.js"/>"></script>
 <script src="<c:url value="/static/js/main.js"/>"></script>
-</body>
+
 </html>

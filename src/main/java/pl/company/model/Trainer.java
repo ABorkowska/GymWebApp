@@ -30,8 +30,8 @@ public class Trainer {
 	@OneToMany(mappedBy="trainer")
 	private List<Schedule> classes = new ArrayList<>();
 	
-	@ManyToMany(mappedBy="trainers")
-	private List<Plan> plans = new ArrayList<>();
+	@OneToMany(mappedBy="trainer")
+	private List<PlanOrder> planOrder = new ArrayList<>();
 	
 	@Override
 	public String toString() {

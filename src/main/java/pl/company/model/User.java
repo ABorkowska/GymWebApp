@@ -58,14 +58,13 @@ public class User {
 	private Set<Role> roles;
 	
 	
-	//many to many do schedule -> member podrzedny w relacji
 	@ManyToMany(mappedBy = "users")
 	private List<Schedule> classes = new ArrayList<>();
 	
 	
 	@Nullable
-	@ManyToOne
-	private Plan plan;
+	@OneToMany(mappedBy="user")
+	private List<PlanOrder> planOrders = new ArrayList<>();
 	
 	@ManyToMany
 	@JoinTable(name = "users_workouts",
@@ -87,7 +86,6 @@ public class User {
 				", enabled=" + enabled +
 				", roles=" + roles +
 				", classes=" + classes +
-				", plan=" + plan +
 				", workouts=" + workouts +
 				'}';
 	}
