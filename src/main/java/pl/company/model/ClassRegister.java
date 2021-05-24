@@ -4,8 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.NumberFormat;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 
 @Getter
 @Setter
@@ -19,5 +21,24 @@ public class ClassRegister {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
+	@ManyToOne
+	private Schedule schedule;
+	
+	@ManyToOne
+	private User user;
+	
+	@NotBlank
+	@Email
+	private String mail;
+	
+	@NotNull
+	@NumberFormat(style = NumberFormat.Style.NUMBER)
+	@Min(9)
+	@Max(13)
+	private Integer contactNumber;
+	
+	
+	
 	
 }

@@ -41,11 +41,16 @@ public class Schedule {
 	@ManyToOne
 	private Trainer trainer;
 	
-	//many to many do member, schedule jako nadrzedny
-	@ManyToMany
-	@JoinTable(name="classes_members",
-			joinColumns = @JoinColumn(name="schedule_id"),
-			inverseJoinColumns = @JoinColumn(name="member_id"))
+	@OneToMany(mappedBy="schedule")
+	private List<ClassRegister> classes = new ArrayList<>();
 	
-	private List<User> users = new ArrayList<>();
+	
+	
+//	//many to many do member, schedule jako nadrzedny
+//	@ManyToMany
+//	@JoinTable(name="classes_members",
+//			joinColumns = @JoinColumn(name="schedule_id"),
+//			inverseJoinColumns = @JoinColumn(name="member_id"))
+//
+//	private List<User> users = new ArrayList<>();
 	}

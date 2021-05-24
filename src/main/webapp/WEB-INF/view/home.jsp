@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="<c:url value="/static/css/flaticon.css"/>">
     <link rel="stylesheet" href="<c:url value="/static/css/swiper.min.css"/>">
     <link rel="stylesheet" href="<c:url value="/static/css/style.css"/>">
+    <link rel="stylesheet" href="<c:url value="/static/css/services.css"/>">
 </head>
 <body>
 <!-- Header -->
@@ -56,7 +57,7 @@
                     <div class="building-box">
                         <figure><img src=<c:out value="/static/images/build3.png"/>?" alt=""></figure>
                         <h4>TRENUJ Z INSTRUKTOREM</h4>
-                        <p>Skorzystaj z oferty planów treningowych z trenerem personalnym </p><a href="<c:out value="/gym/plan"/>" class="btn">Sczegóły</a></div>
+                        <p>Skorzystaj z oferty planów treningowych z trenerem personalnym </p><a href="<c:out value="/gym/plans"/>" class="btn">Sczegóły</a></div>
                 </div>
                 <div class="col-sm-4 col-xs-12">
                     <div class="building-box">
@@ -69,22 +70,22 @@
     </div>
 </div>
 
-
-<!-- Footer -->
+</body>
+<!-- Footer Section -->
 <%@ include file="./footer.jsp" %>
-<!-- /.footer -->
+</html>
 
 <!-- JavaScript File Links -->
-<script src="<c:url value="/static/js/jquery-3.3.1.min.js"/>"></script>
-<script src="<c:url value="/static/js/modernizr-3.6.0.min.js"/>"></script>
-<script src="<c:url value="/static/js/plugins.js"/>"></script>
-<script src="<c:url value="/http://cdn.bootstrapmb.com/bootstrap/4.3.1/js/bootstrap.min.js"/>"></script>
-<script src="<c:url value="/static/js/isotope.pkgd.min.js"/>"></script>
-<script src="<c:url value="/static/js/swiper.min.js"/>"></script>
-<script src="<c:url value="/static/js/waypoint.js"/>"></script>
-<script src="<c:url value="/static/js/counterup.min.js"/>"></script>
-<script src="<c:url value="/static/js/lightcase.js"/>"></script>
-<script src="<c:url value="/static/js/wow.min.js"/>"></script>
-<script src="<c:url value="/static/js/main.js"/>"></script>
-</body>
-</html>
+<%--<script src="<c:url value="/static/js/jquery-3.3.1.min.js"/>"></script>--%>
+<%--<script src="<c:url value="/static/js/modernizr-3.6.0.min.js"/>"></script>--%>
+<%--<script src="<c:url value="/static/js/plugins.js"/>"></script>--%>
+<%--<script src="<c:url value="/http://cdn.bootstrapmb.com/bootstrap/4.3.1/js/bootstrap.min.js"/>"></script>--%>
+<%--<script src="<c:url value="/static/js/isotope.pkgd.min.js"/>"></script>--%>
+<%--<script src="<c:url value="/static/js/swiper.min.js"/>"></script>--%>
+<%--<script src="<c:url value="/static/js/waypoint.js"/>"></script>--%>
+<%--<script src="<c:url value="/static/js/counterup.min.js"/>"></script>--%>
+<%--<script src="<c:url value="/static/js/lightcase.js"/>"></script>--%>
+<%--<script src="<c:url value="/static/js/wow.min.js"/>"></script>--%>
+<%--<script src="<c:url value="/static/js/main.js"/>"></script>--%>
+<%--</body>--%>
+<%--</html>--%>

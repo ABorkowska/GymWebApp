@@ -62,39 +62,47 @@ public class PlanOrderController {
 		System.out.println(trainerId);
 		System.out.println(planOrder);
 		Trainer trainer = trainerService.findTrainerById(trainerId);
+		//todo: value not selected generates errors
+		planOrder.setTrainer(trainer);
 		if (principal==null) {
 			return "redirect:/gym/login";
 		}
 		User user = userService.findUserByUsername(principal.getName());
 		planOrder.setId(null);
 		planOrder.setNutrition(exists);
+		if (exists){
+			planOrder.setNutritionPrice(plan.getNutritionPrice());
+		}
 		planOrder.setPlan(plan);
-		planOrder.setTrainer(trainer);
+		
 		planOrder.setUser(user);
 		PlanOrder orderedPlan = planOrderService.savePlanOrder(planOrder);
 		return "redirect:/gym/plans/order/" + orderedPlan.getId();
 	}
 	
-	@GetMapping()
+	@GetMapping("/gym/plans/order/{id}")
 	public String payPlan(@PathVariable Long id, Model model) {
 		PlanOrder planOrder = planOrderService.findById(id);
 		Long planId = planOrderService.findPlanForPlanOrder(id);
 		Plan plan = planService.getOne(planId);
-		
-		if (planOrder.getNutrition()){
-			Double nutritionPrice = planService.getPlanPrice(planId);
-			model.addAttribute("nutritionPrice", nutritionPrice);
-		}
+		Double price = plan.getPrice();
+//		if (planOrder.getNutrition()){
+//			model.addAttribute("nutritionPrice", nutritionPrice);
+//		}
 		model.addAttribute("planOrder", planOrder);
 		model.addAttribute("plan", plan);
+		model.addAttribute("price", price);
 		return "plan-pay";
 	}
 	
 	@PostMapping("/gym/plans/order/{id}")
 	public String processPayment(@PathVariable Long id, @Valid @ModelAttribute PlanOrder planOrder, BindingResult result){
+		planOrder = planOrderService.findById(id);
 		if (result.hasErrors()){
 			return "redirect:/gym/plans/order/{id}";
 		}
+		//todo: value not updated
+		//todo: validate payee data i.e. postal code
 		planOrder.setOrdered(true);
 		return "redirect:https://www.paypal.com/pl/signin";
 	}

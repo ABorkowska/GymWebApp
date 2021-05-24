@@ -52,10 +52,11 @@
 </div>
 
 <!-- Timetable -->
-
+<div class="bg_img" data-background="/static/images/banner/log-bg.jpg">
 <div class="container">
     <div class="row">
         <div class="col">
+            <div class="timetable_container_note">Zapisy na nasze zajęcia odbywają się <b><i>w trybie tygodniowym</i></b>. Grafik startuje w każdy poniedziałek.</div>
             <div class="timetable_container d-flex flex-sm-row flex-column align-items-start justify-content-sm-between justify-content-start">
 
                 <!-- Monday -->

@@ -25,19 +25,20 @@ public class PlanOrder {
 	
 	private boolean nutrition;
 	
+	@Nullable
+	private Double nutritionPrice;
+	
 	private boolean ordered;
 	
 	@ManyToOne
 	private Plan plan;
 	
+	@Nullable
 	@ManyToOne
 	private Trainer trainer;
 	
 	@ManyToOne
 	private User user;
-	
-	@Transient
-	private Double price;
 	
 	@Override
 	public String toString() {
@@ -48,9 +49,5 @@ public class PlanOrder {
 				", trainer=" + trainer +
 				", user=" + user +
 				'}';
-	}
-	
-	public boolean getNutrition() {
-		return true;
 	}
 }

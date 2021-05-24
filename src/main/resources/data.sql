@@ -33,25 +33,26 @@ values (1, 'Hantle', 'Klatka', 'Rozpiętki hantlami', null),
        (32, '-', 'Plecy', 'Ściąganie ramion do tyłu w opadzie', null);
 
 insert into plans
-values (1, 'Mass', 4, 450.00),
-       (2, 'Mass', 8, 800.00),
-       (3, 'Mass', 12, 1200.00),
-       (4, 'Shape', 4, 430.00),
-       (5, 'Shape', 8, 780.00),
-       (6, 'Shape', 12, 1140.00),
-       (7, 'Strength', 4, 500.00),
-       (8, 'Strength', 8, 900.00),
-       (9, 'Strength', 12, 1350.00);
+values (1, 'Mass', 4, 150.00, 450.00),
+       (2, 'Mass', 8, 150.00, 800.00),
+       (3, 'Mass', 12, 150.00, 1200.00),
+       (4, 'Shape', 4, 150.00, 430.00),
+       (5, 'Shape', 8, 150.00, 780.00),
+       (6, 'Shape', 12, 150.00, 1140.00),
+       (7, 'Strength', 4, 150.00, 500.00),
+       (8, 'Strength', 8, 150.00, 900.00),
+       (9, 'Strength', 12, 150.00, 1350.00);
 
-INSERT INTO roles VALUES (1, 'ROLE_USER');
+INSERT INTO roles VALUES (1, 'ROLE_USER'), (2, 'ROLE_ADMIN');
 
 insert into users(id, email, enabled,first_name, last_name, password, subscribed, username)
-values (1,'margaret@gmail.com',1, 'Małgorzata','Sosnowska','margo',null,'Margo123'),
-       (2,'groomy14@wp.pl',1,'Grzegorz','Górny','Gniewko',null,'Gugudolls1'),
-       (3,'s.jasinski@prc.com',1,'Sławomir','Jasiński','jasion','yes','99Jasson99'),
-       (4,'kamil.baranowski@o2.pl',1,'Kamil','Baranowski','Kamson','yes','Kukuruku40'),
-       (5,'marco_schumann@gmail.com',1,'Marco','Schumann','Marcovsky',null,'Rabbit55'),
-       (6,'andrea.sch@o2.pl',1,'Andrea','Szefler','Andrea',null,'Andrea333');
+values (1,'margaret@gmail.com',1, 'Małgorzata','Sosnowska','$2a$10$OpIqZEOW2QSlm1KByYrGHO1c8gBrD.m3JxpHGDEImr59GVD9JidKa',null,'Margo'),
+       (2,'groomy14@wp.pl',1,'Grzegorz','Górny','$2a$10$OpIqZEOW2QSlm1KByYrGHO1c8gBrD.m3JxpHGDEImr59GVD9JidKa',null,'Gniewko'),
+       (3,'s.jasinski@prc.com',1,'Sławomir','Jasiński','$2a$10$OpIqZEOW2QSlm1KByYrGHO1c8gBrD.m3JxpHGDEImr59GVD9JidKa','yes','Jasson'),
+       (4,'kamil.baranowski@o2.pl',1,'Kamil','Baranowski','$2a$10$OpIqZEOW2QSlm1KByYrGHO1c8gBrD.m3JxpHGDEImr59GVD9JidKa','yes','Kamson'),
+       (5,'marco_schumann@gmail.com',1,'Marco','Schumann','$2a$10$OpIqZEOW2QSlm1KByYrGHO1c8gBrD.m3JxpHGDEImr59GVD9JidKa',null,'Markovsky'),
+       (6,'starsky@onet.pl',1,'Adam','Starzyński','$2a$10$OpIqZEOW2QSlm1KByYrGHO1c8gBrD.m3JxpHGDEImr59GVD9JidKa','yes','Starsky'),
+       (7,'andrea.sch@o2.pl',1,'Andrea','Szefler','Andrea333',null,'Andrea');
 
 insert into trainers
 values (1, 'artur.czajka@irongym.com', 'Artur Czajka'),
@@ -100,35 +101,41 @@ values (1, 'poniedziałek', '16:00', 'Body Shape', 'Ruslana Sayek', 6),
        (29, 'niedziela', '10:00', 'Strength', 'Mateusz Zasański', 2),
        (30, 'niedziela', '16:00', 'Resistance Bands', 'Artur Czajka', 1);
 
+insert into classes_users (contact_number, mail, schedule_id, user_id)
+values (520645014,'margaret@gmail.com', 16, 1),
+       (821457569,'kamil.baranowski@o2.pl', 25, 4),
+       (821457569,'kamil.baranowski@o2.pl', 8, 4);
 
 insert into workouts
 values (1, 3, 8, 'Mass'),
        (2, 5, 4, 'Strength'),
        (3, 15, 4, 'Shape');
 
-INSERT INTO plan_order VALUES (1, false, 1, 4, 2);
+INSERT INTO plan_order VALUES
+        (1, false, null, true, 1, 4, 2),
+        (2, true, 150.00, false, 6, 2, 4);
 
 insert into user_role values(1,1),(2,1),(3,1),(4,1),(5,1),(6,1)
-#
-# # # # # #
-# # # # # # # # #
-# # # # # # # # # # create table SPRING_SESSION(
-# # # # # # # # # #     primary_id            CHAR(36) NOT NULL,
-# # # # # # # # # #     session_id            CHAR(36) NOT NULL,
-# # # # # # # # # #     creation_time         BIGINT   NOT NULL,
-# # # # # # # # # #     last_access_time      BIGINT   NOT NULL,
-# # # # # # # # # #     max_inactive_interval INT      NOT NULL,
-# # # # # # # # # #     expiry_time           BIGINT   NOT NULL,
-# # # # # # # # # #     principal_name        VARCHAR(100),
-# # # # # # # # # #     CONSTRAINT spring_session_pk PRIMARY KEY (primary_id)
-# # # # # # # # # # );
+# #
+# # # # # # #
 # # # # # # # # # #
-# # # # # # # # # # create table SPRING_SESSION_ATTRIBUTES(
-# # # # # # # # # #     session_primary_id CHAR(36)     NOT NULL,
-# # # # # # # # # #     attribute_name     VARCHAR(200) NOT NULL,
-# # # # # # # # # #     attribute_bytes    BLOB         NOT NULL,
-# # # # # # # # # #     CONSTRAINT spring_session_attributes_pk PRIMARY KEY (session_primary_id, attribute_name),
-# # # # # # # # # #     CONSTRAINT spring_session_attributes_fk FOREIGN KEY (session_primary_id) REFERENCES SPRING_SESSION (primary_id) ON DELETE CASCADE
-# # # # # # # # # # );
-# # # # # # # # #
-# # # # # # # # #
+# # # # # # # # # # # create table SPRING_SESSION(
+# # # # # # # # # # #     primary_id            CHAR(36) NOT NULL,
+# # # # # # # # # # #     session_id            CHAR(36) NOT NULL,
+# # # # # # # # # # #     creation_time         BIGINT   NOT NULL,
+# # # # # # # # # # #     last_access_time      BIGINT   NOT NULL,
+# # # # # # # # # # #     max_inactive_interval INT      NOT NULL,
+# # # # # # # # # # #     expiry_time           BIGINT   NOT NULL,
+# # # # # # # # # # #     principal_name        VARCHAR(100),
+# # # # # # # # # # #     CONSTRAINT spring_session_pk PRIMARY KEY (primary_id)
+# # # # # # # # # # # );
+# # # # # # # # # # #
+# # # # # # # # # # # create table SPRING_SESSION_ATTRIBUTES(
+# # # # # # # # # # #     session_primary_id CHAR(36)     NOT NULL,
+# # # # # # # # # # #     attribute_name     VARCHAR(200) NOT NULL,
+# # # # # # # # # # #     attribute_bytes    BLOB         NOT NULL,
+# # # # # # # # # # #     CONSTRAINT spring_session_attributes_pk PRIMARY KEY (session_primary_id, attribute_name),
+# # # # # # # # # # #     CONSTRAINT spring_session_attributes_fk FOREIGN KEY (session_primary_id) REFERENCES SPRING_SESSION (primary_id) ON DELETE CASCADE
+# # # # # # # # # # # );
+# # # # # # # # # #
+# # # # # # # # # #

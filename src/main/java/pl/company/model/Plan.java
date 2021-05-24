@@ -7,11 +7,11 @@ import lombok.Setter;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import java.util.ArrayList;
 import java.util.List;
-
 
 @Table(name = "plans")
 @Entity
@@ -25,14 +25,18 @@ public class Plan {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column (name="amount")
-	private Integer numberOfClasses;
-	
 	@NotBlank
 	private String name;
 	
-	//@Positive
-	@Pattern(regexp="\\d{2,5}.\\d{2}")
+	@Column (name="amount")
+	private Integer numberOfClasses;
+	
+//	@Pattern(regexp="\\d{2,5}.\\d{2}")
+	@Digits(integer=3, fraction=2)
+	private Double nutritionPrice;
+	
+//	@Pattern(regexp="\\d{2,5}.\\d{2}")
+	@Digits(integer=4, fraction=2)
 	private Double price;
 	
 	@Nullable

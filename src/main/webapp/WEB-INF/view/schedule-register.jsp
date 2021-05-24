@@ -48,7 +48,7 @@
                 <li><a href="<c:url value="/gym/schedule"/>">Zajęcia</a></li>
                 <li>Zapisy</li>
             </ul>
-
+        </div>
     </div>
 </div>
 
@@ -71,11 +71,11 @@
                                 <p hidden><form:input path="name"/></p>
                                 <p hidden><form:input path="nameOfTrainer"/>
                                 <div class="col-lg-6">
-                                    <label for="login">Login*</label>
-                                    <input type="text" id="login">
+                                    <label for="email">E-Mail *</label>
+                                    <input type="text" id="email">
                                 </div>
                                 <div class="col-lg-6">
-                                    <label for="phone">Numer telefonu*</label>
+                                    <label for="phone">Numer telefonu *</label>
                                     <input type="text" id="phone">
                                 </div>
                                 <div class="col-lg-6">

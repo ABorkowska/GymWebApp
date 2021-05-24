@@ -63,6 +63,7 @@
                         <div class="wdt-100">
                             <div class="wdt-100">
                                 <p hidden><form:input path="id"/></p>
+                                <p hidden><form:input path="ordered"/></p>
                                 <div class="form-field field-49 "><label>Imię *</label>
                                     <input name="name" type="text" class="form-input" required></div>
                                 <div class="form-field field-49 field-fr"><label>Nazwisko *</label>
@@ -85,11 +86,11 @@
                     <div class="product-orderlst">
                         <ul>
                             <li><span class="left-txt">Plan treningowy:</span>
-                                <span class="rght-txt">&nbsp &nbsp - </span></li>
+                                <span class="rght-txt">&nbsp &nbsp ${plan.price}0 zł.</span></li>
                             <li><span class="left-txt">Plan żywieniowy</span>
-                                <span class="rght-txt">&nbsp &nbsp - </span></li>
-                            <li><span class="left-txt"><strong>SUMA</strong></span>
-                                <span class="rght-txt"><strong>&nbsp &nbsp - </strong></span></li>
+                                <span class="rght-txt">&nbsp &nbsp ${planOrder.nutritionPrice}0 zł.</span></li>
+                            <li><span class="left-txt-sum"><strong>SUMA</strong></span>
+                                <span class="rght-txt-sum"><strong>&nbsp &nbsp ${plan.price + planOrder.nutritionPrice}0 zł.</strong></span></li>
                         </ul>
                     </div>
                     <div class="checkout-form">
@@ -118,18 +119,5 @@
 <!-- Footer -->
 <%@ include file="./footer.jsp" %>
 <!-- /.footer -->
-
-<!-- JavaScript File Links -->
-<script src="<c:url value="/static/js/jquery-3.3.1.min.js"/>"></script>
-<script src="<c:url value="/static/js/modernizr-3.6.0.min.js"/>"></script>
-<script src="<c:url value="/static/js/plugins.js"/>"></script>
-<script src="<c:url value="/http://cdn.bootstrapmb.com/bootstrap/4.3.1/js/bootstrap.min.js"/>"></script>
-<script src="<c:url value="/static/js/isotope.pkgd.min.js"/>"></script>
-<script src="<c:url value="/static/js/swiper.min.js"/>"></script>
-<script src="<c:url value="/static/js/waypoint.js"/>"></script>
-<script src="<c:url value="/static/js/counterup.min.js"/>"></script>
-<script src="<c:url value="/static/js/lightcase.js"/>"></script>
-<script src="<c:url value="/static/js/wow.min.js"/>"></script>
-<script src="<c:url value="/static/js/main.js"/>"></script>
 
 </html>

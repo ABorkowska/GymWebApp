@@ -1,14 +1,11 @@
 package pl.company.model;
 
 import lombok.*;
-import org.hibernate.validator.constraints.Length;
 import org.jetbrains.annotations.Nullable;
-import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 import java.util.Set;
 
@@ -57,9 +54,8 @@ public class User {
 			inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles;
 	
-	
-	@ManyToMany(mappedBy = "users")
-	private List<Schedule> classes = new ArrayList<>();
+	@OneToMany(mappedBy = "user")
+	private List<ClassRegister> classes = new ArrayList<>();
 	
 	
 	@Nullable
@@ -72,6 +68,10 @@ public class User {
 			inverseJoinColumns = @JoinColumn(name = "workout_id"))
 	private List<Workout> workouts = new ArrayList<>();
 	
+	
+//	@Transient
+//	@Pattern (regexp="^([0-9]{2})-([0-9]{3})$")
+//	private String postalCode;
 	
 	@Override
 	public String toString() {

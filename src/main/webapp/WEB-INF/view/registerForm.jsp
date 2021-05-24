@@ -89,17 +89,4 @@
 <%@ include file="./footer.jsp" %>
 <!-- /.footer -->
 
-<!-- JavaScript File Links -->
-<script src="<c:url value="/static/js/jquery-3.3.1.min.js"/>"></script>
-<script src="<c:url value="/static/js/modernizr-3.6.0.min.js"/>"></script>
-<script src="<c:url value="/static/js/plugins.js"/>"></script>
-<script src="<c:url value="/http://cdn.bootstrapmb.com/bootstrap/4.3.1/js/bootstrap.min.js"/>"></script>
-<script src="<c:url value="/static/js/isotope.pkgd.min.js"/>"></script>
-<script src="<c:url value="/static/js/swiper.min.js"/>"></script>
-<script src="<c:url value="/static/js/waypoint.js"/>"></script>
-<script src="<c:url value="/static/js/counterup.min.js"/>"></script>
-<script src="<c:url value="/static/js/lightcase.js"/>"></script>
-<script src="<c:url value="/static/js/wow.min.js"/>"></script>
-<script src="<c:url value="/static/js/main.js"/>"></script>
-</body>
 </html>

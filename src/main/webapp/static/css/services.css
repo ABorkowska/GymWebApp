@@ -3,6 +3,7 @@
 {
 	padding-top: 316px;
 	padding-bottom: 100px;
+	padding-left: 30px;
 	overflow: hidden;
 }
 .tt_overlay
@@ -56,9 +57,19 @@
 }
 .timetable_container
 {
-	margin-top: 62px;
+	margin-top: 40px;
+	margin-bottom: 50px;
+	width: calc(100% + 156px);
+	left: -60px;
+}
+.timetable_container_note
+{
+	margin-top: 40px;
+	margin-bottom: 20px;
 	width: calc(100% + 156px);
 	left: -78px;
+	color: #030000;
+	font-weight: 600;
 }
 .tt_day
 {
@@ -221,7 +232,7 @@ h3.check-heading {
 }
 
 .product-orderlst ul li .rght-txt {
-	width: 25%;
+	width: 40%;
 	float: right;
 }
 
@@ -233,6 +244,19 @@ h3.check-heading {
 .product-orderlst ul li:last-child {
 	border-top: 1px solid #ccc;
 	border-bottom: 1px solid #ccc;
+	font-weight: 800;
+	font-size: 20px;
+}
+
+.rght-txt-sum{
+	font-weight: 800;
+	font-size: 20px;
+	width: 42%;
+	float: right
+}
+.left-txt-sum{
+	font-weight: 800;
+	font-size: 20px;
 }
 
 .paypal-img img {

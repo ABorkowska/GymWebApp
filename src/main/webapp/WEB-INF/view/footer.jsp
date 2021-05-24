@@ -63,7 +63,7 @@
         </div>
     </div>
     <div class="footer-bottom align-items-center d-flex">
-        <div class="container"><p class="m-0">&copy; Copyright <a href="http://www.bootstrapmb.com/">IRON Gym</a> 2021
+        <div class="container"><p class="m-0">&copy; Copyright IRON Gym</a> 2021
         </p>
         </div>
     </div>

@@ -83,7 +83,7 @@
                             <div class="value">
                                 <div class="rs-select2 js-select-simple select--no-search">
                                     <form:select multiple="false" path="trainers">
-                                        <form:option value="" label="Wybierz z listy"/>
+                                        <form:option value="0" label="Wybierz z listy"/>
                                         <form:options itemValue="id" itemLabel="name" name="trainer" items="${trainers}"/>
                                     </form:select>
 <%--                                    <form:select itemValue="id" itemLabel="name" multiple="false"--%>
@@ -93,7 +93,7 @@
                             </div>
                         </div>
                         <div class="form-row p-t-20">
-                            <label class="label label--block">Dołączam plan żywieniowy (+150.00 zł)</label>
+                            <label class="label label--block">Dołączam plan żywieniowy (+ ${plan.nutritionPrice}0 zł)</label>
                             <div class="p-t-15">
                                 <label class="radio-container m-r-55">Tak
                                     <input type="radio" name="exists" value="yes">
@@ -126,18 +126,4 @@
 <!-- Footer -->
 <%@ include file="./footer.jsp" %>
 <!-- /.footer -->
-
-<!-- JavaScript File Links -->
-<script src="<c:url value="/static/js/jquery-3.3.1.min.js"/>"></script>
-<script src="<c:url value="/static/js/modernizr-3.6.0.min.js"/>"></script>
-<script src="<c:url value="/static/js/plugins.js"/>"></script>
-<script src="<c:url value="/http://cdn.bootstrapmb.com/bootstrap/4.3.1/js/bootstrap.min.js"/>"></script>
-<script src="<c:url value="/static/js/isotope.pkgd.min.js"/>"></script>
-<script src="<c:url value="/static/js/swiper.min.js"/>"></script>
-<script src="<c:url value="/static/js/waypoint.js"/>"></script>
-<script src="<c:url value="/static/js/counterup.min.js"/>"></script>
-<script src="<c:url value="/static/js/lightcase.js"/>"></script>
-<script src="<c:url value="/static/js/wow.min.js"/>"></script>
-<script src="<c:url value="/static/js/main.js"/>"></script>
-
 </html>

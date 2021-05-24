@@ -22,6 +22,11 @@ public class HomeController {
 		return "plan-buy";
 	}
 	
+	@GetMapping("/pay")
+	public String payPlan(){
+		return "plan-pay";
+	}
+	
 	@GetMapping("/class")
 	public String showTest() {
 		return "schedule-register";

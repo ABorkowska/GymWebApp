@@ -6,6 +6,7 @@ import pl.company.model.Trainer;
 import pl.company.repository.TrainerRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class TrainerService {
@@ -25,6 +26,6 @@ public class TrainerService {
 		return trainerRepo.findByName(name);
 	}
 	public Trainer findTrainerById(Long id) {
-		return trainerRepo.findById(id).get();
+		return trainerRepo.findById(id).orElse(null);
 	}
 }

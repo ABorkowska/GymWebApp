@@ -22,7 +22,4 @@ public class PlanService {
 		Plan plan = planRepo.getOne(id);
 		return plan;
 	}
-	public Double getPlanPrice(Long id){
-		return planRepo.findPriceOfPlan(id);
-	}
 }
