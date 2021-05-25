@@ -49,6 +49,7 @@ public class Plan {
 			joinColumns=@JoinColumn(name="plan_id_"),
 			inverseJoinColumns=@JoinColumn(name="trainer_id"))
 	private List<Trainer> trainers = new ArrayList<>();
-	
 	}
+	
+
 	

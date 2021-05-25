@@ -16,9 +16,6 @@ public class GreetingController {
 
 }
 
-
-
-
 @RestController
 @RequestMapping("/admin")
 class AdminController {

@@ -25,20 +25,11 @@ public class ClassRegister {
 	@ManyToOne
 	private Schedule schedule;
 	
-	@ManyToOne
-	private User user;
+	private String email;
 	
-	@NotBlank
-	@Email
-	private String mail;
-	
-	@NotNull
-	@NumberFormat(style = NumberFormat.Style.NUMBER)
-	@Min(9)
-	@Max(13)
 	private Integer contactNumber;
 	
-	
-	
+	@ManyToOne
+	private User user;
 	
 }

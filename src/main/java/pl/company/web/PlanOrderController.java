@@ -28,11 +28,6 @@ public class PlanOrderController {
 		return trainerService.getTrainerNames();
 	}
 	
-//	@ModelAttribute("plans")
-//	public Collection<Plan> plans() {
-//		return planService.findAll();
-//	}
-	
 	public PlanOrderController(PlanService planService, PlanOrderService planOrderService, UserService userService, TrainerService trainerService) {
 		this.planService = planService;
 		this.planOrderService = planOrderService;
@@ -59,11 +54,7 @@ public class PlanOrderController {
 	                      @RequestParam(required = false, name = "trainers") Long trainerId,
 	                      @RequestParam(required = false, name = "exists") Boolean exists, Principal principal) {
 		Plan plan = planService.getOne(id);
-		System.out.println(trainerId);
-		System.out.println(planOrder);
 		Trainer trainer = trainerService.findTrainerById(trainerId);
-		//todo: value not selected generates errors
-		planOrder.setTrainer(trainer);
 		if (principal==null) {
 			return "redirect:/gym/login";
 		}
@@ -74,7 +65,7 @@ public class PlanOrderController {
 			planOrder.setNutritionPrice(plan.getNutritionPrice());
 		}
 		planOrder.setPlan(plan);
-		
+		planOrder.setTrainer(trainer);
 		planOrder.setUser(user);
 		PlanOrder orderedPlan = planOrderService.savePlanOrder(planOrder);
 		return "redirect:/gym/plans/order/" + orderedPlan.getId();
@@ -86,9 +77,6 @@ public class PlanOrderController {
 		Long planId = planOrderService.findPlanForPlanOrder(id);
 		Plan plan = planService.getOne(planId);
 		Double price = plan.getPrice();
-//		if (planOrder.getNutrition()){
-//			model.addAttribute("nutritionPrice", nutritionPrice);
-//		}
 		model.addAttribute("planOrder", planOrder);
 		model.addAttribute("plan", plan);
 		model.addAttribute("price", price);

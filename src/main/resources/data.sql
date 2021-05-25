@@ -101,7 +101,7 @@ values (1, 'poniedziałek', '16:00', 'Body Shape', 'Ruslana Sayek', 6),
        (29, 'niedziela', '10:00', 'Strength', 'Mateusz Zasański', 2),
        (30, 'niedziela', '16:00', 'Resistance Bands', 'Artur Czajka', 1);
 
-insert into classes_users (contact_number, mail, schedule_id, user_id)
+insert into classes_users (contact_number, email, schedule_id, user_id)
 values (520645014,'margaret@gmail.com', 16, 1),
        (821457569,'kamil.baranowski@o2.pl', 25, 4),
        (821457569,'kamil.baranowski@o2.pl', 8, 4);

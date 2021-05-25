@@ -63,7 +63,8 @@
                             <h2>Formularz zapisu</h2>
                             <p>Zapisujesz się na: <b>${training.name}</b> - ${training.day}, godz. ${training.hour}</p>
                         </div>
-                            <form:form action="/gym/schedule/${training.id}" method="post" modelAttribute="training" class="register-form">
+                        <form:form action="/gym/schedule/${training.id}" method="post" modelAttribute="training"
+                                   class="register-form">
                             <div class="row">
                                 <p hidden><form:input path="id"/></p>
                                 <p hidden><form:input path="day"/></p>
@@ -72,46 +73,47 @@
                                 <p hidden><form:input path="nameOfTrainer"/>
                                 <div class="col-lg-6">
                                     <label for="email">E-Mail *</label>
-                                    <input type="text" id="email">
+                                    <input type="text" id="email" name="email" placeholder="${email} required"/>
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="phone">Numer telefonu *</label>
-                                    <input type="text" id="phone">
+                                    <input type="tel" id="phone" name="phone" placeholder="Wprowadź numer" pattern="[0-9]{9,13}" required/>
                                 </div>
                                 <div class="col-lg-6">
                                     <input type="submit" class="register-btn" value="Zapisz się"/>
                                 </div>
                                 <div class="col-lg-6">
-                                    <input type="button" class="register-btn-2" onclick="location.href='/gym/schedule';" value="Wróć do grafiku"/>
+                                    <input type="button" class="register-btn-2" onclick="location.href='/gym/schedule';"
+                                           value="Wróć do grafiku"/>
                                 </div>
                             </div>
                         </form:form>
 
-<%--                        <form:form action="/gym/schedule" method="post" modelAttribute="training" class="register-form">--%>
-<%--                            <div class="row">--%>
-<%--                                <p hidden><form:input path="id"/></p>--%>
-<%--                                <p hidden><form:input path="day"/></p>--%>
-<%--                                <p hidden><form:input path="hour"/></p>--%>
-<%--                                <p hidden><form:input path="name"/></p>--%>
-<%--                                <p hidden><form:input path="nameOfTrainer"/>--%>
-<%--                                <div class="col-lg-6">--%>
-<%--                                    <form:label for="login" path="login">Login*</form:label>--%>
-<%--                                    <form:input path="login" type="text" id="login"/>--%>
-<%--                                    <form:errors path="login" cssClass="error"/>--%>
-<%--                                </div>--%>
-<%--                                <div class="col-lg-6">--%>
-<%--                                    <form:label for="phoneNumber" path="phoneNumber">Numer telefonu*</form:label>--%>
-<%--                                    <form:input path="phoneNumber" type="text" id="phoneNumber"/>--%>
-<%--                                    <form:errors path="phoneNumber" cssClass="error"/>--%>
-<%--                                </div>--%>
-<%--                                <div class="col-lg-6">--%>
-<%--                                    <input type="submit" class="register-btn" value="Wyślij"/>--%>
-<%--                                </div>--%>
-<%--                                <div class="col-lg-6">--%>
-<%--                                    <input type="button" class="register-btn-2" onclick="location.href='/gym/schedule';" value="Wróć do grafiku"/>--%>
-<%--                                </div>--%>
-<%--                            </div>--%>
-<%--                        </form:form>--%>
+                        <%--                        <form:form action="/gym/schedule" method="post" modelAttribute="training" class="register-form">--%>
+                        <%--                            <div class="row">--%>
+                        <%--                                <p hidden><form:input path="id"/></p>--%>
+                        <%--                                <p hidden><form:input path="day"/></p>--%>
+                        <%--                                <p hidden><form:input path="hour"/></p>--%>
+                        <%--                                <p hidden><form:input path="name"/></p>--%>
+                        <%--                                <p hidden><form:input path="nameOfTrainer"/>--%>
+                        <%--                                <div class="col-lg-6">--%>
+                        <%--                                    <form:label for="login" path="login">Login*</form:label>--%>
+                        <%--                                    <form:input path="login" type="text" id="login"/>--%>
+                        <%--                                    <form:errors path="login" cssClass="error"/>--%>
+                        <%--                                </div>--%>
+                        <%--                                <div class="col-lg-6">--%>
+                        <%--                                    <form:label for="phoneNumber" path="phoneNumber">Numer telefonu*</form:label>--%>
+                        <%--                                    <form:input path="phoneNumber" type="text" id="phoneNumber"/>--%>
+                        <%--                                    <form:errors path="phoneNumber" cssClass="error"/>--%>
+                        <%--                                </div>--%>
+                        <%--                                <div class="col-lg-6">--%>
+                        <%--                                    <input type="submit" class="register-btn" value="Wyślij"/>--%>
+                        <%--                                </div>--%>
+                        <%--                                <div class="col-lg-6">--%>
+                        <%--                                    <input type="button" class="register-btn-2" onclick="location.href='/gym/schedule';" value="Wróć do grafiku"/>--%>
+                        <%--                                </div>--%>
+                        <%--                            </div>--%>
+                        <%--                        </form:form>--%>
 
 
                     </div>

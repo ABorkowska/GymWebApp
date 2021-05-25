@@ -27,30 +27,27 @@ public class Schedule {
 	private String day;
 	
 	@NotBlank
-	@Pattern(regexp="^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$")
+	@Pattern(regexp = "^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$")
 	private String hour;
 	
 	@NotBlank
-	@Size(max=20)
+	@Size(max = 20)
 	private String name;
 	
-	@Column(name="instructor")
+	@Column(name = "instructor")
 	private String nameOfTrainer;
 	
 	@NotNull
 	@ManyToOne
 	private Trainer trainer;
 	
-	@OneToMany(mappedBy="schedule")
+	@OneToMany(mappedBy = "schedule")
 	private List<ClassRegister> classes = new ArrayList<>();
 	
 	
-	
-//	//many to many do member, schedule jako nadrzedny
-//	@ManyToMany
-//	@JoinTable(name="classes_members",
-//			joinColumns = @JoinColumn(name="schedule_id"),
-//			inverseJoinColumns = @JoinColumn(name="member_id"))
-//
-//	private List<User> users = new ArrayList<>();
-	}
+	@ManyToMany
+	@JoinTable(name = "schedule_user",
+			joinColumns = @JoinColumn(name = "schedule_id"),
+			inverseJoinColumns = @JoinColumn(name = "user_id"))
+	private List<User> users = new ArrayList<>();
+}

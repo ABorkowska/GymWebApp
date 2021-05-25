@@ -3,13 +3,11 @@ package pl.company.web;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import pl.company.model.ClassRegister;
 import pl.company.model.Schedule;
 ;
+import pl.company.model.Trainer;
 import pl.company.model.User;
 import pl.company.service.ClassRegisterService;
 import pl.company.service.ScheduleService;
@@ -18,6 +16,7 @@ import pl.company.service.UserService;
 
 import javax.validation.Valid;
 import java.security.Principal;
+import java.util.Collection;
 import java.util.List;
 
 @Controller
@@ -34,6 +33,10 @@ public class ScheduleController {
 		this.userService = userService;
 		this.classService = classService;
 	}
+	@ModelAttribute("trainers")
+	public Collection<User> users() {
+		return userService.findAll();
+	}
 	
 	@GetMapping("/gym/schedule")
 	public String showSchedule(Model model) {
@@ -43,24 +46,37 @@ public class ScheduleController {
 	}
 	
 	@GetMapping("/gym/schedule/{id}")
-	public String selectClass(@PathVariable Long id, Model model) {
+	public String selectClass(@PathVariable Long id, Model model, Principal principal) {
 		Schedule training = scheduleService.getOne(id);
-		model.addAttribute("training", training);
-		return "schedule-register";
-	}
-	
-	@PostMapping("/gym/schedule/{id}")
-	public String registerToClass(@PathVariable Long id, @Valid @ModelAttribute ClassRegister classRegister, BindingResult result, Principal principal) {
-		if (result.hasErrors()) {
-			return "schedule-register";
-		}
 		if (principal==null) {
 			return "redirect:/gym/login";
 		}
 		User user = userService.findUserByUsername(principal.getName());
-		classRegister.setSchedule(scheduleService.getOne(id));
+		System.out.println(user);
+		model.addAttribute("training", training);
+		model.addAttribute("email", user.getEmail());
+		return "schedule-register";
+	}
+	
+	@PostMapping("/gym/schedule/{id}")
+	public String registerToClass(@PathVariable Long id, @ModelAttribute ClassRegister classRegister,
+	                              @RequestParam("email") String email,
+	                              @RequestParam ("phone") Integer phone, BindingResult result, Principal principal) {
+		if (result.hasErrors()) {
+			return "schedule-register";
+		}
+		System.out.println(phone);
+		Schedule schedule = scheduleService.getOne(id);
+		if (principal==null) {
+			return "redirect:/gym/login";
+		}
+		User user = userService.findUserByUsername(principal.getName());
+		classRegister.setId(null);
+		classRegister.setSchedule(schedule);
 		classRegister.setUser(user);
+		classRegister.setEmail(email);
+		classRegister.setContactNumber(phone);
 		classService.saveClassRegister(classRegister);
-		return "home";
+		return "redirect:/home";
 	}
 }
