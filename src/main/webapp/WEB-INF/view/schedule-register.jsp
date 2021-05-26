@@ -89,33 +89,6 @@
                             </div>
                         </form:form>
 
-                        <%--                        <form:form action="/gym/schedule" method="post" modelAttribute="training" class="register-form">--%>
-                        <%--                            <div class="row">--%>
-                        <%--                                <p hidden><form:input path="id"/></p>--%>
-                        <%--                                <p hidden><form:input path="day"/></p>--%>
-                        <%--                                <p hidden><form:input path="hour"/></p>--%>
-                        <%--                                <p hidden><form:input path="name"/></p>--%>
-                        <%--                                <p hidden><form:input path="nameOfTrainer"/>--%>
-                        <%--                                <div class="col-lg-6">--%>
-                        <%--                                    <form:label for="login" path="login">Login*</form:label>--%>
-                        <%--                                    <form:input path="login" type="text" id="login"/>--%>
-                        <%--                                    <form:errors path="login" cssClass="error"/>--%>
-                        <%--                                </div>--%>
-                        <%--                                <div class="col-lg-6">--%>
-                        <%--                                    <form:label for="phoneNumber" path="phoneNumber">Numer telefonu*</form:label>--%>
-                        <%--                                    <form:input path="phoneNumber" type="text" id="phoneNumber"/>--%>
-                        <%--                                    <form:errors path="phoneNumber" cssClass="error"/>--%>
-                        <%--                                </div>--%>
-                        <%--                                <div class="col-lg-6">--%>
-                        <%--                                    <input type="submit" class="register-btn" value="Wyślij"/>--%>
-                        <%--                                </div>--%>
-                        <%--                                <div class="col-lg-6">--%>
-                        <%--                                    <input type="button" class="register-btn-2" onclick="location.href='/gym/schedule';" value="Wróć do grafiku"/>--%>
-                        <%--                                </div>--%>
-                        <%--                            </div>--%>
-                        <%--                        </form:form>--%>
-
-
                     </div>
                 </div>
                 <div class="col-lg-4">

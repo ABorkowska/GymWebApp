@@ -52,7 +52,8 @@ values (1,'margaret@gmail.com',1, 'Małgorzata','Sosnowska','$2a$10$OpIqZEOW2QSl
        (4,'kamil.baranowski@o2.pl',1,'Kamil','Baranowski','$2a$10$OpIqZEOW2QSlm1KByYrGHO1c8gBrD.m3JxpHGDEImr59GVD9JidKa','yes','Kamson'),
        (5,'marco_schumann@gmail.com',1,'Marco','Schumann','$2a$10$OpIqZEOW2QSlm1KByYrGHO1c8gBrD.m3JxpHGDEImr59GVD9JidKa',null,'Markovsky'),
        (6,'starsky@onet.pl',1,'Adam','Starzyński','$2a$10$OpIqZEOW2QSlm1KByYrGHO1c8gBrD.m3JxpHGDEImr59GVD9JidKa','yes','Starsky'),
-       (7,'andrea.sch@o2.pl',1,'Andrea','Szefler','Andrea333',null,'Andrea');
+       (7,'andrea.sch@o2.pl',1,'Andrea','Szefler','Andrea333',null,'Andrea'),
+       (8,'bartosz_bednarek@irongym.pl',1,'Bartosz','Bednarek','$2a$10$QmXsopwvLKx0shHMqKjxeO6pe6F6hsbYVF3O/c9vAut7m5UXIWHgC',null,'BartoszB');
 
 insert into trainers
 values (1, 'artur.czajka@irongym.com', 'Artur Czajka'),
@@ -115,7 +116,7 @@ INSERT INTO plan_order VALUES
         (1, false, null, true, 1, 4, 2),
         (2, true, 150.00, false, 6, 2, 4);
 
-insert into user_role values(1,1),(2,1),(3,1),(4,1),(5,1),(6,1)
+insert into user_role values(1,1),(2,1),(3,1),(4,1),(5,1),(6,1),(7,1),(8,2)
 # #
 # # # # # # #
 # # # # # # # # # #

@@ -33,10 +33,10 @@ public class ScheduleController {
 		this.userService = userService;
 		this.classService = classService;
 	}
-	@ModelAttribute("trainers")
-	public Collection<User> users() {
-		return userService.findAll();
-	}
+//	@ModelAttribute("users")
+//	public Collection<User> users() {
+//		return userService.findAll();
+//	}
 	
 	@GetMapping("/gym/schedule")
 	public String showSchedule(Model model) {
@@ -47,7 +47,7 @@ public class ScheduleController {
 	
 	@GetMapping("/gym/schedule/{id}")
 	public String selectClass(@PathVariable Long id, Model model, Principal principal) {
-		Schedule training = scheduleService.getOne(id);
+		Schedule training = scheduleService.getSchedule(id);
 		if (principal==null) {
 			return "redirect:/gym/login";
 		}
@@ -66,7 +66,7 @@ public class ScheduleController {
 			return "schedule-register";
 		}
 		System.out.println(phone);
-		Schedule schedule = scheduleService.getOne(id);
+		Schedule schedule = scheduleService.getSchedule(id);
 		if (principal==null) {
 			return "redirect:/gym/login";
 		}

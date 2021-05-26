@@ -34,6 +34,7 @@ public class Schedule {
 	@Size(max = 20)
 	private String name;
 	
+	@NotBlank
 	@Column(name = "instructor")
 	private String nameOfTrainer;
 	
@@ -43,7 +44,6 @@ public class Schedule {
 	
 	@OneToMany(mappedBy = "schedule")
 	private List<ClassRegister> classes = new ArrayList<>();
-	
 	
 	@ManyToMany
 	@JoinTable(name = "schedule_user",

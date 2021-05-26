@@ -15,7 +15,7 @@ public class ScheduleService {
 		this.scheduleRepo = scheduleRepo;
 	}
 	
-	public Schedule getOne(Long id) {
+	public Schedule getSchedule(Long id) {
 		Schedule schedule = scheduleRepo.getOne(id);
 		return schedule;
 	}
@@ -24,5 +24,7 @@ public class ScheduleService {
 		List<Schedule> list = scheduleRepo.findAll();
 		return list;
 	}
-	
+	public Schedule updateSchedule(Schedule schedule){
+		return scheduleRepo.save(schedule);
+	}
 }

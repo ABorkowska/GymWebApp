@@ -31,8 +31,8 @@
         <div class="banner-content-container">
             <div class="banner-content">
                 <h4 class="sub-title">
-                    <span class="shape-wrapper"><span class="shape"></span>This is a perfect place for you<span class="shape"></span></span></h4>
-                <h5 class="title">build your body with us</h5>
+                    <span class="shape-wrapper"><span class="shape"></span>Idealne miejsce na Twój trening<span class="shape"></span></span></h4>
+                <h5 class="title">build your body<br> with IRON</h5>
 <%--                <p></p>--%>
 <%--                <div class="button-group">--%>
 <%--                    <a href="#" class="custom-button">read more</a>--%>

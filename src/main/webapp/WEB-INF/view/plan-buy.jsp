@@ -111,7 +111,7 @@
                         <p>* Po zamówieniu zostaniesz przekierowany do strony płatności.
                            Odwiedż nas, jeśli chcesz dokonać zakupu bezpośrednio w klubie.
                         <div class="form-row p-t-10">
-                            <input type="button" class="btn btn--radius-2" onclick="location.href='/gym/plans';"
+                            <input type="button" class="custom-button-plan" onclick="location.href='/gym/plans';"
                                    value="Powrót do oferty"/>
                         </div>
                     </div>

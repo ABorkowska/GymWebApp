@@ -3,6 +3,8 @@ package pl.company.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import pl.company.enums.Equipment;
+import pl.company.enums.WorkoutType;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -19,21 +21,25 @@ public class Workout {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@NotBlank
-	private String type;
-	private Integer reps;
-	private Integer cycles;
 	
+	@NotBlank
+	@Enumerated(EnumType.STRING)
+	private WorkoutType type;
+	
+	private Integer reps;
+	
+	private Integer sets;
+
 //	@Enumerated(EnumType.STRING)
 //	private Equipment equipment;
 //
 //	@Enumerated(EnumType.STRING)
 //	private MuscleGroup muscleGroup;
 	
-	@OneToMany(mappedBy="workout")
+	@OneToMany(mappedBy = "workout")
 	private List<Exercise> exercises = new ArrayList<>();
 	
-	@ManyToMany(mappedBy="workouts")
+	@ManyToMany(mappedBy = "workouts")
 	private List<User> users = new ArrayList<>();
 	
 }
