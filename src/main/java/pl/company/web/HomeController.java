@@ -41,4 +41,8 @@ public class HomeController {
 	public String showAdminDashboard() {
 		return "admin-class-edit";
 	}
+	@GetMapping("/week")
+	public String showWeeklySchedule() {
+		return "admin-classRegister";
+	}
 }

@@ -22,9 +22,6 @@
     <link rel="stylesheet" href="<c:url value="/static/css/swiper.min.css"/>">
     <link rel="stylesheet" href="<c:url value="/static/css/style.css"/>">
     <link rel="stylesheet" href="<c:url value="/static/css/bootstrap-admin.min.css"/>">
-    <link rel="stylesheet" type="text/css"
-          href="<c:url value="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css"/>">
-
 </head>
 
 <body>
@@ -33,44 +30,39 @@
 <!-- /.header -->
 <a href="#" class="scrollToTop"><i class="fas fa-angle-up"></i></a>
 
-<div class="templatemo-content-container bg-img">
-    <div class="templatemo-content-widget">
-        <div class="table-responsive">
-            <a href="<c:url value="./admin/schedule"/>">
-                <button type="button" class="btn col-lg-14 package-item">Dodaj nowe zajęcia</button>
-            </a>
+<div class="templatemo-content-container bg-img" data-background="/static/images/banner/05.jpg">
+    <td>Action</td>
 
+    <div class="templatemo-content-widget">
+        <div class="panel panel-default table-responsive">
+            <table class="table table-striped table-bordered templatemo-user-table">
+                <thead>
+                <tr>
+                    <td><a href="" class="white-text templatemo-sort-by">Dzień tyg. <span class="caret"></span></a></td>
+                    <td><a href="" class="white-text templatemo-sort-by">Godz. <span class="caret"></span></a></td>
+                    <td><a href="" class="white-text templatemo-sort-by">Nazwa<span class="caret"></span></a></td>
+                    <td><a href="" class="white-text templatemo-sort-by">Uczestnik <span class="caret"></span></a></td>
+                    <td><a href="" class="white-text templatemo-sort-by">Nr. Tel. <span class="caret"></span></a></td>
+                    <td><a href="" class="white-text templatemo-sort-by">E-Mail <span class="caret"></span></a></td>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr>
+                    <c:forEach items="${schedule}" var="class">
+                    <td>${class.id}</td>
+                    <td>${class.day}</td>
+                    <td>${class.hour}</td>
+                    <td>${class.name}</td>
+                    <td>${class.nameOfTrainer}</td>
+                    <td><a href="<c:url value="/admin/schedule/edit/${class.id}"/>" class="templatemo-edit-btn">Edit</a></td>
+                    <td><a href="" class="templatemo-link">Action</a></td>
+                    <td><a href="<c:url value="/admin/schedule/edit/${class.id}"/>" class="templatemo-edit-btn">Delete</a></td>
+                </tr>
+                </c:forEach>
+                </tbody>
+            </table>
         </div>
-        <table id="table" class="table table-striped table-bordered templatemo-user-table">
-            <thead>
-            <tr>
-                <td class="white-text templatemo-sort-by">Id</td>
-                <td class="white-text templatemo-sort-by">Dzień tygodnia</td>
-                <td class="white-text templatemo-sort-by">Godzina</td>
-                <td class="white-text templatemo-sort-by">Nazwa</td>
-                <td class="white-text templatemo-sort-by">Instruktor</td>
-                <td>Edytuj</td>
-                <td>Action</td>
-                <td>usuń</td>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <c:forEach items="${schedule}" var="class">
-                <td>${class.id}</td>
-                <td>${class.day}</td>
-                <td>${class.hour}</td>
-                <td>${class.name}</td>
-                <td>${class.nameOfTrainer}</td>
-                <td><a href="<c:url value="/admin/schedule/edit/${class.id}"/>" class="templatemo-edit-btn">Edytuj</a>
-                </td>
-                <td><a href="" class="templatemo-link">Action</a></td>
-                <td><a href="<c:url value="/admin/schedule/delete/${class.id}"/>" class="templatemo-edit-btn">Usuń</a>
-                </td>
-            </tr>
-            </c:forEach>
-            </tbody>
-        </table>
     </div>
 </div>
 
@@ -78,17 +70,6 @@
 <!-- Footer -->
 <%@ include file="./footer-admin.jsp" %>
 <!-- /.footer -->
-
-<script>
-    $(document).ready(function() {
-        $('#table').DataTable({
-            "language": {
-                "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Polish.json"
-            }
-        });
-    });
-</script>
-
 <script src="<c:url value="/static/js/jquery-3.3.1.min.js"/>"></script>
 <script src="<c:url value="/static/js/modernizr-3.6.0.min.js"/>"></script>
 <script src="<c:url value="/static/js/plugins.js"/>"></script>
@@ -101,7 +82,6 @@
 <script src="<c:url value="/static/js/wow.min.js"/>"></script>
 <script src="<c:url value="/static/js/main.js"/>"></script>
 <script src="<c:url value="/static/js/templatemo-script.js"/>"></script>
-<script type="text/javascript" charset="utf8"
-        src="<c:url value="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"/>"></script>
-
 </html>
+
+

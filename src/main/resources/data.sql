@@ -65,42 +65,42 @@ values (1, 'artur.czajka@irongym.com', 'Artur Czajka'),
        (7, 'marzena.lang@irongym.com', 'Marzena Lang');
 
 insert into schedule
-values (1, 'poniedziałek', '16:00', 'Body Shape', 'Ruslana Sayek', 6),
-       (2, 'poniedziałek', '17:00', 'Kettlebells', 'Mariusz Kabacki', 5),
-       (3, 'poniedziałek', '18:00', 'Body Workout', 'Mariusz Kabacki', 5),
-       (4, 'poniedziałek', '19:00', 'Circuit Training', 'Karol Bardo', 3),
-       (5, 'poniedziałek', '20:00', 'Weight Lifting', 'Kamil Woliński', 4),
+values (1, 'Poniedziałek', '16:00', 'Body Shape', 'Ruslana Sayek', 6),
+       (2, 'Poniedziałek', '17:00', 'Kettlebells', 'Mariusz Kabacki', 5),
+       (3, 'Poniedziałek', '18:00', 'Body Workout', 'Mariusz Kabacki', 5),
+       (4, 'Poniedziałek', '19:00', 'Circuit Training', 'Karol Bardo', 3),
+       (5, 'Poniedziałek', '20:00', 'Weight Lifting', 'Kamil Woliński', 4),
 
-       (6, 'wtorek', '16:00', 'Upper-Body', 'Mariusz Kabacki', 5),
-       (7, 'wtorek', '17:00', 'Resistance Bands', 'Mariusz Kabacki', 5),
-       (8, 'wtorek', '18:00', 'Iron Power', 'Kamil Woliński', 4),
-       (9, 'wtorek', '19:00', 'Circuit Training', 'Karol Bardo', 3),
-       (10, 'wtorek', '20:00', 'Gym Classes', 'Mateusz Zasański', 2),
+       (6, 'Wtorek', '16:00', 'Upper-Body', 'Mariusz Kabacki', 5),
+       (7, 'Wtorek', '17:00', 'Resistance Bands', 'Mariusz Kabacki', 5),
+       (8, 'Wtorek', '18:00', 'Iron Power', 'Kamil Woliński', 4),
+       (9, 'Wtorek', '19:00', 'Circuit Training', 'Karol Bardo', 3),
+       (10, 'Wtorek', '20:00', 'Gym Classes', 'Mateusz Zasański', 2),
 
-       (11, 'środa', '16:00', 'Body Pump', 'Ruslana Sayek', 6),
-       (12, 'środa', '17:00', 'Kettlebells', 'Ruslana Sayek', 6),
-       (13, 'środa', '18:00', 'Lower-Body', 'Ruslana Sayek', 6),
-       (14, 'środa', '19:00', 'Weight Lifting', 'Kamil Woliński', 4),
-       (15, 'środa', '20:00', 'Crossfit', 'Artur Czajka', 1),
+       (11, 'Środa', '16:00', 'Body Pump', 'Ruslana Sayek', 6),
+       (12, 'Środa', '17:00', 'Kettlebells', 'Ruslana Sayek', 6),
+       (13, 'Środa', '18:00', 'Lower-Body', 'Ruslana Sayek', 6),
+       (14, 'Środa', '19:00', 'Weight Lifting', 'Kamil Woliński', 4),
+       (15, 'Środa', '20:00', 'Crossfit', 'Artur Czajka', 1),
 
-       (16, 'czwartek', '16:00', 'Fighter Training', 'Karol Bardo', 3),
-       (17, 'czwartek', '17:00', 'Circuit Training', 'Karol Bardo', 3),
-       (18, 'czwartek', '18:00', 'Iron Power', 'Mateusz Zasański', 2),
-       (19, 'czwartek', '19:00', 'Strength', 'Artur Czajka', 1),
-       (20, 'czwartek', '20:00', 'Body Pump', 'Artur Czajka', 1),
+       (16, 'Czwartek', '16:00', 'Fighter Training', 'Karol Bardo', 3),
+       (17, 'Czwartek', '17:00', 'Circuit Training', 'Karol Bardo', 3),
+       (18, 'Czwartek', '18:00', 'Iron Power', 'Mateusz Zasański', 2),
+       (19, 'Czwartek', '19:00', 'Strength', 'Artur Czajka', 1),
+       (20, 'Czwartek', '20:00', 'Body Pump', 'Artur Czajka', 1),
 
-       (21, 'piątek', '16:00', 'Iron Power', 'Mateusz Zasański', 2),
-       (22, 'piątek', '17:00', 'Upper-Body', 'Mateusz Zasański', 2),
-       (23, 'piątek', '18:00', 'Lower-Body', 'Marzena Lang', 7),
-       (24, 'piątek', '19:00', 'Body Shape', 'Marzena Lang', 7),
+       (21, 'Piątek', '16:00', 'Iron Power', 'Mateusz Zasański', 2),
+       (22, 'Piątek', '17:00', 'Upper-Body', 'Mateusz Zasański', 2),
+       (23, 'Piątek', '18:00', 'Lower-Body', 'Marzena Lang', 7),
+       (24, 'Piątek', '19:00', 'Body Shape', 'Marzena Lang', 7),
 
-       (25, 'sobota', '09:00', 'Circuit Training', 'Mariusz Kabacki', 5),
-       (26, 'sobota', '10:00', 'Bootcamp', 'Mariusz Kabacki', 5),
-       (27, 'sobota', '18:00', 'Weight Lifting', 'Kamil Woliński', 4),
+       (25, 'Sobota', '09:00', 'Circuit Training', 'Mariusz Kabacki', 5),
+       (26, 'Sobota', '10:00', 'Bootcamp', 'Mariusz Kabacki', 5),
+       (27, 'Sobota', '18:00', 'Weight Lifting', 'Kamil Woliński', 4),
 
-       (28, 'niedziela', '09:00', 'Gym Classes', 'Karol Bardo', 3),
-       (29, 'niedziela', '10:00', 'Strength', 'Mateusz Zasański', 2),
-       (30, 'niedziela', '16:00', 'Resistance Bands', 'Artur Czajka', 1);
+       (28, 'Niedziela', '09:00', 'Gym Classes', 'Karol Bardo', 3),
+       (29, 'Niedziela', '10:00', 'Strength', 'Mateusz Zasański', 2),
+       (30, 'Niedziela', '16:00', 'Resistance Bands', 'Artur Czajka', 1);
 
 insert into classes_users (contact_number, email, schedule_id, user_id)
 values (520645014,'margaret@gmail.com', 16, 1),
@@ -116,27 +116,6 @@ INSERT INTO plan_order VALUES
         (1, false, null, true, 1, 4, 2),
         (2, true, 150.00, false, 6, 2, 4);
 
-insert into user_role values(1,1),(2,1),(3,1),(4,1),(5,1),(6,1),(7,1),(8,2)
-# #
-# # # # # # #
-# # # # # # # # # #
-# # # # # # # # # # # create table SPRING_SESSION(
-# # # # # # # # # # #     primary_id            CHAR(36) NOT NULL,
-# # # # # # # # # # #     session_id            CHAR(36) NOT NULL,
-# # # # # # # # # # #     creation_time         BIGINT   NOT NULL,
-# # # # # # # # # # #     last_access_time      BIGINT   NOT NULL,
-# # # # # # # # # # #     max_inactive_interval INT      NOT NULL,
-# # # # # # # # # # #     expiry_time           BIGINT   NOT NULL,
-# # # # # # # # # # #     principal_name        VARCHAR(100),
-# # # # # # # # # # #     CONSTRAINT spring_session_pk PRIMARY KEY (primary_id)
-# # # # # # # # # # # );
-# # # # # # # # # # #
-# # # # # # # # # # # create table SPRING_SESSION_ATTRIBUTES(
-# # # # # # # # # # #     session_primary_id CHAR(36)     NOT NULL,
-# # # # # # # # # # #     attribute_name     VARCHAR(200) NOT NULL,
-# # # # # # # # # # #     attribute_bytes    BLOB         NOT NULL,
-# # # # # # # # # # #     CONSTRAINT spring_session_attributes_pk PRIMARY KEY (session_primary_id, attribute_name),
-# # # # # # # # # # #     CONSTRAINT spring_session_attributes_fk FOREIGN KEY (session_primary_id) REFERENCES SPRING_SESSION (primary_id) ON DELETE CASCADE
-# # # # # # # # # # # );
-# # # # # # # # # #
-# # # # # # # # # #
+insert into user_role values(1,1),(2,1),(3,1),(4,1),(5,1),(6,1),(7,1),(8,2);
+
+INSERT INTO plan_trainer VALUES (1, 2),(6, 4);

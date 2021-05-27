@@ -23,13 +23,11 @@ import java.util.List;
 public class ScheduleController {
 	
 	private final ScheduleService scheduleService;
-	private final TrainerService trainerService;
 	private final UserService userService;
 	private final ClassRegisterService classService;
 	
-	public ScheduleController(ScheduleService scheduleService, TrainerService trainerService, UserService userService, ClassRegisterService classService) {
+	public ScheduleController(ScheduleService scheduleService, UserService userService, ClassRegisterService classService) {
 		this.scheduleService = scheduleService;
-		this.trainerService = trainerService;
 		this.userService = userService;
 		this.classService = classService;
 	}

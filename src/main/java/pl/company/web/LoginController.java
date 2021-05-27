@@ -62,15 +62,5 @@ public class LoginController {
 		model.addAttribute("user", user);
 		return "loginForm";
 	}
-	
-	//todo czy tak zadziala?
-//	@GetMapping("/gym/login")
-//	public ModelAndView login(@RequestParam(value = "error", required = false) String error) {
-//		ModelAndView model = new ModelAndView("/gym/login");
-//		if (error != null) {
-//			model.addObject("error", "Niepoprawna nazwa użytkownika lub hasło");
-//		}
-//		return model;
-//	}
 }
 

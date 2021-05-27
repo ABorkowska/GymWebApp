@@ -16,15 +16,18 @@ public class ScheduleService {
 	}
 	
 	public Schedule getSchedule(Long id) {
-		Schedule schedule = scheduleRepo.getOne(id);
-		return schedule;
+		return scheduleRepo.getOne(id);
 	}
 	
-	public List <Schedule> findAll (){
-		List<Schedule> list = scheduleRepo.findAll();
-		return list;
+	public List <Schedule> findAll(){
+		return scheduleRepo.findAll();
 	}
-	public Schedule updateSchedule(Schedule schedule){
-		return scheduleRepo.save(schedule);
+	public void updateSchedule(Schedule schedule){
+		scheduleRepo.save(schedule);
 	}
+	
+	public List<String> getInstructors (){
+		return scheduleRepo.getTrainerNames();
+	}
+	
 }

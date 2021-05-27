@@ -22,10 +22,14 @@ public class TrainerService {
 		return list;
 	}
 	
-	public Trainer findTrainerByName(String name) {
-		return trainerRepo.findByName(name);
+	public Long findIdByName(String name) {
+		return trainerRepo.findTrainerIdByName(name);
 	}
 	public Trainer findTrainerById(Long id) {
 		return trainerRepo.findById(id).orElse(null);
+	}
+	
+	public Trainer findTrainerByName(String name) {
+		return trainerRepo.findByName(name);
 	}
 }

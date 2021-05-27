@@ -38,7 +38,6 @@ public class Schedule {
 	@Column(name = "instructor")
 	private String nameOfTrainer;
 	
-	@NotNull
 	@ManyToOne
 	private Trainer trainer;
 	

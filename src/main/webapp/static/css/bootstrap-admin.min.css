@@ -101,7 +101,7 @@ code, kbd, pre, samp {
 button, input, optgroup, select, textarea {
     margin: 0;
     font: inherit;
-    color: inherit
+    color: #f4f3f3
 }
 
 button {
@@ -146,6 +146,7 @@ input[type=search] {
     -moz-box-sizing: content-box;
     box-sizing: content-box;
     -webkit-appearance: textfield
+    background-color: #bee8f7;
 }
 
 input[type=search]::-webkit-search-cancel-button, input[type=search]::-webkit-search-decoration {
@@ -2797,7 +2798,7 @@ table td[class*=col-], table th[class*=col-] {
 }
 
 .table > tbody > tr.info > td, .table > tbody > tr.info > th, .table > tbody > tr > td.info, .table > tbody > tr > th.info, .table > tfoot > tr.info > td, .table > tfoot > tr.info > th, .table > tfoot > tr > td.info, .table > tfoot > tr > th.info, .table > thead > tr.info > td, .table > thead > tr.info > th, .table > thead > tr > td.info, .table > thead > tr > th.info {
-    background-color: #d9edf7
+    background-color: #c1dbe8
 }
 
 .table-hover > tbody > tr.info:hover > td, .table-hover > tbody > tr.info:hover > th, .table-hover > tbody > tr:hover > .info, .table-hover > tbody > tr > td.info:hover, .table-hover > tbody > tr > th.info:hover {
@@ -2888,7 +2889,11 @@ label {
 input[type=search] {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    box-sizing: border-box
+    box-sizing: border-box;
+}
+input[type="search"] {
+    background-color: #e1edfa;
+    color: #302f2f;
 }
 
 input[type=checkbox], input[type=radio] {
@@ -5973,7 +5978,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
 }
 
 .panel-info > .panel-heading .badge {
-    color: #d9edf7;
+    color: #bde0f2;
     background-color: #31708f
 }
 
@@ -7443,7 +7448,7 @@ input[type="radio"]:checked + label span {
 .templatemo-sort-by:hover {	color: #ded9d9; }
 .templatemo-edit-btn {
     border: 1px solid #ddd;
-    border-radius: 3px;
+    border-radius: 3px;F
     color: black;
     padding: 4px 12px;
     transition: all 0.3s ease;

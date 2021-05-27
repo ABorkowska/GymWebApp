@@ -29,30 +29,45 @@ public class AdminScheduleController {
 	public Collection<Trainer> trainers() {
 		return trainerService.getTrainerNames();
 	}
+	
 	public AdminScheduleController(ScheduleService scheduleService, TrainerService trainerService) {
 		this.scheduleService = scheduleService;
 		this.trainerService = trainerService;
 	}
 	
 	@GetMapping("/admin/schedule")
-	public String displaySchedule(Model model){
+	public String displaySchedule(Model model) {
 		List<Schedule> schedule = scheduleService.findAll();
 		model.addAttribute("schedule", schedule);
 		return "admin-schedule";
 	}
+	
 	@GetMapping("/admin/schedule/edit/{id}")
-	public String displayClass(@PathVariable Long id, Model model){
+	public String displayClass(@PathVariable Long id, Model model) {
 		Schedule schedule = scheduleService.getSchedule(id);
+		List<String> trainerNames = scheduleService.getInstructors();
 		model.addAttribute("schedule", schedule);
+		model.addAttribute("trainerNames", trainerNames);
 		return "admin-class-edit";
 	}
+	
 	@PostMapping("/admin/schedule/edit/{id}")
 	public String saveClass(@PathVariable Long id, @Valid @ModelAttribute Schedule schedule, BindingResult result) {
+		Trainer trainer = trainerService.findTrainerByName(schedule.getNameOfTrainer());
 		if (result.hasErrors()) {
-			return "admin-class-edit";
+			return "redirect:/admin/schedule/edit/" + id;
 		}
-		scheduleService.updateSchedule(scheduleService.getSchedule(id));
-
-		return "admin-schedule";
+		schedule.setTrainer(trainer);
+		scheduleService.updateSchedule(schedule);
+		return "redirect:/admin/schedule";
 	}
+	@GetMapping("/admin/schedule/delete/{id}")
+	public String deleteClass(@PathVariable Long id,Model model) {
+		Schedule schedule = scheduleService.getSchedule(id);
+		model.addAttribute("schedule", schedule);
+		return "redirect:/admin/schedule";
+	}
+	
+	
 }
+

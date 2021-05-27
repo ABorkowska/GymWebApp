@@ -62,7 +62,9 @@
                 <a href="https://twitter.com/?lang=pl" class="twitter">Twitter</a>
             </div>
             <div class="text-center"><h6 class="login-or">LUB</h6></div>
-
+            <c:if test="${error!= null}">
+                <div cssClass="error">${error}
+            </c:if>
             <form:form action="/gym/login" method="post" modelAttribute="user" class="login-form">
             <div class="form-group">
                 <form:input path="username" type="text" id="username" placeholder="Podaj login"/>

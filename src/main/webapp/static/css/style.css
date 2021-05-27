@@ -5079,3 +5079,14 @@ template {
     transition: all 0.3s ease 0s;
     cursor: pointer;
 }
+.btn-del {
+    display: inline-block;
+    border-radius: 0;
+    background: transparent;
+    border: 2px solid #e8e8e8;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 400;
+    color: #242323;
+    cursor: pointer;
+}
