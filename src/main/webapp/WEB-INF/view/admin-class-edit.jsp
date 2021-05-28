@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: alina
-  Date: 26.05.2021
-  Time: 16:57
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -50,24 +43,23 @@
             </div>
             <div class="form-row">
                 <div class="value">
+
                     <label>Dzień tygodnia</label>
                     <form:select path="day">
                         <form:option value = "${schedule.day}">${schedule.day}</form:option>
-                        <form:option value = "monday">Poniedziałek</form:option>
-                        <form:option value = "tuesday">Wtorek</form:option>
-                        <form:option value = "wednesday">Środa</form:option>
-                        <form:option value = "thursday">Czwartek</form:option>
-                        <form:option value = "friday">Piątek</form:option>
-                        <form:option value = "saturday">Sobota</form:option>
-                        <form:option value = "sunday">Niedziela</form:option>
+                        <form:option value = "Poniedziałek">Poniedziałek</form:option>
+                        <form:option value = "Wtorek">Wtorek</form:option>
+                        <form:option value = "Środa">Środa</form:option>
+                        <form:option value = "Czwartek">Czwartek</form:option>
+                        <form:option value = "Piątek">Piątek</form:option>
+                        <form:option value = "Sobota">Sobota</form:option>
+                        <form:option value = "Niedziela">Niedziela</form:option>
                     </form:select>
-<%--                    <label> Dzien tygodnia</label>--%>
-<%--                    <form:input path="day" type="text" placeholder="${schedule.day}" />--%>
-<%--                    <form:errors path="day" cssClass="error"/>--%>
+
                 </div>
                 <div class="value col-lg-2">
                 <div class="value">
-                    <label> Godzina</label>
+                    <label>Godzina</label>
                     <form:input path="hour" type="text" placeholder="${schedule.hour}"/>
                     <form:errors path="hour" cssClass="error"/>
                 </div>
@@ -84,14 +76,14 @@
                 <div class="value">
                     <p></p>
                     <label>Instruktor</label>
-                    <form:select path="nameOfTrainer">
+                    <form:select path="nameOfTrainer" multiply="false">
                         <form:option value = "${schedule.nameOfTrainer}">${schedule.nameOfTrainer}</form:option>
-                        <c:forEach var="trainer" items="${trainers}">
-                        <form:option value = "nameOfTrainer">${trainer.name}</form:option>
+<%--                        <form:options itemValue="id" itemLabel="name" name="trainer" items="${trainers}"/>--%>
+                        <jsp:useBean id="trainerNames" scope="request" type="java.util.List"/>
+                        <c:forEach var="trainerName" items="${trainerNames}">
+                            <form:option value="${trainerName}"></form:option>
                         </c:forEach>
                     </form:select>
-<%--                    <form:input path="nameOfTrainer" type="text" placeholder="${schedule.nameOfTrainer}"/>--%>
-<%--                    <form:errors path="nameOfTrainer" cssClass="error"/>--%>
                 </div>
             </div>
             <p></p>
@@ -115,6 +107,7 @@
 <!-- Footer -->
 <%@ include file="./footer-admin.jsp" %>
 <!-- /.footer -->
+
 <script src="<c:url value="/static/js/jquery-3.3.1.min.js"/>"></script>
 <script src="<c:url value="/static/js/modernizr-3.6.0.min.js"/>"></script>
 <script src="<c:url value="/static/js/plugins.js"/>"></script>

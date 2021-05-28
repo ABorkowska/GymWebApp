@@ -36,7 +36,7 @@
 <div class="templatemo-content-container bg-img">
     <div class="templatemo-content-widget">
         <div class="table-responsive">
-            <a href="<c:url value="./admin/schedule"/>">
+            <a href="<c:url value="./schedule/add"/>">
                 <button type="button" class="btn col-lg-14 package-item">Dodaj nowe zajęcia</button>
             </a>
 
@@ -62,10 +62,11 @@
                 <td>${class.hour}</td>
                 <td>${class.name}</td>
                 <td>${class.nameOfTrainer}</td>
-                <td><a href="<c:url value="/admin/schedule/edit/${class.id}"/>" class="templatemo-edit-btn">Edytuj</a>
+                <td><a href="<c:url value="/admin/schedule/edit/${class.id}"/>" class="templatemo-edit-btn" >Edytuj</a>
                 </td>
                 <td><a href="" class="templatemo-link">Action</a></td>
-                <td><a href="<c:url value="/admin/schedule/delete/${class.id}"/>" class="templatemo-edit-btn">Usuń</a>
+                <td><a href="<c:url value="/admin/schedule/delete/${class.id}"/>" class="templatemo-edit-btn"
+                       onClick="return confirmSubmit()">Usuń</a>
                 </td>
             </tr>
             </c:forEach>
@@ -87,6 +88,13 @@
             }
         });
     });
+
+    function confirmSubmit () {
+        let agree = confirm("\nCzy na pewno chcesz usunąć?\n\nNie będzie możliwe cofnięcie tej akcji");
+        if (agree) {
+            return true;
+        } else return false;
+    }
 </script>
 
 <script src="<c:url value="/static/js/jquery-3.3.1.min.js"/>"></script>

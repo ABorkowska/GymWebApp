@@ -17,11 +17,9 @@ import javax.validation.Valid;
 public class LoginController {
 	
 	private final UserService userService;
-	//private final SecurityService securityService;
 	
 	public LoginController(UserService userService) {
 		this.userService = userService;
-		//this.securityService = securityService;
 	}
 	
 	@GetMapping("/gym/register")
@@ -47,9 +45,6 @@ public class LoginController {
 			user.setSubscribed("yes");
 		}
 		userService.saveUser(user);
-		
-		//securityService.autoLogin(user.getUsername(), user.getPassword());
-		
 		return "redirect:/gym/login";
 	}
 	

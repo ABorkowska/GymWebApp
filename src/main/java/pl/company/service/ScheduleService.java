@@ -19,15 +19,19 @@ public class ScheduleService {
 		return scheduleRepo.getOne(id);
 	}
 	
-	public List <Schedule> findAll(){
+	public List<Schedule> findAll() {
 		return scheduleRepo.findAll();
 	}
-	public void updateSchedule(Schedule schedule){
+	
+	public void saveSchedule(Schedule schedule) {
 		scheduleRepo.save(schedule);
 	}
 	
-	public List<String> getInstructors (){
+	public List<String> getInstructors() {
 		return scheduleRepo.getTrainerNames();
 	}
 	
+	public void removeSchedule(Long id) {
+		scheduleRepo.deleteById(id);
+	}
 }

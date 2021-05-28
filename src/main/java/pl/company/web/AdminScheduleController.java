@@ -4,10 +4,7 @@ import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 import pl.company.model.Schedule;
 import pl.company.model.Trainer;
 import pl.company.model.User;
@@ -58,16 +55,37 @@ public class AdminScheduleController {
 			return "redirect:/admin/schedule/edit/" + id;
 		}
 		schedule.setTrainer(trainer);
-		scheduleService.updateSchedule(schedule);
+		scheduleService.saveSchedule(schedule);
 		return "redirect:/admin/schedule";
 	}
+	
 	@GetMapping("/admin/schedule/delete/{id}")
-	public String deleteClass(@PathVariable Long id,Model model) {
+	public String deleteClass(@PathVariable Long id) {
 		Schedule schedule = scheduleService.getSchedule(id);
-		model.addAttribute("schedule", schedule);
+		if (schedule != null) {
+			scheduleService.removeSchedule(id);
+		}
 		return "redirect:/admin/schedule";
 	}
 	
+	@GetMapping("/admin/schedule/add")
+	public String addClass(Model model) {
+		List<String> trainerNames = scheduleService.getInstructors();
+		model.addAttribute ("schedule", new Schedule());
+		model.addAttribute("trainerNames", trainerNames);
+		return "admin-class-add";
+	}
 	
+	@PostMapping("/admin/schedule/add")
+	public String saveNewClass(@Valid @ModelAttribute Schedule schedule, BindingResult result, Model model){
+		if (result.hasErrors()) {
+			model.addAttribute("trainerNames",scheduleService.getInstructors());
+			return "admin-class-add";
+		}
+		Trainer trainer = trainerService.findTrainerByName(schedule.getNameOfTrainer());
+		schedule.setTrainer(trainer);
+		scheduleService.saveSchedule(schedule);
+		return "redirect:/admin/schedule";
+	}
 }
 

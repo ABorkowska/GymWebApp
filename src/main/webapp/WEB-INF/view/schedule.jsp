@@ -56,7 +56,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <div class="timetable_container_note">Zapisy na nasze zajęcia odbywają się <b><i>w trybie tygodniowym</i></b>. Grafik startuje w każdy poniedziałek.</div>
+            <div class="timetable_container_note">Zapisy na nasze zajęcia odbywają się <b><i>w trybie tygodniowym</i></b>. Grafik startuje w każdy poniedziałek. ZAPRASZAMY!</div>
             <div class="timetable_container d-flex flex-sm-row flex-column align-items-start justify-content-sm-between justify-content-start">
 
                 <!-- Monday -->
@@ -64,7 +64,8 @@
                     <div class="tt_title">poniedziałek</div>
                     <div class="tt_day_content grid">
                         <!-- Class -->
-                        <c:forEach items="${classes}" var="class" begin="0" end="4">
+                        <c:forEach items="${classes}" var="class">
+                            <c:if test="${class.day == 'Poniedziałek'}">
                         <div class="tt_class grid-item">
                             <div class="tt_class_title">${class.name}</div>
                             <div class="tt_class_instructor">${class.nameOfTrainer}</div>
@@ -72,7 +73,7 @@
                             <div class="tt_class_instructor">
                                 <a href="<c:out value="/gym/schedule/${class.id}"/>">Zapisz się</a>
                             </div>
-                        </div>
+                        </div></c:if>
                         </c:forEach>
                     </div>
                 </div>
@@ -82,7 +83,8 @@
                     <div class="tt_title">wtorek</div>
                     <div class="tt_day_content grid">
                         <!-- Class -->
-                        <c:forEach items="${classes}" var="class" begin="5" end="9">
+                        <c:forEach items="${classes}" var="class">
+                            <c:if test="${class.day == 'Wtorek'}">
                             <div class="tt_class grid-item">
                                 <div class="tt_class_title">${class.name}</div>
                                 <div class="tt_class_instructor">${class.nameOfTrainer}</div>
@@ -90,7 +92,7 @@
                                 <div class="tt_class_instructor">
                                     <a href="<c:out value="/gym/schedule/${class.id}"/>">Zapisz się</a>
                                 </div>
-                            </div>
+                            </div></c:if>
                         </c:forEach>
                     </div>
                 </div>
@@ -100,7 +102,8 @@
                     <div class="tt_title">środa</div>
                     <div class="tt_day_content grid">
                         <!-- Class -->
-                        <c:forEach items="${classes}" var="class" begin="10" end="14">
+                        <c:forEach items="${classes}" var="class">
+                            <c:if test="${class.day == 'Środa'}">
                             <div class="tt_class grid-item">
                                 <div class="tt_class_title">${class.name}</div>
                                 <div class="tt_class_instructor">${class.nameOfTrainer}</div>
@@ -108,7 +111,7 @@
                                 <div class="tt_class_instructor">
                                     <a href="<c:out value="/gym/schedule/${class.id}"/>">Zapisz się</a>
                                 </div>
-                            </div>
+                            </div></c:if>
                         </c:forEach>
                     </div>
                 </div>
@@ -117,7 +120,9 @@
                 <div class="tt_day">
                     <div class="tt_title">czwartek</div>
                     <div class="tt_day_content grid">
-                        <c:forEach items="${classes}" var="class" begin="15" end="19">
+                        <!-- Class -->
+                        <c:forEach items="${classes}" var="class">
+                            <c:if test="${class.day == 'Czwartek'}">
                             <div class="tt_class grid-item">
                                 <div class="tt_class_title">${class.name}</div>
                                 <div class="tt_class_instructor">${class.nameOfTrainer}</div>
@@ -125,7 +130,7 @@
                                 <div class="tt_class_instructor">
                                     <a href="<c:out value="/gym/schedule/${class.id}"/>">Zapisz się</a>
                                 </div>
-                            </div>
+                            </div></c:if>
                         </c:forEach>
                     </div>
                 </div>
@@ -134,7 +139,9 @@
                 <div class="tt_day">
                     <div class="tt_title">piątek</div>
                     <div class="tt_day_content grid">
-                        <c:forEach items="${classes}" var="class" begin="20" end="23">
+                        <!-- Class -->
+                        <c:forEach items="${classes}" var="class">
+                            <c:if test="${class.day == 'Piątek'}">
                             <div class="tt_class grid-item">
                                 <div class="tt_class_title">${class.name}</div>
                                 <div class="tt_class_instructor">${class.nameOfTrainer}</div>
@@ -142,7 +149,7 @@
                                 <div class="tt_class_instructor">
                                     <a href="<c:out value="/gym/schedule/${class.id}"/>">Zapisz się</a>
                                 </div>
-                            </div>
+                            </div></c:if>
                         </c:forEach>
 <%--                        <!-- No Class -->--%>
 <%--                        <div class="tt_class empty grid-item"></div>--%>
@@ -153,7 +160,9 @@
                 <div class="tt_day">
                     <div class="tt_title">sobota</div>
                     <div class="tt_day_content grid">
-                        <c:forEach items="${classes}" var="class" begin="24" end="26">
+                        <!-- Class -->
+                        <c:forEach items="${classes}" var="class">
+                            <c:if test="${class.day == 'Sobota'}">
                             <div class="tt_class grid-item">
                                 <div class="tt_class_title">${class.name}</div>
                                 <div class="tt_class_instructor">${class.nameOfTrainer}</div>
@@ -161,7 +170,7 @@
                                 <div class="tt_class_instructor">
                                     <a href="<c:out value="/gym/schedule/${class.id}"/>">Zapisz się</a>
                                 </div>
-                            </div>
+                            </div></c:if>
                         </c:forEach>
                     </div>
                 </div>
@@ -170,7 +179,9 @@
                 <div class="tt_day">
                     <div class="tt_title">niedziela</div>
                     <div class="tt_day_content grid">
-                        <c:forEach items="${classes}" var="class" begin="27" end="29">
+                        <!-- Class -->
+                        <c:forEach items="${classes}" var="class">
+                            <c:if test="${class.day == 'Niedziela'}">
                             <div class="tt_class grid-item">
                                 <div class="tt_class_title">${class.name}</div>
                                 <div class="tt_class_instructor">${class.nameOfTrainer}</div>
@@ -178,7 +189,7 @@
                                 <div class="tt_class_instructor">
                                     <a href="<c:out value="/gym/schedule/${class.id}"/>">Zapisz się</a>
                                 </div>
-                            </div>
+                            </div></c:if>
                         </c:forEach>
                     </div>
                 </div>

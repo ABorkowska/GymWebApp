@@ -3,12 +3,8 @@ package pl.company.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
+import javax.validation.constraints.*;
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +30,7 @@ public class Schedule {
 	@Size(max = 20)
 	private String name;
 	
-	@NotBlank
+	@NotBlank(message="Wybierz z listy")
 	@Column(name = "instructor")
 	private String nameOfTrainer;
 	

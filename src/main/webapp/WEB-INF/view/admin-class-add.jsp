@@ -36,7 +36,7 @@
     <div class="container">
         <div class="schedule-wrapper">
             <div class="schedule-header text-center">
-                <h2>Edycja zajęć</h2>
+                <h2>Dodawanie zajęć</h2>
             </div>
             <div class="schedule-header">
                 <form:form method="post" action="/admin/schedule/add" modelAttribute="schedule" class="register-form">
@@ -59,14 +59,14 @@
                 <div class="value col-lg-2">
                     <div class="value">
                         <label>Godzina</label>
-                        <form:input path="hour" type="text" placeholder="${schedule.hour}"/>
+                        <form:input path="hour" type="text" placeholder="HH:MM"/>
                         <form:errors path="hour" cssClass="error"/>
                     </div>
                 </div>
                 <div class="value col-lg-4">
                     <div class="value">
                         <label>Nazwa</label>
-                        <form:input path="name" type="text" placeholder="${schedule.name}"/>
+                        <form:input path="name" type="text"/>
                         <form:errors path="name" cssClass="error"/>
                     </div>
                 </div>
@@ -76,11 +76,10 @@
                     <p></p>
                     <label>Instruktor</label>
                     <form:select path="nameOfTrainer" multiply="false">
-                        <form:option value = "${schedule.nameOfTrainer}">${schedule.nameOfTrainer}</form:option>
-                        <%--                        <form:options itemValue="id" itemLabel="name" name="trainer" items="${trainers}"/>--%>
-                        <jsp:useBean id="trainerNames" scope="request" type="java.util.List"/>
+<%--                        <form:option value = "-- Wybierz z listy --"></form:option>--%>
                         <c:forEach var="trainerName" items="${trainerNames}">
                             <form:option value="${trainerName}"></form:option>
+                            <form:errors path="nameOfTrainer" cssClass="error"/>
                         </c:forEach>
                     </form:select>
                 </div>
