@@ -32,7 +32,7 @@
             <div class="banner-content">
                 <h4 class="sub-title">
                     <span class="shape-wrapper"><span class="shape"></span>Idealne miejsce na Twój trening<span class="shape"></span></span></h4>
-                <h5 class="title">build your body<br> with IRON</h5>
+                <h5 class="title">z IRON do celu Podejmij wyzwanie!</h5>
 <%--                <p></p>--%>
 <%--                <div class="button-group">--%>
 <%--                    <a href="#" class="custom-button">read more</a>--%>
@@ -57,7 +57,7 @@
                     <div class="building-box">
                         <figure><img src=<c:out value="/static/images/build3.png"/>?" alt=""></figure>
                         <h4>TRENUJ Z INSTRUKTOREM</h4>
-                        <p>Skorzystaj z oferty planów treningowych z trenerem personalnym </p><a href="<c:out value="/gym/plans"/>" class="btn">Sczegóły</a></div>
+                        <p>Skorzystaj z oferty indywidualnych planów treningowych </p><a href="<c:out value="/gym/plans"/>" class="btn">Sczegóły</a></div>
                 </div>
                 <div class="col-sm-4 col-xs-12">
                     <div class="building-box">

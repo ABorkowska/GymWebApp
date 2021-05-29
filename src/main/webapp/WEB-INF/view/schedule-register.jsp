@@ -73,11 +73,13 @@
                                 <p hidden><form:input path="nameOfTrainer"/>
                                 <div class="col-lg-6">
                                     <label for="email">E-Mail *</label>
-                                    <input type="text" id="email" name="email" placeholder="${email} required"/>
+                                    <input path="email" type="email" id="email" name="email" placeholder="${email}"/>
+<%--                                    <form:errors path="email" cssClass="error"/>--%>
                                 </div>
                                 <div class="col-lg-6">
                                     <label for="phone">Numer telefonu *</label>
-                                    <input type="tel" id="phone" name="phone" placeholder="Wprowadź numer" pattern="[0-9]{9,13}" required/>
+                                    <input type="tel" id="phone" name="phone" placeholder="Wprowadź numer"
+                                           pattern="[0-9]{9,13}" required/>
                                 </div>
                                 <div class="col-lg-6">
                                     <input type="submit" class="register-btn" value="Zapisz się"/>

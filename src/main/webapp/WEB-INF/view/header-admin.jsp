@@ -38,8 +38,8 @@
                     <a href=""><img src="<c:url value="/static/images/logo/logo-tt.PNG"/>" alt="logo"></a>
                 </div>
                 <ul class="menu">
-                    <li class="menu-item"><a href="<c:url value="/admin/home"/>" class="menu-item-link">Dashboard</a></li></li>
-                    <li class="menu-item"><a href="#0" class="menu-item-link">Grafik</a></li>
+                    <li class="menu-item"><a href="<c:url value="/home"/>" class="menu-item-link">HOME</a></li></li>
+                    <li class="menu-item"><a href="<c:url value="/admin/schedule"/>" class="menu-item-link">Grafik</a></li>
                     <li class="menu-item"><a href="#0" class="menu-item-link">Zapisy</a></li>
                     <li class="menu-item"><a href="#0" class="menu-item-link">Instruktorzy</a></li>
                     <li class="menu-item"><a href="#0" class="menu-item-link">Plany</a></li>

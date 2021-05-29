@@ -51,24 +51,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.passwordParameter("password")
 				.failureUrl("/gym/login?error=true");
 	}
-
-//	@Override
-//	protected void configure(HttpSecurity http) throws Exception {
-//		http.authorizeRequests()
-//				.antMatchers("/home").permitAll()
-//				.antMatchers("/gym/**").authenticated()
-//				.and().formLogin();
-//	}
-
-	
-//	@Override
-//	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//		auth.inMemoryAuthentication()
-//				.withUser("kamil").password(passEncoder().encode("Kamil333")).roles("USER")
-//				.and()
-//				.withUser("BartoszB").password(passEncoder().encode("Bartek44")).roles("ADMIN");
-//	}
-
 	
 	@EventListener(ApplicationReadyEvent.class)     //tworzy usera przy starcie aplikacji
 	public void get() {
