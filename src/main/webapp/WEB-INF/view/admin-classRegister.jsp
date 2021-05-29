@@ -38,19 +38,19 @@
             <table class="table table-striped table-bordered templatemo-user-table">
                 <thead>
                 <tr>
-                    <td><a href="" class="white-text templatemo-sort-by">Dzień tyg. <span class="caret"></span></a></td>
-                    <td><a href="" class="white-text templatemo-sort-by">Godz. <span class="caret"></span></a></td>
-                    <td><a href="" class="white-text templatemo-sort-by">Nazwa<span class="caret"></span></a></td>
-                    <td><a href="" class="white-text templatemo-sort-by">Uczestnik <span class="caret"></span></a></td>
-                    <td><a href="" class="white-text templatemo-sort-by">Nr. Tel. <span class="caret"></span></a></td>
-                    <td><a href="" class="white-text templatemo-sort-by">E-Mail <span class="caret"></span></a></td>
+                    <td class="white-text templatemo-sort-by">Dzień tyg. <span class="caret"></span></td>
+                    <td class="white-text templatemo-sort-by">Godz. <span class="caret"></span></td>
+                    <td class="white-text templatemo-sort-by">Nazwa<span class="caret"></span></td>
+                    <td class="white-text templatemo-sort-by">Uczestnik <span class="caret"></span></td>
+                    <td class="white-text templatemo-sort-by">Nr. Tel. <span class="caret"></span></td>
+                    <td class="white-text templatemo-sort-by">E-Mail <span class="caret"></span></td>
                 </tr>
                 </thead>
 
                 <tbody>
                 <tr>
-                    <c:forEach items="${schedule}" var="class">
-                    <td>${class.id}</td>
+                    <c:forEach items="${register}" var="class">
+<%--                    <td>${class.id}</td>--%>
                     <td>${class.day}</td>
                     <td>${class.hour}</td>
                     <td>${class.name}</td>

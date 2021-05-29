@@ -25,7 +25,10 @@ public class ClassRegisterController {
 	@GetMapping("/admin/schedule/register")
 	public String displayWeeklySchedule(Model model){
 		List<ClassRegister> register = classService.findAll();
+		
 		model.addAttribute("register", register);
 		return "admin-classRegister";
 	}
+	
+	
 }

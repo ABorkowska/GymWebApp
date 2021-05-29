@@ -67,15 +67,17 @@
                                 <div class="form-field field-49 "><label>Imię *</label>
                                     <input name="name" type="text" class="form-input" required></div>
                                 <div class="form-field field-49 field-fr"><label>Nazwisko *</label>
-                                    <input name="name" type="text" class="form-input" required></div>
+                                    <input name="surname" type="text" class="form-input" required></div>
                                 <div class="form-field"><label>Adres *</label>
-                                    <input name="name" type="text" class="form-input input-marginbtm" required></div>
+                                    <input name="address" type="text" class="form-input input-marginbtm" required></div>
                                 <div class="form-field field-49"><label>Miejscowość *</label>
-                                    <input name="name" type="text" class="form-input" required></div>
+                                    <input name="city" type="text" class="form-input" required></div>
                                 <div class="form-field field-49 field-fr"><label>Kod pocztowy *</label>
-                                    <input name="name" type="text" class="form-input" required></div>
+                                    <input name="postalCode" type="text" class="form-input"
+                                           placeholder="__-___" pattern="^[0-9]{2}-[0-9]{3}$" required></div>
                                 <div class="form-field"><label>E-Mail *</label>
-                                    <input name="name" type="text" class="form-input" required></div>
+                                    <input name="email" type="text" class="form-input"
+                                           pattern="^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$" required></div>
                             </div>
                         </div>
                     </div>

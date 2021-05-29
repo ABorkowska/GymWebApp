@@ -22,14 +22,14 @@ public class ClassRegister {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@ManyToOne
-	private Schedule schedule;
-	
 	private String email;
 	
 	private Integer contactNumber;
 	
 	@ManyToOne
 	private User user;
+	
+	@ManyToOne
+	private Schedule schedule;
 	
 }

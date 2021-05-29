@@ -38,7 +38,6 @@ public class User {
 	private String username;
 	
 	@NotBlank
-//	@Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$",
 	@Size(min=8, message = "Hasło musi zawierać co najmniej 8 znaków")
 	private String password;
 	
@@ -67,11 +66,6 @@ public class User {
 			joinColumns = @JoinColumn(name = "user_id"),
 			inverseJoinColumns = @JoinColumn(name = "workout_id"))
 	private List<Workout> workouts = new ArrayList<>();
-	
-	
-//	@Transient
-//	@Pattern (regexp="^([0-9]{2})-([0-9]{3})$")
-//	private String postalCode;
 	
 	@Override
 	public String toString() {

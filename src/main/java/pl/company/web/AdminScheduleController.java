@@ -25,6 +25,7 @@ public class AdminScheduleController {
 	@ModelAttribute("trainers")
 	public Collection<Trainer> trainers() {
 		return trainerService.getTrainerNames();
+		
 	}
 	
 	public AdminScheduleController(ScheduleService scheduleService, TrainerService trainerService) {

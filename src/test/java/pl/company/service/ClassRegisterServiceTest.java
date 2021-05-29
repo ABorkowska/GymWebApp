@@ -2,10 +2,9 @@ package pl.company.service;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
-import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import org.mockito.junit.jupiter.MockitoExtension;
 import pl.company.model.ClassRegister;
 import pl.company.model.Schedule;
 import pl.company.model.User;
@@ -13,21 +12,20 @@ import pl.company.repository.ClassRegisterRepository;
 import static org.mockito.Mockito.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-@RunWith(MockitoJUnitRunner.class)
+@ExtendWith(MockitoExtension.class)
 class ClassRegisterServiceTest {
 	
 	ClassRegisterService testedService;
-	@MockBean
+	@Mock
 	ClassRegisterRepository classRepo;
-	@MockBean
+	@Mock
 	ScheduleService scheduleService;
-	@MockBean
+	@Mock
 	UserService userService;
 	
 	
 	@BeforeEach
 	void setUp() {
-		//userService = new UserService(null, null, null);
 		testedService = new ClassRegisterService(classRepo, scheduleService, userService);
 	}
 	
