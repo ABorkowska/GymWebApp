@@ -112,6 +112,11 @@
             <artifactId>javaparser-core</artifactId>
             <version>3.14.159265359</version>
         </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
         <!--WebJars-->
         <!--		<dependency>-->
         <!--			<groupId>org.webjars</groupId>-->

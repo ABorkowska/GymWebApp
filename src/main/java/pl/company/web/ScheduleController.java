@@ -64,17 +64,17 @@ public class ScheduleController {
 			return "schedule-register";
 		}
 		System.out.println(phone);
-		Schedule schedule = scheduleService.getSchedule(id);
+		//Schedule schedule = scheduleService.getSchedule(id);
 		if (principal==null) {
 			return "redirect:/gym/login";
 		}
-		User user = userService.findUserByUsername(principal.getName());
-		classRegister.setId(null);
-		classRegister.setSchedule(schedule);
-		classRegister.setUser(user);
-		classRegister.setEmail(email);
-		classRegister.setContactNumber(phone);
-		classService.saveClassRegister(classRegister);
+//		User user = userService.findUserByUsername(principal.getName());
+//		classRegister.setId(null);
+//		classRegister.setSchedule(schedule);
+//		classRegister.setUser(user);
+//		classRegister.setEmail(email);
+//		classRegister.setContactNumber(phone);
+		classService.saveClassRegister(id,principal.getName(), email, phone);
 		return "redirect:/home";
 	}
 }

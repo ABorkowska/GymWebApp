@@ -89,7 +89,6 @@ public class PlanOrderController {
 		if (result.hasErrors()){
 			return "redirect:/gym/plans/order/{id}";
 		}
-		//todo: value not updated
 		//todo: validate payee data i.e. postal code
 		planOrder.setOrdered(true);
 		planOrderService.savePlanOrder(planOrder);

@@ -73,7 +73,7 @@
                                 <p hidden><form:input path="nameOfTrainer"/>
                                 <div class="col-lg-6">
                                     <label for="email">E-Mail *</label>
-                                    <input path="email" type="email" id="email" name="email" placeholder="${email}"/>
+                                    <input path="email" type="email" id="email" name="email" value ="${email}" placeholder="${email}"/>
 <%--                                    <form:errors path="email" cssClass="error"/>--%>
                                 </div>
                                 <div class="col-lg-6">
