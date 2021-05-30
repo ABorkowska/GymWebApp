@@ -6,7 +6,11 @@ import pl.company.model.Schedule;
 import pl.company.model.User;
 import pl.company.repository.ClassRegisterRepository;
 
-import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.transaction.Transactional;
+import java.util.*;
 
 @Service
 public class ClassRegisterService {
@@ -25,18 +29,23 @@ public class ClassRegisterService {
 		List<ClassRegister> list = classRepo.findAll();
 		return list;
 	}
-
-	public ClassRegister saveClassRegister(Long id, String username, String email, Integer phone){
+	
+	public ClassRegister saveClassRegister(Long id, String username, String email, Integer phone) {
 		Schedule schedule = scheduleService.getSchedule(id);
 		User user = userService.findUserByUsername(username);
 		ClassRegister classRegister = new ClassRegister();
 		classRegister.setSchedule(schedule);
 		classRegister.setUser(user);
-		if (email==null || email.equals("")){
+		if (email == null || email.equals("")) {
 			email = user.getEmail();
 		}
 		classRegister.setEmail(email);
 		classRegister.setContactNumber(phone);
 		return classRepo.save(classRegister);
 	}
+	public List<ClassRegister> getRegistered(){
+		List<ClassRegister> classes = classRepo.findAll();
+		return classes;
+	}
 }
+

@@ -105,6 +105,7 @@ values (1, 'Poniedziałek', '16:00', 'Body Shape', 'Ruslana Sayek', 6),
 insert into classes_users (contact_number, email, schedule_id, user_id)
 values (520645014,'margaret@gmail.com', 16, 1),
        (821457569,'kamil.baranowski@o2.pl', 25, 4),
+       (821514223,'groomy14@wp.pl',30, 2),
        (821457569,'kamil.baranowski@o2.pl', 8, 4);
 
 insert into workouts

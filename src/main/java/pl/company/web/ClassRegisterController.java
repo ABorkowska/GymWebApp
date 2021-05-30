@@ -1,15 +1,19 @@
 package pl.company.web;
 
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import pl.company.model.ClassRegister;
 import pl.company.model.Schedule;
+import pl.company.model.User;
 import pl.company.service.ClassRegisterService;
 import pl.company.service.ScheduleService;
 import pl.company.service.UserService;
 
+import java.util.Collection;
 import java.util.List;
 
+@Controller
 public class ClassRegisterController {
 	
 	private final ClassRegisterService classService;
@@ -24,11 +28,13 @@ public class ClassRegisterController {
 	
 	@GetMapping("/admin/schedule/register")
 	public String displayWeeklySchedule(Model model){
-		List<ClassRegister> register = classService.findAll();
-		
+		Collection<ClassRegister> register = classService.findAll();
+		Collection<User> users = userService.findUsers();
+		Collection<Schedule> classes = scheduleService.findAll();
 		model.addAttribute("register", register);
-		return "admin-classRegister";
+		model.addAttribute("users", users);
+		model.addAttribute("classes", classes);
+		return "admin-class-register";
 	}
-	
 	
 }

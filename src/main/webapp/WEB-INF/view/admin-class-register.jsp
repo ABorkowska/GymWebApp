@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="<c:url value="/static/css/swiper.min.css"/>">
     <link rel="stylesheet" href="<c:url value="/static/css/style.css"/>">
     <link rel="stylesheet" href="<c:url value="/static/css/bootstrap-admin.min.css"/>">
+    <link rel="stylesheet" type="text/css"
+          href="<c:url value="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css"/>">
 </head>
 
 <body>
@@ -30,35 +32,42 @@
 <!-- /.header -->
 <a href="#" class="scrollToTop"><i class="fas fa-angle-up"></i></a>
 
-<div class="templatemo-content-container bg-img" data-background="/static/images/banner/05.jpg">
-    <td>Action</td>
-
+<div class="templatemo-content-container bg-img">
     <div class="templatemo-content-widget">
-        <div class="panel panel-default table-responsive">
-            <table class="table table-striped table-bordered templatemo-user-table">
+        <div class="table-responsive">
+            <a href="<c:url value="/admin/schedule/reset"/>">
+                <button type="button" onClick="return confirmReset()" class="btn col-lg-14 package-item">RESETUJ</button>
+            </a>
+        </div>
+            <table id="table" class="table table-striped table-bordered templatemo-user-table">
                 <thead>
                 <tr>
-                    <td class="white-text templatemo-sort-by">Dzień tyg. <span class="caret"></span></td>
-                    <td class="white-text templatemo-sort-by">Godz. <span class="caret"></span></td>
-                    <td class="white-text templatemo-sort-by">Nazwa<span class="caret"></span></td>
-                    <td class="white-text templatemo-sort-by">Uczestnik <span class="caret"></span></td>
-                    <td class="white-text templatemo-sort-by">Nr. Tel. <span class="caret"></span></td>
-                    <td class="white-text templatemo-sort-by">E-Mail <span class="caret"></span></td>
+                    <td class="white-text templatemo-sort-by">Zajęcia</td>
+                    <td class="white-text templatemo-sort-by">Uczestnicy</td>
+                    <td class="white-text templatemo-sort-by">Numer telefonu</td>
+                    <td class="white-text templatemo-sort-by">E-mail</td>
                 </tr>
                 </thead>
-
                 <tbody>
-                <tr>
-                    <c:forEach items="${register}" var="class">
-<%--                    <td>${class.id}</td>--%>
-                    <td>${class.day}</td>
-                    <td>${class.hour}</td>
-                    <td>${class.name}</td>
-                    <td>${class.nameOfTrainer}</td>
-                    <td><a href="<c:url value="/admin/schedule/edit/${class.id}"/>" class="templatemo-edit-btn">Edit</a></td>
-                    <td><a href="" class="templatemo-link">Action</a></td>
-                    <td><a href="<c:url value="/admin/schedule/edit/${class.id}"/>" class="templatemo-edit-btn">Delete</a></td>
-                </tr>
+                <c:forEach items="${register}" var="class">
+                    <tr>
+                        <td>
+                            <c:forEach items="${classes}" var="unit">
+                                <c:if test="${unit.id==class.schedule.id}">
+                                    ${unit.day} - ${unit.hour} - ${unit.name}
+                                </c:if>
+                            </c:forEach>
+                        </td>
+                        <td>
+                            <c:forEach items="${users}" var="user">
+                                <c:if test="${user.id==class.user.id}">
+                                    ${user.firstName} ${user.lastName}
+                                </c:if>
+                            </c:forEach>
+                        </td>
+                        <td>${class.contactNumber}</td>
+                        <td>${class.email}</td>
+                    </tr>
                 </c:forEach>
                 </tbody>
             </table>
@@ -70,6 +79,23 @@
 <!-- Footer -->
 <%@ include file="./footer-admin.jsp" %>
 <!-- /.footer -->
+
+<script>
+    $(document).ready(function() {
+        $('#table').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Polish.json"
+            }
+        });
+    });
+    function confirmReset () {
+        let agree = confirm("\nCzy na pewno chcesz usunąć wszystkie dane?\n\nNie będzie możliwe cofnięcie tej akcji");
+        if (agree) {
+            return true;
+        } else return false;
+    }
+</script>
+
 <script src="<c:url value="/static/js/jquery-3.3.1.min.js"/>"></script>
 <script src="<c:url value="/static/js/modernizr-3.6.0.min.js"/>"></script>
 <script src="<c:url value="/static/js/plugins.js"/>"></script>
@@ -82,6 +108,8 @@
 <script src="<c:url value="/static/js/wow.min.js"/>"></script>
 <script src="<c:url value="/static/js/main.js"/>"></script>
 <script src="<c:url value="/static/js/templatemo-script.js"/>"></script>
+<script type="text/javascript" charset="utf8"
+        src="<c:url value="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"/>"></script>
 </html>
 
 

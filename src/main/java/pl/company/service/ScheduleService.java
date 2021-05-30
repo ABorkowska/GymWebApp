@@ -2,6 +2,7 @@ package pl.company.service;
 
 import org.springframework.stereotype.Service;
 import pl.company.model.Schedule;
+import pl.company.model.User;
 import pl.company.repository.ScheduleRepository;
 
 import java.util.List;
@@ -33,5 +34,8 @@ public class ScheduleService {
 	
 	public void removeSchedule(Long id) {
 		scheduleRepo.deleteById(id);
+	}
+	public Schedule findClassById(Long id){
+		return scheduleRepo.findById(id).orElse(null);
 	}
 }

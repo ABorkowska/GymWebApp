@@ -24,7 +24,6 @@
     <link rel="stylesheet" href="<c:url value="/static/css/bootstrap-admin.min.css"/>">
     <link rel="stylesheet" type="text/css"
           href="<c:url value="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css"/>">
-
 </head>
 
 <body>
@@ -36,7 +35,7 @@
 <div class="templatemo-content-container bg-img">
     <div class="templatemo-content-widget">
         <div class="table-responsive">
-            <a href="<c:url value="./schedule/add"/>">
+            <a href="<c:url value="/admin/schedule/add"/>">
                 <button type="button" class="btn col-lg-14 package-item">Dodaj nowe zajęcia</button>
             </a>
 
