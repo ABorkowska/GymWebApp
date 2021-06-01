@@ -1,16 +1,148 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: alina
-  Date: 14.05.2021
-  Time: 19:52
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IRON Gym</title>
+    <link href="<c:url value="https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700&display=swap"/>"
+          rel="stylesheet">
+    <link href="<c:url value="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i&display=swap"/>"
+          rel="stylesheet">
+    <link rel="stylesheet" href="<c:url value="http://cdn.bootstrapmb.com/bootstrap/4.3.1/css/bootstrap.min.css"/>">
+    <link rel="stylesheet" href="<c:url value="/static/css/all.min.css"/>">
+    <link rel="stylesheet" href="<c:url value="/static/css/animate.css"/>">
+    <link rel="stylesheet" href="<c:url value="/static/css/lightcase.css"/>">
+    <link rel="stylesheet" href="<c:url value="/static/css/flaticon.css"/>">
+    <link rel="stylesheet" href="<c:url value="/static/css/swiper.min.css"/>">
+    <link rel="stylesheet" href="<c:url value="/static/css/style.css"/>">
+    <link rel="stylesheet" href="<c:url value="/static/css/services.css"/>">
+    <link rel="stylesheet" href="<c:url value="/static/css/class-register.css"/>">
 </head>
 <body>
+<!-- Header -->
+<%@ include file="./header.jsp" %>
+<!-- /.header -->
+<a href="#" class="scrollToTop"><i class="fas fa-angle-up"></i></a>
+<!-- Page Header-->
+<section class="page-header bg_img" data-background="/static/images/banner/05.jpg">
+    <div class="container">
+        <h3 class="title">
+            <span class="shape-wrapper">
+                <span class="shape"></span>Generator Treningów<span class="shape"></span></span>
+        </h3>
+    </div>
+</section>
+
+<!-- Breadcrumb Section -->
+<div class="breadcrumb-section">
+    <div class="container">
+        <div class="breadcrumb-wrapper">
+            <div class="breadcrumb-title"><h6 class="title">Stwórz trening</h6></div>
+            <ul class="breadcrumb">
+                <li><a href="<c:url value="/home"/>">Home</a></li>
+                <li><a href="<c:url value="/gym/dashboard"/>">Mój IRON</a></li>
+                <li>Moje treningi</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="padding-bottom padding-top bg_img" data-background="/static/images/banner/stripes.png">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div>
+                    <div class="col-lg-10">
+                        <div class="expert-single-content"><h3 class="title">Stwórz własny trening</h3>
+                            <div><b>
+                                <form:form method="post" action="/gym/plans/" class="registration-form" style="color: black"><br>
+
+                                <div class="form-group"> 1. Nazwij swój trening</div>
+                                <input type="text"><br><br>
+
+                                <div class="form-group"> 2. Wybierz swój CEL TRENINGOWY</div>
+                                <div class="p-t-15"><b></b>
+                                    <label class="radio-container m-r-55">Masa &nbsp&nbsp
+                                        <input type="radio" name="type" value="mass"><span class="checkmark"></span>
+                                    </label>
+                                    <label class="radio-container">Rzeżba
+                                        <input type="radio" name="type" value="shape"><span class="checkmark"></span>
+                                    </label>
+                                    <label class="radio-container m-r-55">Siła &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                                        <input type="radio" name="type" value="strength"><span class="checkmark"></span>
+                                    </label>
+                                </div><br>
+
+                                <div class="form-group"> 3. Zaznacz PARTIE CIAŁA / GRUPY MIĘŚNI, które chcesz trenować</div>
+                                <div class="value">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <select multiple="true" path="trainers">
+                                            <option value="0" label="Wybierz"/>
+                                            <options itemValue="id" itemLabel="name" name="trainer"/>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div><br>
+
+                                <div class="form-group"> 4. Dobierz SPRZĘT do swojego treningu</div>
+                                <div class="value">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        <select multiple="true" path="trainers">
+                                            <option value="0" label="Wybierz"/>
+                                            <options itemValue="id" itemLabel="name" name="trainer"/>
+                                        </select>
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div><br></b>
+                            </div>
+                            <div class="col-lg-6">
+                                <input type="submit" class="register-btn" value="Generuj trening"/>
+                                <div class="form-row p-t-10">
+                                </div>
+                            </div>
+                        </div>
+                        </form:form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <aside class="sidebar">
+                    <div class="widget widget-category widget-info"><h5 class="widget-title">Moje treningi</h5>
+                        <ul>
+                            <li><a href="#">Shape upper body</a></li>
+                        </ul>
+                    </div>
+                    <div class="widget widget-popular"><h5 class="widget-title">Polecane strony</h5>
+                        <ul>
+                            <li>
+                                <div class="widget-popular-content"><h5 class="title">
+                                    <a href="classes-details.html">Buduj Masę</a></h5></div>
+                            </li>
+                            <li>
+                                <div class="widget-popular-content"><h5 class="title">
+                                    <a href="classes-details.html">Fabryka Siły</a></h5></div>
+                            </li>
+                            <li>
+                                <div class="widget-popular-content"><h5 class="title">
+                                    <a href="https://sebastianchudziak.pl/encyklopedia/">Encyklopedia Siłowni</a></h5>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="widget-popular-content"><h5 class="title">
+                                    <a href="https://www.sfd.pl/">SFD - ofcjalne strona sklepu</a></h5></div>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </div>
+</div>
 
 </body>
+<!-- Footer Section -->
+<%@ include file="./footer.jsp" %>
 </html>

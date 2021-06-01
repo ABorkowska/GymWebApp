@@ -31,10 +31,6 @@ public class ScheduleController {
 		this.userService = userService;
 		this.classService = classService;
 	}
-//	@ModelAttribute("users")
-//	public Collection<User> users() {
-//		return userService.findAll();
-//	}
 	
 	@GetMapping("/gym/schedule")
 	public String showSchedule(Model model) {

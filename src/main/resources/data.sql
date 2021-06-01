@@ -103,10 +103,12 @@ values (1, 'Poniedziałek', '16:00', 'Body Shape', 'Ruslana Sayek', 6),
        (30, 'Niedziela', '16:00', 'Resistance Bands', 'Artur Czajka', 1);
 
 insert into classes_users (contact_number, email, schedule_id, user_id)
-values (520645014,'margaret@gmail.com', 16, 1),
-       (821457569,'kamil.baranowski@o2.pl', 25, 4),
-       (821514223,'groomy14@wp.pl',30, 2),
-       (821457569,'kamil.baranowski@o2.pl', 8, 4);
+values (821514223,'groomy14@wp.pl',30, 2),
+       (631709312,'bartosz_bednarek@irongym.pl',27, 8),
+       (631709312,'bartosz_bednarek@irongym.pl',18, 8),
+       (821457569,'kamil.baranowski@o2.pl', 8, 4),
+       (520645014,'margaret@gmail.com', 16, 1),
+       (821457569,'kamil.baranowski@o2.pl', 25, 4);
 
 insert into workouts
 values (1, 3, 8, 'Mass'),
@@ -115,7 +117,8 @@ values (1, 3, 8, 'Mass'),
 
 INSERT INTO plan_order VALUES
         (1, false, null, true, 1, 4, 2),
-        (2, true, 150.00, false, 6, 2, 4);
+        (2, true, 150.00, true, 6, 2, 4),
+        (3, true, 150.00, false, 9, 3, 7);
 
 insert into user_role values(1,1),(2,1),(3,1),(4,1),(5,1),(6,1),(7,1),(8,2);
 

@@ -5,6 +5,8 @@ import pl.company.model.Plan;
 import pl.company.model.PlanOrder;
 import pl.company.repository.PlanOrderRepository;
 
+import java.util.Collection;
+
 @Service
 public class PlanOrderService {
 	
@@ -23,5 +25,9 @@ public class PlanOrderService {
 	}
 	public Long findPlanForPlanOrder(Long id){
 		return planOrderRepo.findPlanForPlanOrder(id);
+	}
+	
+	public Collection<PlanOrder> findAll() {
+		return planOrderRepo.findAll();
 	}
 }

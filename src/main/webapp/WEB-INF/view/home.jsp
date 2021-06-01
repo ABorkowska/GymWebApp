@@ -33,14 +33,8 @@
                 <h4 class="sub-title">
                     <span class="shape-wrapper"><span class="shape"></span>Idealne miejsce na Twój trening<span class="shape"></span></span></h4>
                 <h5 class="title">z IRON do celu Podejmij wyzwanie!</h5>
-<%--                <p></p>--%>
-<%--                <div class="button-group">--%>
-<%--                    <a href="#" class="custom-button">read more</a>--%>
-<%--                    <a href="#" class="custom-button active">contact us</a>--%>
-<%--                </div>--%>
             </div>
         </div>
-<%--        <div class="banner-thumb"><img src=".static/images/banner/01.jpg" alt="banner-thumb"></div>--%>
     </div>
 </section>
 <div class="building-outer">
@@ -63,7 +57,7 @@
                     <div class="building-box">
                         <figure><img src=<c:out value="/static/images/build2.png"/>?" alt=""></figure>
                         <h4>TRENUJ INDYWIDUALNIE</h4>
-                        <p>Stwórz własny trening według swoich preferencji</p><a href="<c:out value="/gym/workout"/>" class="btn">Sczegóły</a></div>
+                        <p>Stwórz własny trening według swoich preferencji</p><a href="<c:out value="/gym/workout/create"/>" class="btn">Sczegóły</a></div>
                 </div>
             </div>
         </div>

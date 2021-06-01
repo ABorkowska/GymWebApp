@@ -21,9 +21,9 @@
 </head>
 
 <body>
-<!-- Header Section Stars Here -->
+
 <a href="#" class="scrollToTop"><i class="fas fa-angle-up"></i></a>
-<!-- Fixed Sidebar Section Ends Here -->
+
 <!-- Header Section Stars Here -->
 <header>
     <div class="header-top d-none d-xl-block">
@@ -82,15 +82,14 @@
                     <li class="menu-item"><a href="#0" class="menu-item-link">Treningi</a>
                         <ul class="sub-menu">
                             <li class="menu-item"><a href="blog.html" class="menu-item-link">Baza treningów</a></li>
-                            <li class="menu-item"><a href="blog-details.html" class="menu-item-link">Stwórz własny trening</a>
+                            <li class="menu-item"><a href="<c:url value="/gym/workout/create"/>" class="menu-item-link">Stwórz własny trening</a>
                             </li>
                         </ul>
                     </li>
-                    <li class="menu-item"><a href="#0" class="menu-item-link">Mój IRON</a>
+                    <li class="menu-item"><a href="<c:url value="/gym/dashboard"/>" class="menu-item-link">Mój IRON</a>
                         <ul class="sub-menu">
                             <li class="menu-item"><a href="<c:url value="/gym/login"/>" class="menu-item-link">Logowanie</a></li>
                             <li class="menu-item"><a href="<c:url value="/gym/register"/>" class="menu-item-link">Rejestracja</a></li>
-                            <li class="menu-item"><a href="four-not-four.html" class="menu-item-link">404</a></li>
                         </ul>
                     </li>
                     <li class="menu-item"><a href="contact.html" class="menu-item-link">Contact</a></li>

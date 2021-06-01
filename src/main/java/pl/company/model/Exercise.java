@@ -21,10 +21,13 @@ public class Exercise {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	
 	@NotBlank
 	private String name;
+	
 	@Enumerated(EnumType.STRING)
 	private MuscleGroup muscleGroup;
+	
 	@Enumerated(EnumType.STRING)
 	private Equipment equipment;
 	

@@ -47,5 +47,9 @@ public class ClassRegisterService {
 		List<ClassRegister> classes = classRepo.findAll();
 		return classes;
 	}
+	
+	public void deleteAll(List<ClassRegister> classRegister) {
+		classRepo.deleteAll(classRegister);
+	}
 }
 

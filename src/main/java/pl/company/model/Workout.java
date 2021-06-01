@@ -29,12 +29,6 @@ public class Workout {
 	private Integer reps;
 	
 	private Integer sets;
-
-//	@Enumerated(EnumType.STRING)
-//	private Equipment equipment;
-//
-//	@Enumerated(EnumType.STRING)
-//	private MuscleGroup muscleGroup;
 	
 	@OneToMany(mappedBy = "workout")
 	private List<Exercise> exercises = new ArrayList<>();

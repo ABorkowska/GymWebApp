@@ -3,6 +3,8 @@ package pl.company.web;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import pl.company.model.ClassRegister;
 import pl.company.model.Schedule;
 import pl.company.model.User;
@@ -37,4 +39,9 @@ public class ClassRegisterController {
 		return "admin-class-register";
 	}
 	
+	@GetMapping("/admin/schedule/reset")
+	public String clearRegister (){
+		classService.deleteAll(classService.findAll());
+		return "redirect:/admin/schedule/register";
+	}
 }

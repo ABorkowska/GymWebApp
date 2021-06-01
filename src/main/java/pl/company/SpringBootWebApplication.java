@@ -32,17 +32,4 @@ public class SpringBootWebApplication extends SpringBootServletInitializer {
 		firewall.setAllowUrlEncodedDoubleSlash(true);
 		return firewall;
 	}
-	
-//	@Bean(name = "localeResolver")
-//	public LocaleContextResolver getLocaleContextResolver() {
-//		SessionLocaleResolver localeResolver = new SessionLocaleResolver();
-//		localeResolver.setDefaultLocale(new Locale("pl", "PL"));
-//		return localeResolver;
-//	}
-	
-//	@Bean
-//	public Validator validator() {
-//		return new LocalValidatorFactoryBean();
-//	}
-
 }

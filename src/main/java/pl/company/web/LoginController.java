@@ -34,7 +34,6 @@ public class LoginController {
 		if (result.hasErrors()) {
 			return "registerForm";
 		}
-		//jesli podany login juz jest w bazie
 		if (userService.findUserByUsername(user.getUsername()) != null) {
 			throw new LoginException();
 		}

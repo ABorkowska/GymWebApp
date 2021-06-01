@@ -252,6 +252,7 @@ select, input, textarea, button {
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
+    color:#333232;
 }
 
 select:focus, input:focus, textarea:focus, button:focus {
@@ -266,7 +267,7 @@ textarea {
 
 input, button, select {
     height: 40px;
-    color: #777777;
+    color: #333232;
 }
 
 label, button, select {
@@ -274,12 +275,13 @@ label, button, select {
 }
 
 input {
-    background: #f7fbff;
+    background: #ebf4fc;
     border: 1px solid transparent;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
     padding-left: 10px;
+    color: #333232;
 }
 
 input:focus {
@@ -316,11 +318,11 @@ input[type="submit"] {
 }
 
 .padding-top {
-    padding-top: 80px;
+    padding-top: 60px;
 }
 
 .padding-bottom {
-    padding-bottom: 80px;
+    padding-bottom: 70px;
 }
 
 .section-header {
@@ -703,16 +705,16 @@ template {
 }
 
 .footer-widget {
-    margin-bottom: 45px;
+    margin-bottom: 40px;
 }
 
 .footer-widget .widget-title {
-    margin-bottom: 26px;
+    margin-bottom: 20px;
 }
 
 .footer-widget p {
     opacity: .9;
-    margin-bottom: 28px;
+    margin-bottom: 25px;
 }
 
 @media (min-width: 992px) {
@@ -1352,14 +1354,14 @@ template {
 }
 
 .widget {
-    background-color: #fafafa;
+    background-color: #f2e1e1;
     padding: 35px 30px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 @media (min-width: 992px) {
     .widget {
-        margin-bottom: 60px;
+        margin-bottom: 50px;
     }
 }
 
@@ -1639,6 +1641,7 @@ template {
 .widget-category.widget-info ul li a {
     padding: 8px;
     padding-left: 0;
+    color: #242121;
 }
 
 .widget-category.widget-info ul li a::before {
@@ -1677,7 +1680,7 @@ template {
 }
 
 .widget.widget-post ul li .meta-post a {
-    color: #777777;
+    color: #595959;
 }
 
 .widget.widget-post ul li .meta-post .meta-date {
@@ -3528,8 +3531,8 @@ template {
     background: #ffffff;
 }
 
-.login-form .form-group input::placeholder {
-    color: #777777;
+.login-form .registration-form .form-group input::placeholder {
+    color: #333232;
 }
 
 .login-form .form-group input[type="submit"] {
@@ -4207,6 +4210,7 @@ template {
 .comment-form .form-group input, .comment-form .form-group textarea {
     border: 1px solid #e5e5e5;
     padding: 20px;
+    color: #333232;
 }
 
 .comment-form .form-group textarea {

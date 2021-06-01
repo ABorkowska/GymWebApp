@@ -60,18 +60,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		adminRepo.save(user1);
 	}
 }
-
-//	@Bean
-//	public HttpFirewall looseHttpFirewall() {
-//		StrictHttpFirewall firewall = new StrictHttpFirewall();
-//		firewall.setAllowedHttpMethods(Arrays.asList("GET", "POST"));
-//		firewall.setAllowSemicolon(true);
-//		firewall.setAllowUrlEncodedSlash(true);
-//		firewall.setAllowBackSlash(true);
-//		firewall.setAllowUrlEncodedPercent(true);
-//		firewall.setAllowUrlEncodedPeriod(true);
-//		return firewall;
-//	}
 	
 
 
