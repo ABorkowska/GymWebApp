@@ -82,25 +82,6 @@
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             </div
     </form:form>
-
-    <%--            <form method="post" class="login-form">--%>
-    <%--                <div class="form-group">--%>
-    <%--                    <input type="text" name="username" placeholder="Podaj login"/>--%>
-    <%--                </div>--%>
-    <%--                <div class="form-group">--%>
-    <%--                    <input type="password" name="password" placeholder="Podaj hasło"/><span>${error}</span>--%>
-    <%--                </div>--%>
-    <%--                        &lt;%&ndash;                    <form:errors path="password" cssClass="error"/></div>&ndash;%&gt;--%>
-    <%--                <div class="form-group">--%>
-    <%--                    <input type="submit" value="Zaloguj">--%>
-    <%--                </div>--%>
-    <%--                <div class="sign-in-option">--%>
-    <%--                     <a href="<c:url value="/gym/register"/>">Nie masz konta? Zarejestruj się</a>--%>
-    <%--                </div>--%>
-    <%--                <div class="form-group">--%>
-    <%--                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
-    <%--                </div>--%>
-    <%--            </form>--%>
 </section>
 
 </body>

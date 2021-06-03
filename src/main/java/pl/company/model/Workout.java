@@ -3,6 +3,7 @@ package pl.company.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.jetbrains.annotations.Nullable;
 import pl.company.enums.Equipment;
 import pl.company.enums.WorkoutType;
 
@@ -22,17 +23,20 @@ public class Workout {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotBlank
 	@Enumerated(EnumType.STRING)
 	private WorkoutType type;
 	
-	private Integer reps;
-	
 	private Integer sets;
 	
-	@OneToMany(mappedBy = "workout")
+	private Integer reps;
+	
+	private String name;
+	
+	@Nullable
+	@ManyToMany(mappedBy = "workouts", cascade=CascadeType.ALL)
 	private List<Exercise> exercises = new ArrayList<>();
 	
+	@Nullable
 	@ManyToMany(mappedBy = "workouts")
 	private List<User> users = new ArrayList<>();
 	

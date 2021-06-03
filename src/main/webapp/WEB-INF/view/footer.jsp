@@ -7,12 +7,11 @@
         <div class="container">
             <div class="row mb-45-none">
                 <div class="col-lg-4 col-md-6">
-                    <div class="footer-widget widget-about"><h5 class="widget-title">About Us</h5>
-                        <p>Lorem ipsum dolor sit amet, mauris libero congue eget pulvinar, cras ut mus tempus dolor,
-                            ante tortor ornare ante arcu nam</p>
-                        <h6 class="sub-title">Subscribe</h6>
+                    <div class="footer-widget widget-about"><h5 class="widget-title">O NAS</h5>
+                        <p>IRON Gym</p>
+                        <h6 class="sub-title">Newsletter - zapisz się!</h6>
                         <form class="footer-form">
-                            <input type="text" placeholder="Your Email" class="footer-input">
+                            <input type="text" placeholder="Twój e-mail" class="footer-input">
                             <label for="f1">
                                 <i class="fas fa-arrow-right"></i>
                             </label>
@@ -27,7 +26,7 @@
                     </div>
                 </div>
                 <div class="col-lg-2 col-md-6">
-                    <div class="footer-widget widget-link"><h5 class="widget-title">Useful Links</h5>
+                    <div class="footer-widget widget-link"><h5 class="widget-title">Linki</h5>
                         <ul>
                             <li><a href="#">Weight Loss</a></li>
                             <li><a href="#">Pakckages</a></li>
@@ -38,24 +37,24 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <div class="footer-widget widget-post"><h5 class="widget-title">Our Blog post</h5>
+                    <div class="footer-widget widget-post"><h5 class="widget-title">Nasz Blog</h5>
                         <ul>
-                            <li><a class="post-title" href="#">Ullamco est amet quis tullam cursus, metus.</a><span>05 may 2017</span>
+                            <li><a class="post-title" href="#">Nieudany trening to ten, którego nie wykonałeś</a><span>05 maj 2021</span>
                             </li>
-                            <li><a class="post-title" href="#">Ullamco est amet quis tullam cursus, metus.</a><span>05 may 2017</span>
+                            <li><a class="post-title" href="#">Masa czy Siła?</a><span>05 czerwiec 2021</span>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="footer-widget widget-form">
-                        <h5 class="widget-title">Contact Form</h5>
+                        <h5 class="widget-title">Formularz kontaktowy</h5>
                         <form class="footer-contact-form">
-                            <input type="text" placeholder="Name">
-                            <input type="text" placeholder="Email">
-                            <textarea name="footer-message" id="f2" class="footer-textarea" placeholder="Message">
+                            <input type="text" placeholder="Imię">
+                            <input type="text" placeholder="E-mail">
+                            <textarea name="footer-message" id="f2" class="footer-textarea">
                             </textarea>
-                            <input type="submit" value="submit Now">
+                            <input type="submit" value="Wyślij">
                         </form>
                     </div>
                 </div>

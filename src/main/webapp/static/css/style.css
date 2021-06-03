@@ -255,6 +255,19 @@ select, input, textarea, button {
     color:#333232;
 }
 
+selectW {
+    width: 100%;
+    height:100px;
+    background-color: #ffffff;
+    border: 1px solid #e1e1e1;
+    outline: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    color:#333232;
+
+}
+
 select:focus, input:focus, textarea:focus, button:focus {
     outline: none;
 }
@@ -264,6 +277,7 @@ textarea {
     resize: none;
     padding: 10px;
 }
+
 
 input, button, select {
     height: 40px;
@@ -3606,6 +3620,16 @@ template {
     color: #fff;
     width: 20px;
 }
+    .dropdown-content {
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 8px 0px rgba(0,0,0,0);
+        padding: 12px 16px;
+        z-index: 1;
+        height:110px;
+        position: relative;
+        display: inline-block;
+    }
 
 .other-social-links {
     margin: -10px;
@@ -5037,7 +5061,7 @@ template {
     /*border-width: thick;*/
     /*border-color:red;*/
     padding: 50px 0;
-    background: #a10505 url(/static/images/banner/03.jpg) no-repeat center top / cover;
+    background: #a10505 url(/static/images/banner/04.jpg) no-repeat center top / cover;
 }
 
 .building-list {
@@ -5052,7 +5076,8 @@ template {
 }
 
 .building-box figure {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+
 }
 
 .building-box h4 {
@@ -5061,7 +5086,8 @@ template {
 }
 
 .building-box p {
-    margin: 15px 0
+    margin: 15px 0;
+    color: #0a0100;
 }
 
 .building-box a.btn {

@@ -400,11 +400,10 @@ input[type="checkbox"] + label span {
     height:25px;
     margin:-1px 4px 0 0;
     vertical-align:middle;
-    background:url(../images/checkbox-radio-sheet.png) left top no-repeat;
     cursor:pointer;
 }
 input[type="checkbox"]:checked + label span {
-    background:url(../images/checkbox-radio-sheet.png) -26px top no-repeat;
+
 }
 input[type="radio"] { display:none; }
 input[type="radio"] + label span {
@@ -413,11 +412,9 @@ input[type="radio"] + label span {
     height:25px;
     margin:-1px 4px 0 0;
     vertical-align:middle;
-    background:url(../images/checkbox-radio-sheet.png) -52px top no-repeat;
     cursor:pointer;
 }
 input[type="radio"]:checked + label span {
-    background:url(../images/checkbox-radio-sheet.png) -78px top no-repeat;
 }
 
 /* 6. Manage Users

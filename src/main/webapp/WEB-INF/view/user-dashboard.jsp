@@ -59,22 +59,18 @@
 
                             <div><h5>Aktualizuj swoje dane</h5><br>
 
-                                <form:form action="/gym/dashboard/profile" method="post" modelAttribute="user"
-                                           class="registration-form">
+                                <form:form action="/gym/dashboard/profile" method="post" modelAttribute="user" class="registration-form">
                                     <div class="form-group"><h6>E-Mail</h6>
                                         <form:input path="email" type="text" id="email" placeholder="${user.email}"/>
                                         <form:errors path="email" cssClass="error"/></div><br>
                                     <div class="form-group"><h6>Imię</h6>
-                                        <form:input path="firstName" type="text" id="firstName"
-                                                    placeholder="${user.firstName}"/>
+                                        <form:input path="firstName" type="text" id="firstName" placeholder="${user.firstName}"/>
                                         <form:errors path="firstName" cssClass="error"/></div><br>
                                     <div class="form-group"><h6>Nazwisko</h6>
-                                        <form:input path="lastName" type="text" id="lastName"
-                                                    placeholder="${user.lastName}"/>
+                                        <form:input path="lastName" type="text" id="lastName" placeholder="${user.lastName}"/>
                                         <form:errors path="lastName" cssClass="error"/></div><br>
                                     <div class="form-group"><h6>Nazwa użytkownika / Login</h6>
-                                        <form:input path="username" type="text" id="username"
-                                                    placeholder="${user.username}"/>
+                                        <form:input path="username" type="text" id="username" placeholder="${user.username}"/>
                                         <form:errors path="username" cssClass="error"/></div><br>
                                     <div class="form-group"><h6>Hasło</h6>
                                         <form:password path="password" id="password" placeholder="${user.password}"/>
@@ -86,7 +82,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
             <div class="col-lg-4">
                 <aside class="sidebar">
@@ -99,7 +94,7 @@
                                     </c:if>
                                 </c:forEach>
                             </c:forEach><br>
-                            <a href="<c:url value="/gym/schedule"/>"><i>ZWYBIERZ ZAJĘCIA</i></a>
+                            <a href="<c:url value="/gym/schedule"/>"><b><i>WYBIERZ ZAJĘCIA</i></b></a>
                         </ul>
                     </div>
                     <div class="widget widget-category widget-info"><h5 class="widget-title">Zakupione plany</h5>
@@ -113,13 +108,13 @@
                                     </c:forEach>
                                 </c:forEach>
                             </c:forEach><br>
-                            <a href="<c:url value="/gym/plans"/>"><i>KUP PLAN TRENINGOWY</i></a>
+                            <a href="<c:url value="/gym/plans"/>"><b><i>KUP PLAN TRENINGOWY</i></b></a>
                         </ul>
                     </div>
                     <div class="widget widget-category widget-info"><h5 class="widget-title">Moje treningi</h5>
                         <ul>
                             <li><a href="#">Shape upper body</a></li><br>
-                            <a href="<c:url value="/gym/workout/create"/>"><i>STWÓRZ NOWY TRENING</i></a>
+                            <a href="<c:url value="/gym/workout/create"/>"><b><i>STWÓRZ NOWY TRENING</i></b></a>
                         </ul>
                     </div>
                 </aside>

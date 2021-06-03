@@ -550,48 +550,61 @@ ul, ol {
 	.hero-text h1 {
 		font-size: 42px;
 	}
+
 	.single-trainer-item .trainer-text {
 		width: 284px;
 		-webkit-transform: translateX(-142px);
 		-ms-transform: translateX(-142px);
 		transform: translateX(-142px);
 	}
+
 	.footer-banner-item:after {
 		width: 300px;
 		-webkit-transform: translate(-150px, -155px);
 		-ms-transform: translate(-150px, -155px);
 		transform: translate(-150px, -155px);
 	}
+
 	.footer-banner-item {
 		padding-top: 28px;
 	}
+
 	.subscribe-option {
 		padding: 0 15px;
 	}
+
 	.subscribe-option .subscribe-form {
 		width: 260px;
 	}
+
 	.copyright-text ul li {
 		margin-right: 15px;
 	}
+
 	.register-text {
 		padding: 50px 35px 60px 35px;
 	}
+
 	.services-item {
 		padding-left: 40px;
 		padding-top: 100px;
 	}
+
 	.services-item.pd-b {
 		padding-top: 80px;
 	}
+
 	.services-item img {
 		left: 40px;
 		top: 40px;
 	}
+
 	.bd-text .tag-share .tags a {
 		margin-bottom: 5px;
 	}
+
 	.gallery-controls li {
 		margin-right: 10px;
 	}
+
 }

@@ -58,43 +58,43 @@
                     <div class="col-lg-10">
                         <div class="expert-single-content"><h3 class="title">Stwórz własny trening</h3>
                             <div><b>
-                                <form:form method="post" action="/gym/plans/" class="registration-form" style="color: black"><br>
+                                <form:form method="post" action="/gym/workout/create" class="registration-form" modelAttribute="workout" style="color: black"><br>
 
                                 <div class="form-group"> 1. Nazwij swój trening</div>
-                                <input type="text"><br><br>
+                                <form:input path="name" type="text"/><br><br>
 
                                 <div class="form-group"> 2. Wybierz swój CEL TRENINGOWY</div>
                                 <div class="p-t-15"><b></b>
                                     <label class="radio-container m-r-55">Masa &nbsp&nbsp
-                                        <input type="radio" name="type" value="mass"><span class="checkmark"></span>
+                                        <form:radiobutton path="type" name="type" value="MASS"/><span class="checkmark"></span>
                                     </label>
                                     <label class="radio-container">Rzeżba
-                                        <input type="radio" name="type" value="shape"><span class="checkmark"></span>
+                                        <form:radiobutton path="type" name="type" value="SHAPE"/><span class="checkmark"></span>
                                     </label>
                                     <label class="radio-container m-r-55">Siła &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-                                        <input type="radio" name="type" value="strength"><span class="checkmark"></span>
+                                        <form:radiobutton path="type" name="type" value="STRENGTH"/><span class="checkmark"></span>
                                     </label>
                                 </div><br>
 
                                 <div class="form-group"> 3. Zaznacz PARTIE CIAŁA / GRUPY MIĘŚNI, które chcesz trenować</div>
                                 <div class="value">
-                                    <div class="rs-select2 js-select-simple select--no-search">
-                                        <select multiple="true" path="trainers">
-                                            <option value="0" label="Wybierz"/>
-                                            <options itemValue="id" itemLabel="name" name="trainer"/>
-                                        </select>
-                                        <div class="select-dropdown"></div>
+                                    <div class="rs-select2 js-select-simple select--no-search select-dropdown">
+                                        <form:select path="muscleGroups" class="dropdown-content">
+                                            <c:forEach var="muscle" items="${workout.muscleGroups}">
+                                            <form:option value="" name="muscleGroup">${muscle}</form:option>
+                                        </c:forEach>
+                                        </form:select>
                                     </div>
                                 </div><br>
 
                                 <div class="form-group"> 4. Dobierz SPRZĘT do swojego treningu</div>
                                 <div class="value">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        <select multiple="true" path="trainers">
-                                            <option value="0" label="Wybierz"/>
-                                            <options itemValue="id" itemLabel="name" name="trainer"/>
-                                        </select>
-                                        <div class="select-dropdown"></div>
+                                        <form:select path="equipment" class="dropdown-content">
+                                            <c:forEach var="equipment" items="${workout.equipment}">
+                                            <form:option value="" name="equipment">${equipment}</form:option>
+                                            </c:forEach>
+                                        </form:select>
                                     </div>
                                 </div><br></b>
                             </div>
@@ -119,11 +119,11 @@
                         <ul>
                             <li>
                                 <div class="widget-popular-content"><h5 class="title">
-                                    <a href="classes-details.html">Buduj Masę</a></h5></div>
+                                    <a href="https://www.budujmase.pl">Buduj Masę</a></h5></div>
                             </li>
                             <li>
                                 <div class="widget-popular-content"><h5 class="title">
-                                    <a href="classes-details.html">Fabryka Siły</a></h5></div>
+                                    <a href="https://www.fabrykasily.pl/">Fabryka Siły</a></h5></div>
                             </li>
                             <li>
                                 <div class="widget-popular-content"><h5 class="title">

@@ -39,8 +39,9 @@
     <div class="login-wrapper">
         <h3 class="title">użytkownik o podanym loginie już istnieje</h3>
         <p></p>
-        <a href="<c:url value="/gym/login"/>" class="title">Wróć do strony logowania</a></div>
+        <a href="<c:url value="/gym/register"/>" class="title">Wróć do formularza rejestracji</a></div>
     </div>
 </div>
+<%@ include file="./footer.jsp" %>
 </body>
 </html>

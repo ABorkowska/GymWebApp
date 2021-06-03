@@ -2,10 +2,14 @@ package pl.company.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import pl.company.model.*;
 import pl.company.service.*;
 
+import javax.validation.Valid;
 import java.security.Principal;
 import java.util.Collection;
 
@@ -46,5 +50,17 @@ public class UserDashboardController {
 		model.addAttribute("trainers", trainers);
 		model.addAttribute("plans", plans);
 		return "user-dashboard";
+	}
+	@PostMapping("/gym/dashboard/profile")
+	public String updateProfile (@Valid @ModelAttribute User user, BindingResult result, Principal principal){
+		user = userService.findUserByUsername(principal.getName());
+		if (principal==null) {
+			return "redirect:/gym/login";
+		}
+		if (result.hasErrors()){
+			return "user-dashboard";
+		}
+		userService.saveUser(user);
+		return "redirect:/gym/dashboard";
 	}
 }

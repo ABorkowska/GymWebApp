@@ -9,6 +9,8 @@ import pl.company.enums.MuscleGroup;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Table(name = "exercises")
@@ -31,7 +33,19 @@ public class Exercise {
 	@Enumerated(EnumType.STRING)
 	private Equipment equipment;
 	
-	@Nullable
-	@ManyToOne()
-	private Workout workout;
+	@ManyToMany
+	@JoinTable(name = "exercises_workouts",
+			joinColumns = @JoinColumn(name = "exercise_id"),
+			inverseJoinColumns = @JoinColumn(name = "workout_id"))
+	private List<Workout> workouts = new ArrayList<>();
+	
+	@Override
+	public String toString() {
+		return "Exercise{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", muscleGroup=" + muscleGroup +
+				", equipment=" + equipment +
+				'}';
+	}
 }

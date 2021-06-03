@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="<c:url value="/static/css/swiper.min.css"/>">
     <link rel="stylesheet" href="<c:url value="/static/css/style.css"/>">
     <link rel="stylesheet" href="<c:url value="/static/css/services.css"/>">
+    <link rel="stylesheet" href="<c:url value="http://www.w3ii.com/lib/w3.css"/>">
 </head>
 <body>
 <!-- Header -->
@@ -32,7 +33,7 @@
             <div class="banner-content">
                 <h4 class="sub-title">
                     <span class="shape-wrapper"><span class="shape"></span>Idealne miejsce na Twój trening<span class="shape"></span></span></h4>
-                <h5 class="title">z IRON do celu Podejmij wyzwanie!</h5>
+                <h5 class="title"> z IRON do celu... Podejmij wyzwanie!</h5>
             </div>
         </div>
     </div>
@@ -43,19 +44,19 @@
             <div class="row">
                 <div class="col-sm-4 col-xs-12">
                     <div class="building-box">
-                        <figure><img src=<c:out value="/static/images/build1.png"/>?" alt=""></figure>
+                        <figure><img src=<c:out value="/static/images/home/t.PNG"/>?" alt=""></figure>
                         <h4>TRENUJ Z NAMI</h4>
                         <p>Zapraszamy na zajęcia grupowe z naszymi instruktorami</p><a href="<c:out value="/gym/schedule"/>" class="btn">Sczegóły</a></div>
                 </div>
                 <div class="col-sm-4 col-xs-12">
                     <div class="building-box">
-                        <figure><img src=<c:out value="/static/images/build3.png"/>?" alt=""></figure>
+                        <figure><img src=<c:out value="/static/images/home/tr.PNG"/>?" alt=""></figure>
                         <h4>TRENUJ Z INSTRUKTOREM</h4>
                         <p>Skorzystaj z oferty indywidualnych planów treningowych </p><a href="<c:out value="/gym/plans"/>" class="btn">Sczegóły</a></div>
                 </div>
                 <div class="col-sm-4 col-xs-12">
                     <div class="building-box">
-                        <figure><img src=<c:out value="/static/images/build2.png"/>?" alt=""></figure>
+                        <figure><img src=<c:out value="/static/images/home/i.PNG"/>?" alt=""></figure>
                         <h4>TRENUJ INDYWIDUALNIE</h4>
                         <p>Stwórz własny trening według swoich preferencji</p><a href="<c:out value="/gym/workout/create"/>" class="btn">Sczegóły</a></div>
                 </div>

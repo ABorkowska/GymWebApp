@@ -1,36 +1,36 @@
 insert into exercises
-values (1, 'Hantle', 'Klatka', 'Rozpiętki hantlami', null),
-       (2, 'Hantle', 'Barki', 'Wyciskanie hantli nad głowę', null),
-       (3, 'Sztanga', 'Plecy', 'Martwy ciąg', null),
-       (4, 'Sztanga', 'Plecy', 'Wiosłowanie sztangą', null),
-       (5, 'Sztanga', 'Barki', 'Wyciskanie sztangi', null),
-       (6, 'Hantle', 'Barki', 'Wznosy hantli bokiem', null),
-       (7, 'Sztanga', 'Ramiona', 'Wyciskanie francuskie sztanga', null),
-       (8, 'Hantle', 'Barki', 'Arnoldki', null),
-       (9, 'Sztanga', 'Nogi/Pośladki', 'Wykroki ze sztangą', null),
-       (10, 'Hantle', 'Ramiona', 'Uginanie przedramienia z oparciem łokcia', null),
-       (11, 'Sztanga', 'Nogi/Pośladki', 'Przysiad ze sztangą', null),
-       (12, 'Guma', 'Nogi/Pośladki', 'Przysiad z gumą', null),
-       (13, 'Guma', 'Nogi/Pośladki', 'Unoszenie bioder z gumą', null),
-       (14, 'Guma', 'Plecy', 'Prostopadłe ściąganie gumy do bioder leżąc', null),
-       (15, 'Guma', 'Plecy', 'Ściąganie gumy za kark', null),
-       (16, 'Hantle', 'Plecy', 'Wiosłowanie w podporze', null),
-       (17, 'Hantle', 'Klatka', 'Przenoszenie sztangielki za głowę', null),
-       (18, 'Hantle', 'Barki', 'Z-Press', null),
-       (19, 'Guma', 'Barki', 'Face pull z gumą', null),
-       (20, 'Guma', 'Barki', 'Wznosy ramion w przód z gumą', null),
-       (21, 'Hantle', 'Barki', 'Rotacje kubańskie', null),
-       (22, 'Guma', 'Ramiona', 'Prostowanie ramion z gumą(triceps)', null),
-       (23, 'Sztanga', 'Ramiona', 'Zginanie ramion ze sztangą nachwytem', null),
-       (24, 'Hantle', 'Ramiona', 'Zginanie przedramion z hantlami w chwycie młotkowym', null),
-       (25, 'Hantle', 'Klatka', 'Floor press', null),
-       (26, '-', 'Klatka', 'Pompki', null),
-       (27, '-', 'Ramiona', 'Pompki diamentowe', null),
-       (28, '-', 'Nogi/Pośladki', 'Sumo Squat', null),
-       (29, '-', 'Klatka', 'Floor press', null),
-       (30, '-', 'Nogi/Pośladki', 'Zakroki skośne', null),
-       (31, '-', 'Plecy', 'Skręty tułowia w siadzie równoważnym', null),
-       (32, '-', 'Plecy', 'Ściąganie ramion do tyłu w opadzie', null);
+values (1, 'HANTLE', 'Klatka', 'Rozpiętki hantlami'),
+       (2, 'HANTLE', 'Barki', 'Wyciskanie hantli nad głowę'),
+       (3, 'HANTLE', 'Plecy', 'Martwy ciąg'),
+       (4, 'SZTANGA', 'Plecy', 'Wiosłowanie sztangą'),
+       (5, 'SZTANGA', 'Barki', 'Wyciskanie sztangi'),
+       (6, 'HANTLE', 'Barki', 'Wznosy hantli bokiem'),
+       (7, 'SZTANGA', 'Ramiona', 'Wyciskanie francuskie sztanga'),
+       (8, 'HANTLE', 'Barki', 'Arnoldki'),
+       (9, 'SZTANGA', 'Nogi/Pośladki', 'Wykroki ze sztangą'),
+       (10, 'HANTLE', 'Ramiona', 'Uginanie przedramienia z oparciem łokcia'),
+       (11, 'SZTANGA', 'Nogi/Pośladki', 'Przysiad ze sztangą'),
+       (12, 'GUMA', 'Nogi/Pośladki', 'Przysiad z gumą'),
+       (13, 'GUMA', 'Nogi/Pośladki', 'Unoszenie bioder z gumą'),
+       (14, 'GUMA', 'Plecy', 'Prostopadłe ściąganie gumy do bioder leżąc'),
+       (15, 'GUMA', 'Plecy', 'Ściąganie gumy za kark'),
+       (16, 'HANTLE', 'Plecy', 'Wiosłowanie w podporze'),
+       (17, 'HANTLE', 'Klatka', 'Przenoszenie sztangielki za głowę'),
+       (18, 'HANTLE', 'Barki', 'Z-Press'),
+       (19, 'GUMA', 'Barki', 'Face pull z gumą'),
+       (20, 'GUMA', 'Barki', 'Wznosy ramion w przód z gumą'),
+       (21, 'HANTLE', 'Barki', 'Rotacje kubańskie'),
+       (22, 'GUMA', 'Ramiona', 'Prostowanie ramion z gumą(triceps)'),
+       (23, 'SZTANGA', 'Ramiona', 'Zginanie ramion ze sztangą nachwytem'),
+       (24, 'HANTLE', 'Ramiona', 'Zginanie przedramion z hantlami w chwycie młotkowym'),
+       (25, 'HANTLE', 'Klatka', 'Floor press'),
+       (26, 'BRAK', 'Klatka', 'Pompki'),
+       (27, 'BRAK', 'Ramiona', 'Pompki diamentowe'),
+       (28, 'BRAK', 'Nogi/Pośladki', 'Sumo Squat'),
+       (29, 'BRAK', 'Klatka', 'Floor press'),
+       (30, 'BRAK', 'Nogi/Pośladki', 'Zakroki skośne'),
+       (31, 'BRAK', 'Plecy', 'Skręty tułowia w siadzie równoważnym'),
+       (32, 'BRAK', 'Plecy', 'Ściąganie ramion do tyłu w opadzie');
 
 insert into plans
 values (1, 'Mass', 4, 150.00, 450.00),
@@ -111,9 +111,9 @@ values (821514223,'groomy14@wp.pl',30, 2),
        (821457569,'kamil.baranowski@o2.pl', 25, 4);
 
 insert into workouts
-values (1, 3, 8, 'Mass'),
-       (2, 5, 4, 'Strength'),
-       (3, 15, 4, 'Shape');
+values (1, 'Shape',3, 8, 'MASS'),
+       (2, 'My Training', 5, 4, 'STRENGTH'),
+       (3, 'Super', 15, 4, 'SHAPE');
 
 INSERT INTO plan_order VALUES
         (1, false, null, true, 1, 4, 2),
@@ -122,4 +122,4 @@ INSERT INTO plan_order VALUES
 
 insert into user_role values(1,1),(2,1),(3,1),(4,1),(5,1),(6,1),(7,1),(8,2);
 
-INSERT INTO plan_trainer VALUES (1, 2),(6, 4);
+INSERT INTO plan_trainer VALUES (1, 4),(6, 2);
