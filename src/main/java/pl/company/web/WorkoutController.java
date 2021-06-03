@@ -39,34 +39,46 @@ public class WorkoutController {
 			return "redirect:/gym/login";
 		}
 		User user = userService.findUserByUsername(principal.getName());
+		List<Workout> workouts = workoutService.getWorkoutByUserId(user.getId());
 		CustomWorkout workout = new CustomWorkout();
 		workout.setMuscleGroups(Arrays.asList(MuscleGroup.values()));
 		workout.setEquipment(Arrays.asList(Equipment.values()));
 		model.addAttribute("user", user);
 		model.addAttribute("workout", workout);
+		model.addAttribute("workouts", workouts);
 		return "workout-create";
 	}
 	
 	@PostMapping("/gym/workout/create")
-	public String saveWorkout(@Valid @ModelAttribute CustomWorkout workout, BindingResult result) {
-		System.out.println("-------------");
-		System.out.println(workout);
+	public String saveWorkout(@ModelAttribute CustomWorkout workout, Principal principal,
+	                          @RequestParam List<MuscleGroup> muscleGroups,
+	                          @RequestParam List<Equipment> equipment) {
 		
-		workoutService.addWorkout(workout);
+		if (principal == null) {
+			return "redirect:/gym/login";
+		}
+		User user = userService.findUserByUsername(principal.getName());
+		List<Exercise> list = exerciseService.getExercisesforWorkout(muscleGroups, equipment);
+		workout.setMuscleGroups(muscleGroups);
+		workout.setEquipment(equipment);
+		workoutService.addWorkout(workout, user);
+		System.out.println(list);
+		System.out.println(muscleGroups);
+		System.out.println(equipment);
 		
-		return "redirect:/gym/dashboard";
-//	@PostMapping("/gym/workout/create")
-//	public String saveWorkout(@RequestParam WorkoutType type,
-//	                          @RequestParam(value="muscleGroup") List<String> muscleGroup,
-//	                          @RequestParam(value="equipment") List<String> equipment,
-//	                          @Valid @ModelAttribute Workout workout, BindingResult result) {
-//
-//		workout.setType(type);
-//
-//		//List<Exercise> exercises = exerciseService.getExercisesforWorkout(muscleGroup, equipment);
-//
-//		return "redirect:/gym/dashboard";
-//	}
+		return "redirect:/gym/workout/details";
+	}
 	
+	@GetMapping("/gym/workout/details")
+	public String displayWorkout(Model model, Principal principal) {
+		if (principal == null) {
+			return "redirect:/gym/login";
+		}
+		User user = userService.findUserByUsername(principal.getName());
+		List<Workout> workouts = workoutService.getWorkoutByUserId(user.getId());
+		model.addAttribute("user", user);
+		model.addAttribute("workouts", workouts);
+		return "workout-details";
 	}
 }
+

@@ -61,7 +61,7 @@
                                 <form:form method="post" action="/gym/workout/create" class="registration-form" modelAttribute="workout" style="color: black"><br>
 
                                 <div class="form-group"> 1. Nazwij swój trening</div>
-                                <form:input path="name" type="text"/><br><br>
+                                <form:input path="name" type="text" required="true"/><br><br>
 
                                 <div class="form-group"> 2. Wybierz swój CEL TRENINGOWY</div>
                                 <div class="p-t-15"><b></b>
@@ -81,7 +81,7 @@
                                     <div class="rs-select2 js-select-simple select--no-search select-dropdown">
                                         <form:select path="muscleGroups" class="dropdown-content">
                                             <c:forEach var="muscle" items="${workout.muscleGroups}">
-                                            <form:option value="" name="muscleGroup">${muscle}</form:option>
+                                            <form:option value="${muscle}" name="muscleGroup">${muscle}</form:option>
                                         </c:forEach>
                                         </form:select>
                                     </div>
@@ -92,7 +92,7 @@
                                     <div class="rs-select2 js-select-simple select--no-search">
                                         <form:select path="equipment" class="dropdown-content">
                                             <c:forEach var="equipment" items="${workout.equipment}">
-                                            <form:option value="" name="equipment">${equipment}</form:option>
+                                            <form:option value="${equipment}" name="equipment">${equipment}</form:option>
                                             </c:forEach>
                                         </form:select>
                                     </div>
@@ -112,7 +112,9 @@
                 <aside class="sidebar">
                     <div class="widget widget-category widget-info"><h5 class="widget-title">Moje treningi</h5>
                         <ul>
-                            <li><a href="#">Shape upper body</a></li>
+                            <c:forEach var="workout" items="${workouts}">
+                                <li><a href="#">${workout.name}</a></li>
+                            </c:forEach>
                         </ul>
                     </div>
                     <div class="widget widget-popular"><h5 class="widget-title">Polecane strony</h5>

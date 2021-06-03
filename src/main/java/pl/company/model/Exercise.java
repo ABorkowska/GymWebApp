@@ -3,7 +3,6 @@ package pl.company.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.lang.Nullable;
 import pl.company.enums.Equipment;
 import pl.company.enums.MuscleGroup;
 
@@ -33,11 +32,8 @@ public class Exercise {
 	@Enumerated(EnumType.STRING)
 	private Equipment equipment;
 	
-	@ManyToMany
-	@JoinTable(name = "exercises_workouts",
-			joinColumns = @JoinColumn(name = "exercise_id"),
-			inverseJoinColumns = @JoinColumn(name = "workout_id"))
-	private List<Workout> workouts = new ArrayList<>();
+	@OneToMany(mappedBy="exercise")
+	private List<SavedWorkouts> exerciseList = new ArrayList<>();
 	
 	@Override
 	public String toString() {

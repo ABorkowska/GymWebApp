@@ -61,10 +61,7 @@ public class User {
 	@OneToMany(mappedBy="user")
 	private List<PlanOrder> planOrders = new ArrayList<>();
 	
-	@ManyToMany
-	@JoinTable(name = "users_workouts",
-			joinColumns = @JoinColumn(name = "user_id"),
-			inverseJoinColumns = @JoinColumn(name = "workout_id"))
+	@OneToMany(mappedBy="user")
 	private List<Workout> workouts = new ArrayList<>();
 	
 	@Override

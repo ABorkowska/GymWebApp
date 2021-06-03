@@ -1,15 +1,14 @@
 package pl.company.service;
 
 import org.springframework.stereotype.Service;
-import pl.company.enums.WorkoutType;
 import pl.company.model.Exercise;
+import pl.company.model.User;
 import pl.company.model.Workout;
 import pl.company.model.view.CustomWorkout;
 import pl.company.repository.WorkoutRepository;
 
-import java.util.EnumSet;
 import java.util.List;
-import java.util.Set;
+
 
 @Service
 public class WorkoutService {
@@ -24,7 +23,7 @@ public class WorkoutService {
 		this.exerciseService = exerciseService;
 	}
 	
-	public Workout addWorkout(CustomWorkout customWorkout){
+	public Workout addWorkout(CustomWorkout customWorkout, User user){
 		
 		Workout workout = new Workout();
 		
@@ -33,7 +32,12 @@ public class WorkoutService {
 		workout.setType(customWorkout.getType());
 		workout.setSets(customWorkout.getType().getSets());
 		workout.setReps(customWorkout.getType().getReps());
-		workout.setExercises(list);
+		//workout.setExercises(list);
+		System.out.println("--------------------------------------" + list);
+		workout.setUser(user);
 		return workoutRepo.save(workout);
+	}
+	public List<Workout> getWorkoutByUserId(Long id){
+		return workoutRepo.findByUserId(id);
 	}
 }
