@@ -50,72 +50,38 @@
         </div>
     </div>
 </div>
-<div class="padding-bottom padding-top bg_img" data-background="/static/images/banner/stripes.png">
+<div class="padding-bottom padding-top bg_img" data-background="/static/images/banner/wall.jpg">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-8">
-                <div>
-                    <div class="col-lg-10">
-                        <div class="expert-single-content"><h3 class="title">Stwórz własny trening</h3>
-                            <p><b>
-                                <form:form method="post" action="/gym/workout/delete/${workout.id}" class="registration-form" modelAttribute="workout" style="color: black"><br>
-                                <div class="form-group"> ${workout.name}</div>
-                                <br><br>
-                                <div class="form-group"> CEL TRENINGOWY : ${workout.type}</div>
-                                <div class="p-t-15"><b></b>
-                                </div><br>
-                                <p>Ilość serii: ${workout.sets}</p>
-                                <p> Ilość powtórzeń: ${workout.reps}</p>
-                                </div><br>
+        <div class="login-wrapper">
+            <h3 class="title">TWÓJ TRENING</h3>
 
-                                <div class="form-group">ĆWICZENIA</div>
-                                    <ul>
-                                        <c:forEach var="exercise" items="${workout.exercises}">
-                                            <ul>${exercise.name}</ul>
-                                            <li></li>
-                                        </c:forEach>
-                                    </ul>
-                                    </div>
-                                </div><br></b>
-                            </div>
-                            <div class="col-lg-6">
-                                <input type="submit" class="register-btn" value="Usuń trening"/>
-                                <div class="form-row p-t-10">
-                                </div>
-                            </div>
-                        </div>
-                        </form:form>
-                    </div>
+            <form:form method="post" action="/gym/workout/delete/${workout.id}" class="registration-form"
+                       modelAttribute="workout" style="color: black"><br>
+            <div class="form-group"><h4>${workout.name}</h4>
+                <br><br><b>
+                <div class="form-group"> CEL TRENINGOWY : ${workout.type}</div>
+                <div class="p-t-15"><b></b>
+                </div>
+                <br>
+                <p><b>Ilość serii: ${workout.sets}</p>
+                <p><b>Ilość powtórzeń: ${workout.reps}</p>
+                <br>
+                <div class="form-group">ĆWICZENIA</div>
+                <ul>
+                    <c:forEach var="exercise" items="${workout.exercises}">
+                        <li>${exercise.name}</li>
+                        <p><i>Ćwiczone partie: ${exercise.muscleGroup} / potrzebny sprzęt: ${exercise.equipment}</i></p>
+                    </c:forEach>
+                </ul>
+            </div>
+            <br>
+            <div class="col-lg-6">
+                <input type="submit" class="register-btn" value="Usuń trening"/>
+                <div class="form-row p-t-10">
                 </div>
             </div>
-            <div class="col-lg-4">
-                <aside class="sidebar">
-                    <div class="widget widget-category widget-info"><h5 class="widget-title">Moje treningi</h5>
-                    </div>
-                    <div class="widget widget-popular"><h5 class="widget-title">Polecane strony</h5>
-                        <ul>
-                            <li>
-                                <div class="widget-popular-content"><h5 class="title">
-                                    <a href="https://www.budujmase.pl">Buduj Masę</a></h5></div>
-                            </li>
-                            <li>
-                                <div class="widget-popular-content"><h5 class="title">
-                                    <a href="https://www.fabrykasily.pl/">Fabryka Siły</a></h5></div>
-                            </li>
-                            <li>
-                                <div class="widget-popular-content"><h5 class="title">
-                                    <a href="https://sebastianchudziak.pl/encyklopedia/">Encyklopedia Siłowni</a></h5>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="widget-popular-content"><h5 class="title">
-                                    <a href="https://www.sfd.pl/">SFD - ofcjalne strona sklepu</a></h5></div>
-                            </li>
-                        </ul>
-                    </div>
-                </aside>
-            </div>
         </div>
+        </form:form>
     </div>
 </div>
 

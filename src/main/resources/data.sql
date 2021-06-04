@@ -123,3 +123,5 @@ INSERT INTO plan_order VALUES
 insert into user_role values(1,1),(2,1),(3,1),(4,1),(5,1),(6,1),(7,1),(8,2);
 
 INSERT INTO plan_trainer VALUES (1, 4),(6, 2);
+
+INSERT INTO exercise_workout VALUES (3, 4),(3, 2),(3,18),(3,15),(3,21),(3,6);

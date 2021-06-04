@@ -103,7 +103,7 @@
                                 <c:forEach var="plan" items="${plans}">
                                     <c:forEach var="trainer" items="${trainers}">
                                     <c:if test="${user.id==planOrder.user.id && plan.id==planOrder.plan.id && trainer.id==planOrder.trainer.id}">
-                                        <li><a href="#">${plan.name}<span>Trener:</br>${trainer.name}</span></a></li>
+                                        <li><a href="">${plan.name}<span>Trener:</br>${trainer.name}</span></a></li>
                                     </c:if>
                                     </c:forEach>
                                 </c:forEach>

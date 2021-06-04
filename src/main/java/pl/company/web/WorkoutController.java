@@ -81,9 +81,9 @@ public class WorkoutController {
 		return "workout-details";
 	}
 	
-	@PostMapping("/gym/workout/delete/{id}}")
-	public String deleteWorkout(@PathVariable Long id, @ModelAttribute Workout workout) {
-		workout = workoutService.findWorkoutById(id);
+	@PostMapping("/gym/workout/delete/{id}")
+	public String deleteWorkout(@PathVariable Long id) {
+		Workout workout = workoutService.findWorkoutById(id);
 		if (workout != null) {
 			workoutService.removeWorkout(id);
 		}
