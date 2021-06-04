@@ -12,6 +12,7 @@ import pl.company.service.*;
 import javax.validation.Valid;
 import java.security.Principal;
 import java.util.Collection;
+import java.util.List;
 
 @Controller
 public class UserDashboardController {
@@ -22,14 +23,16 @@ public class UserDashboardController {
 	private final PlanOrderService planOrderService;
 	private final TrainerService trainerService;
 	private final PlanService planService;
+	private final WorkoutService workoutService;
 	
-	public UserDashboardController(UserService userService, ClassRegisterService classService, ScheduleService scheduleService, PlanOrderService planOrderService, TrainerService trainerService, PlanService planService) {
+	public UserDashboardController(UserService userService, ClassRegisterService classService, ScheduleService scheduleService, PlanOrderService planOrderService, TrainerService trainerService, PlanService planService, WorkoutService workoutService) {
 		this.userService = userService;
 		this.classService = classService;
 		this.scheduleService = scheduleService;
 		this.planOrderService = planOrderService;
 		this.trainerService = trainerService;
 		this.planService = planService;
+		this.workoutService = workoutService;
 	}
 	
 	@GetMapping("/gym/dashboard")
@@ -43,12 +46,14 @@ public class UserDashboardController {
 		Collection<Schedule> schedule = scheduleService.findAll();
 		Collection<Trainer> trainers = trainerService.getTrainerNames();
 		Collection<Plan> plans = planService.findAll();
+		List<Workout> workouts = workoutService.getWorkoutByUserId(user.getId());
 		model.addAttribute("user", user);
 		model.addAttribute("classes", classes);
 		model.addAttribute("planOrders", planOrders);
 		model.addAttribute("schedule", schedule);
 		model.addAttribute("trainers", trainers);
 		model.addAttribute("plans", plans);
+		model.addAttribute("workouts", workouts);
 		return "user-dashboard";
 	}
 	@PostMapping("/gym/dashboard/profile")

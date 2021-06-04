@@ -32,8 +32,8 @@ public class Exercise {
 	@Enumerated(EnumType.STRING)
 	private Equipment equipment;
 	
-	@OneToMany(mappedBy="exercise")
-	private List<SavedWorkouts> exerciseList = new ArrayList<>();
+	@ManyToMany(mappedBy="exercises")
+	private List<Workout> workouts = new ArrayList<>();
 	
 	@Override
 	public String toString() {

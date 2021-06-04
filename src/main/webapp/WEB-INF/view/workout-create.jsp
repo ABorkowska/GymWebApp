@@ -113,7 +113,7 @@
                     <div class="widget widget-category widget-info"><h5 class="widget-title">Moje treningi</h5>
                         <ul>
                             <c:forEach var="workout" items="${workouts}">
-                                <li><a href="#">${workout.name}</a></li>
+                                <li><a href="<c:out value="/gym/workout/${workout.id}"/>">${workout.name}</a></li>
                             </c:forEach>
                         </ul>
                     </div>

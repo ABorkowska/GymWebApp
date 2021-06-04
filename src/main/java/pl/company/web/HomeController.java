@@ -62,8 +62,8 @@ public class HomeController {
 	public String createWorkout() {
 		return "workout-create";
 	}
-	@GetMapping("/workout/details")
-	public String showWorkout() {
-		return "workout-details";
-	}
+//	@GetMapping("/workout/details")
+//	public String showWorkout() {
+//		return "workout-details";
+//	}
 }

@@ -113,7 +113,9 @@
                     </div>
                     <div class="widget widget-category widget-info"><h5 class="widget-title">Moje treningi</h5>
                         <ul>
-                            <li><a href="#">Shape upper body</a></li><br>
+                            <c:forEach var="workout" items="${workouts}">
+                                <li><a href="<c:out value="/gym/workout/${workout.id}"/>">${workout.name}</a></li>
+                            </c:forEach><br>
                             <a href="<c:url value="/gym/workout/create"/>"><b><i>STWÓRZ NOWY TRENING</i></b></a>
                         </ul>
                     </div>

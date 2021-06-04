@@ -7,6 +7,7 @@ import pl.company.model.Workout;
 import pl.company.model.view.CustomWorkout;
 import pl.company.repository.WorkoutRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -32,12 +33,25 @@ public class WorkoutService {
 		workout.setType(customWorkout.getType());
 		workout.setSets(customWorkout.getType().getSets());
 		workout.setReps(customWorkout.getType().getReps());
-		//workout.setExercises(list);
-		System.out.println("--------------------------------------" + list);
+		workout.setExercises(list);
 		workout.setUser(user);
 		return workoutRepo.save(workout);
 	}
 	public List<Workout> getWorkoutByUserId(Long id){
 		return workoutRepo.findByUserId(id);
+	}
+	
+	public List <Exercise> getExercises(Long id){
+		Workout workout = workoutRepo.getOne(id);
+		System.out.println(workout.getExercises());
+		return workout.getExercises();
+		}
+	
+	public Workout findWorkoutById(Long id){
+		return workoutRepo.getOne(id);
+	}
+	
+	public void removeWorkout(Long id) {
+		workoutRepo.deleteById(id);
 	}
 }

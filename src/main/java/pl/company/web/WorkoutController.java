@@ -66,19 +66,29 @@ public class WorkoutController {
 		System.out.println(muscleGroups);
 		System.out.println(equipment);
 		
-		return "redirect:/gym/workout/details";
+		return "redirect:/gym/dashboard";
 	}
 	
-	@GetMapping("/gym/workout/details")
-	public String displayWorkout(Model model, Principal principal) {
+	@GetMapping("/gym/workout/{id}")
+	public String displayWorkout(@PathVariable Long id, Model model, Principal principal) {
 		if (principal == null) {
 			return "redirect:/gym/login";
 		}
 		User user = userService.findUserByUsername(principal.getName());
-		List<Workout> workouts = workoutService.getWorkoutByUserId(user.getId());
+		Workout workout = workoutService.findWorkoutById(id);
+		model.addAttribute("workout", workout);
 		model.addAttribute("user", user);
-		model.addAttribute("workouts", workouts);
 		return "workout-details";
+	}
+	
+	@PostMapping("/gym/workout/delete/{id}}")
+	public String deleteWorkout(@PathVariable Long id, @ModelAttribute Workout workout) {
+		workout = workoutService.findWorkoutById(id);
+		if (workout != null) {
+			workoutService.removeWorkout(id);
+		}
+		
+		return "redirect:/gym/dashboard";
 	}
 }
 

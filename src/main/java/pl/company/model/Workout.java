@@ -31,8 +31,11 @@ public class Workout {
 	private String name;
 	
 	@Nullable
-	@OneToMany(mappedBy = "workout", cascade=CascadeType.ALL)
-	private List<SavedWorkouts> exerciseList = new ArrayList<>();
+	@ManyToMany(cascade= CascadeType.ALL)
+	@JoinTable(name = "exercise_workout",
+			joinColumns = @JoinColumn(name = "workout_id"),
+			inverseJoinColumns = @JoinColumn(name = "exercise_id"))
+	private List<Exercise> exercises = new ArrayList<>();
 	
 	@Nullable
 	@ManyToOne

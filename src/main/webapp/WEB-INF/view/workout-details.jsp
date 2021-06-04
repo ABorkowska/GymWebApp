@@ -41,7 +41,7 @@
 <div class="breadcrumb-section">
     <div class="container">
         <div class="breadcrumb-wrapper">
-            <div class="breadcrumb-title"><h6 class="title">Stwórz trening</h6></div>
+            <div class="breadcrumb-title"><h6 class="title">Trening</h6></div>
             <ul class="breadcrumb">
                 <li><a href="<c:url value="/home"/>">Home</a></li>
                 <li><a href="<c:url value="/gym/dashboard"/>">Mój IRON</a></li>
@@ -53,41 +53,44 @@
 <div class="padding-bottom padding-top bg_img" data-background="/static/images/banner/stripes.png">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8"><h3 class="title">Twoje treningi</h3><br>
+            <div class="col-lg-8">
                 <div>
-                     <div class="col-lg-10">
-                        <div><b><c:forEach var="workout" items="${workouts}">
-                            <h5>${workout.name}</h5><br>
-                                <div class="p-t-15">
-                                    <div class="form-group"> CEL TRENINGOWY: ${workout.type}</div>
-                                    <p>Liczba serii: ${workout.sets}<p>
-                                    <p>Liczba powtórzeń: ${workout.reps}<p>
-                                    <p></p>
-                                    <div class="form-group"> ĆWICZENIA</div><br>
-                                    </c:forEach>
-                                </div></b><br>
+                    <div class="col-lg-10">
+                        <div class="expert-single-content"><h3 class="title">Stwórz własny trening</h3>
+                            <p><b>
+                                <form:form method="post" action="/gym/workout/delete/${workout.id}" class="registration-form" modelAttribute="workout" style="color: black"><br>
+                                <div class="form-group"> ${workout.name}</div>
+                                <br><br>
+                                <div class="form-group"> CEL TRENINGOWY : ${workout.type}</div>
+                                <div class="p-t-15"><b></b>
+                                </div><br>
+                                <p>Ilość serii: ${workout.sets}</p>
+                                <p> Ilość powtórzeń: ${workout.reps}</p>
+                                </div><br>
+
+                                <div class="form-group">ĆWICZENIA</div>
+                                    <ul>
+                                        <c:forEach var="exercise" items="${workout.exercises}">
+                                            <ul>${exercise.name}</ul>
+                                            <li></li>
+                                        </c:forEach>
+                                    </ul>
+                                    </div>
+                                </div><br></b>
                             </div>
                             <div class="col-lg-6">
-                                <ul>
-                                    <li></li>
-                                    <li></li>
-                                </ul>
+                                <input type="submit" class="register-btn" value="Usuń trening"/>
                                 <div class="form-row p-t-10">
                                 </div>
                             </div>
                         </div>
-
+                        </form:form>
                     </div>
                 </div>
             </div>
             <div class="col-lg-4">
                 <aside class="sidebar">
                     <div class="widget widget-category widget-info"><h5 class="widget-title">Moje treningi</h5>
-                        <ul>
-                            <c:forEach var="workout" items="${workouts}">
-                                <li><a href="#">${workout.name}</a></li>
-                            </c:forEach>
-                        </ul>
                     </div>
                     <div class="widget widget-popular"><h5 class="widget-title">Polecane strony</h5>
                         <ul>
