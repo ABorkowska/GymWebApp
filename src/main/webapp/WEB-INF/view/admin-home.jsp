@@ -33,7 +33,7 @@
 
 </body>
 <!-- Footer -->
-<%--<%@ include file="./footer-admin.jsp" %>--%>
+<%@ include file="./footer-admin.jsp" %>
 <!-- /.footer -->
 <script src="<c:url value="/static/js/jquery-3.3.1.min.js"/>"></script>
 <script src="<c:url value="/static/js/modernizr-3.6.0.min.js"/>"></script>

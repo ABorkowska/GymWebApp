@@ -22,10 +22,9 @@
 </head>
 
 <body>
-<!-- Header Section Stars Here -->
+
 <a href="#" class="scrollToTop"><i class="fas fa-angle-up"></i></a>
-<!-- Fixed Sidebar Section Ends Here -->
-<!-- Header Section Stars Here -->
+
 <header>
     <div class="header-wrapper">
         <div class="logo"><a href=""><img src="<c:url value="/static/images/logo/logo.png"/>" alt="logo"></a>
@@ -48,13 +47,12 @@
                         <ul class="sub-menu">
                             <li class="menu-item"><a href="<c:url value="/gym/login"/>" class="menu-item-link">Logowanie</a></li>
                             <li class="menu-item"><a href="<c:url value="/gym/register"/>" class="menu-item-link">Rejestracja</a></li>
-                            <li class="menu-item"><a href="four-not-four.html" class="menu-item-link">404</a></li>
                         </ul>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
-</header><!-- Header Section Ends Here -->
+</header>
 <!-- Page Header Starts Here -->
 
