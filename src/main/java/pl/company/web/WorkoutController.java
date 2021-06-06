@@ -62,9 +62,6 @@ public class WorkoutController {
 		workout.setMuscleGroups(muscleGroups);
 		workout.setEquipment(equipment);
 		workoutService.addWorkout(workout, user);
-		System.out.println(list);
-		System.out.println(muscleGroups);
-		System.out.println(equipment);
 		
 		return "redirect:/gym/dashboard";
 	}
@@ -87,7 +84,6 @@ public class WorkoutController {
 		if (workout != null) {
 			workoutService.removeWorkout(id);
 		}
-		
 		return "redirect:/gym/dashboard";
 	}
 }

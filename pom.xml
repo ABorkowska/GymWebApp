@@ -5,14 +5,14 @@
     <groupId>com.example</groupId>
     <artifactId>GymWebApp</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <packaging>war</packaging>		<!--jar?-->
+    <packaging>war</packaging>
     <name>GymWebApp</name>
     <description>Demo project for Spring Boot</description>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.4.5</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <relativePath/>
     </parent>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -29,12 +29,11 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId> <!--Spring mvc config-->
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.session</groupId>
             <artifactId>spring-session-core</artifactId>
-            <!--			<artifactId>spring-session-jdbc</artifactId>-->
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -100,7 +99,6 @@
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-taglibs</artifactId>
         </dependency>
-        <!--WebJars-->
         <dependency>
             <groupId>org.jetbrains</groupId>
             <artifactId>annotations</artifactId>
@@ -138,165 +136,3 @@
         </plugins>
     </build>
 </project>
-
-
-<!--<?xml version="1.0" encoding="UTF-8"?>-->
-<!--<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
-<!--         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">-->
-<!--    <modelVersion>4.0.0</modelVersion>-->
-
-
-<!--    <groupId>com.example</groupId>-->
-<!--    <artifactId>GymWebApp</artifactId>-->
-<!--    <version>0.0.1-SNAPSHOT</version>-->
-<!--    <packaging>war</packaging>        &lt;!&ndash;jar?&ndash;&gt;-->
-
-<!--    <name>GymWebApp</name>-->
-<!--    <description>Demo project for Spring Boot</description>-->
-
-<!--    <parent>-->
-<!--        <groupId>org.springframework.boot</groupId>-->
-<!--        <artifactId>spring-boot-starter-parent</artifactId>-->
-<!--        <version>2.4.5</version>-->
-<!--        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
-<!--    </parent>-->
-
-<!--    <properties>-->
-<!--        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>-->
-<!--        <java.version>11</java.version>-->
-<!--    </properties>-->
-
-<!--    <dependencies>-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-data-jpa</artifactId>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-security</artifactId>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-web</artifactId> &lt;!&ndash;Spring mvc config&ndash;&gt;-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.session</groupId>-->
-<!--            <artifactId>spring-session-core</artifactId>-->
-<!--            &lt;!&ndash;			<artifactId>spring-session-jdbc</artifactId>&ndash;&gt;-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-devtools</artifactId>-->
-<!--            <scope>runtime</scope>-->
-<!--            <optional>true</optional>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-tomcat</artifactId>-->
-<!--            <scope>provided</scope>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-validation</artifactId>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-test</artifactId>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash;		<dependency>&ndash;&gt;-->
-<!--        &lt;!&ndash;			<groupId>org.springframework.security</groupId>&ndash;&gt;-->
-<!--        &lt;!&ndash;			<artifactId>spring-security-test</artifactId>&ndash;&gt;-->
-<!--        &lt;!&ndash;			<scope>test</scope>&ndash;&gt;-->
-<!--        &lt;!&ndash;		</dependency>&ndash;&gt;-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.data</groupId>-->
-<!--            <artifactId>spring-data-jpa</artifactId>-->
-<!--            <version>2.1.10.RELEASE</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>mysql</groupId>-->
-<!--            <artifactId>mysql-connector-java</artifactId>-->
-<!--            <scope>runtime</scope>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.projectlombok</groupId>-->
-<!--            <artifactId>lombok</artifactId>-->
-<!--            <optional>true</optional>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.apache.tomcat.embed</groupId>-->
-<!--            <artifactId>tomcat-embed-jasper</artifactId>-->
-<!--            <version>9.0.44</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>javax.servlet</groupId>-->
-<!--            <artifactId>jstl</artifactId>-->
-<!--            <version>1.2</version>-->
-<!--        </dependency>-->
-
-<!--        <dependency>-->
-<!--            <groupId>org.hibernate.validator</groupId>-->
-<!--            <artifactId>hibernate-validator</artifactId>-->
-<!--            <version>6.0.17.Final</version>-->
-<!--            &lt;!&ndash;			<version>7.0.1.Final</version>&ndash;&gt;-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>javax.validation</groupId>-->
-<!--            <artifactId>validation-api</artifactId>-->
-<!--            <version>2.0.0.Final</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.security</groupId>-->
-<!--            <artifactId>spring-security-taglibs</artifactId>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.jetbrains</groupId>-->
-<!--            <artifactId>annotations</artifactId>-->
-<!--            <version>RELEASE</version>-->
-<!--            <scope>compile</scope>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework</groupId>-->
-<!--            <artifactId>spring-web</artifactId>-->
-<!--            <version>5.3.7</version>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.plugin</groupId>-->
-<!--            <artifactId>spring-plugin-core</artifactId>-->
-<!--            <version>2.0.0.RELEASE</version>-->
-<!--        </dependency>-->
-<!--        &lt;!&ndash;WebJars&ndash;&gt;-->
-<!--        &lt;!&ndash;		<dependency>&ndash;&gt;-->
-<!--        &lt;!&ndash;			<groupId>org.webjars</groupId>&ndash;&gt;-->
-<!--        &lt;!&ndash;			<artifactId>bootstrap</artifactId>&ndash;&gt;-->
-<!--        &lt;!&ndash;			<version>3.3.4</version>&ndash;&gt;-->
-<!--        &lt;!&ndash;		</dependency>&ndash;&gt;-->
-<!--        &lt;!&ndash;		<dependency>&ndash;&gt;-->
-<!--        &lt;!&ndash;			<groupId>org.webjars</groupId>&ndash;&gt;-->
-<!--        &lt;!&ndash;			<artifactId>jquery</artifactId>&ndash;&gt;-->
-<!--        &lt;!&ndash;			<version>2.1.4</version>&ndash;&gt;-->
-<!--        &lt;!&ndash;		</dependency>&ndash;&gt;-->
-
-<!--    </dependencies>-->
-
-<!--    <build>-->
-<!--        <plugins>-->
-<!--            <plugin>-->
-<!--                <groupId>org.springframework.boot</groupId>-->
-<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--                &lt;!&ndash;				<configuration>&ndash;&gt;-->
-<!--                &lt;!&ndash;					<excludes>&ndash;&gt;-->
-<!--                &lt;!&ndash;						<exclude>&ndash;&gt;-->
-<!--                &lt;!&ndash;							<groupId>org.projectlombok</groupId>&ndash;&gt;-->
-<!--                &lt;!&ndash;							<artifactId>lombok</artifactId>&ndash;&gt;-->
-<!--                &lt;!&ndash;						</exclude>&ndash;&gt;-->
-<!--                &lt;!&ndash;					</excludes>&ndash;&gt;-->
-<!--                &lt;!&ndash;				</configuration>&ndash;&gt;-->
-<!--            </plugin>-->
-<!--        </plugins>-->
-<!--    </build>-->
-
-<!--</project>-->
-
-
