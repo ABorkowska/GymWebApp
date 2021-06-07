@@ -7,7 +7,7 @@ Main functionalities:
 
 USER panel:
 - Weekly fitness classes schedule with an online registration function
-- Offer to order/buy personal training plans according to training goals
+- Offer to order/buy personal training plans according to individual training goals
 - Customized workout generator to create own trainings based on user preferences (target muscle groups and equipment)
 - User dashboard with an overview of current class registrations, ordered personal plans and created custom workouts
 
@@ -26,7 +26,7 @@ Used technologies:
 - Spring Data
 - Hibernate
 - MySQL
-- Front-end: HTML/CSS, JS/JQuery / Bootstrap 5
+- Front-end: HTML/CSS, JS / Bootstrap 5
 
 
 
