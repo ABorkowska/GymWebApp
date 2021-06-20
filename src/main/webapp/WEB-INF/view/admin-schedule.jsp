@@ -49,7 +49,6 @@
                 <td class="white-text templatemo-sort-by">Nazwa</td>
                 <td class="white-text templatemo-sort-by">Instruktor</td>
                 <td>Edytuj</td>
-                <td>Action</td>
                 <td>usuń</td>
             </tr>
             </thead>
@@ -62,8 +61,6 @@
                 <td>${class.name}</td>
                 <td>${class.nameOfTrainer}</td>
                 <td><a href="<c:url value="/admin/schedule/edit/${class.id}"/>" class="templatemo-edit-btn" >Edytuj</a>
-                </td>
-                <td><a href="" class="templatemo-link">Action</a></td>
                 <td><a href="<c:url value="/admin/schedule/delete/${class.id}"/>" class="templatemo-edit-btn"
                        onClick="return confirmSubmit()">Usuń</a>
                 </td>

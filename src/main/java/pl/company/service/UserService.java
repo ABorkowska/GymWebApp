@@ -15,7 +15,6 @@ public class UserService {
 	
 	private UserRepository userRepo;
 	private RoleRepository roleRepo;
-	private ClassRegisterService classService;
 	private BCryptPasswordEncoder passEncoder;
 	
 	@Autowired
@@ -28,8 +27,8 @@ public class UserService {
 	public User findUserByUsername(String username) {
 		return userRepo.findByUsername(username);
 	}
-	//add Member
-	public User saveUser(User user) {
+	
+	public User addUser(User user) {
 		user.setPassword(passEncoder.encode(user.getPassword()));
 		user.setEnabled(1);
 		Role role = roleRepo.findByName("ROLE_USER");
@@ -37,12 +36,19 @@ public class UserService {
 		return userRepo.save(user);
 	}
 	
-	public Optional<User> findOptionalUserById(Long id) {
-		return Optional.ofNullable(userRepo.findById(id).orElse(null));
+	public User saveUser(User user, String email, String name, String surname, String password) {
+		user.setPassword(passEncoder.encode(password));
+		user.setEnabled(1);
+		Role role = roleRepo.findByName("ROLE_USER");
+		user.setRoles(new HashSet<Role>(Arrays.asList(role)));
+		user.setEmail(email);
+		user.setFirstName(name);
+		user.setLastName(surname);
+		return userRepo.save(user);
 	}
 	
-	public User findRegisteredUser(Long id){
-		return userRepo.findById(id).orElse(null);
+	public Optional<User> findOptionalUserById(Long id) {
+		return userRepo.findById(id);
 	}
 	
 	public List<User> findUsers() {

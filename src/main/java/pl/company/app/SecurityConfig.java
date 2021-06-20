@@ -13,8 +13,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import pl.company.model.Admin;
 import pl.company.repository.AdminRepository;
-import pl.company.service.SecurityService;
-import pl.company.service.UserDetailsServiceImpl;
 
 
 @Configuration
@@ -45,14 +43,14 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/gym/**").permitAll()
 				.antMatchers("/admin/**").hasRole("ADMIN")
 				.and().formLogin()
-				.loginPage("/gym/login")        //adres naszej strony logowania (nadpisuje domyslny formularz)
+				.loginPage("/gym/login")
 				.defaultSuccessUrl("/home")
 				.usernameParameter("username")
 				.passwordParameter("password")
 				.failureUrl("/gym/login?error=true");
 	}
 	
-	@EventListener(ApplicationReadyEvent.class)     //tworzy usera przy starcie aplikacji
+	@EventListener(ApplicationReadyEvent.class)
 	public void get() {
 		Admin user = new Admin(1L, "bartek", passEncoder().encode("Ironbartek"), "ROLE_ADMIN");
 		Admin user1 = new Admin(2L, "kamil", passEncoder().encode("Ironkamil"), "ROLE_USER");

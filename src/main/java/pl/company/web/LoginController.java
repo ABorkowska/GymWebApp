@@ -1,13 +1,10 @@
 package pl.company.web;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 import pl.company.model.User;
-import pl.company.service.SecurityService;
 import pl.company.service.UserService;
 
 import javax.validation.Valid;
@@ -43,7 +40,7 @@ public class LoginController {
 		else if (user.getSubscribed().equals("yes")) {
 			user.setSubscribed("yes");
 		}
-		userService.saveUser(user);
+		userService.addUser(user);
 		return "redirect:/gym/login";
 	}
 	

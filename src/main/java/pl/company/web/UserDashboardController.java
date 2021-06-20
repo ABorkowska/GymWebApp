@@ -57,12 +57,9 @@ public class UserDashboardController {
 		return "user-dashboard";
 	}
 	@PostMapping("/gym/dashboard/profile")
-	public String updateProfile (Principal principal){
-		User user = userService.findUserByUsername(principal.getName());
-		if (principal==null) {
-			return "redirect:/gym/login";
-		}
-		userService.saveUser(user);
+	public String updateProfile (@ModelAttribute User user,Principal principal){
+		User loggedUser = userService.findUserByUsername(principal.getName());
+		userService.saveUser(loggedUser, user.getEmail(), user.getFirstName(), user.getLastName(), user.getPassword());
 		return "redirect:/gym/dashboard";
 	}
 }
