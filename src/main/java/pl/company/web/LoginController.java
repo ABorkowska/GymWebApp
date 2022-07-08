@@ -10,7 +10,6 @@ import pl.company.service.UserService;
 import javax.validation.Valid;
 
 @Controller
-
 public class LoginController {
 	
 	private final UserService userService;
