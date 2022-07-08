@@ -14,7 +14,7 @@ USER panel:
 ADMIN panel:
 - Managing classes schedule to edit, delete and add new classes
 - Overview of current class registrations and a reservation reset function
-- In progress: Managing gym offers: personal plans, workout options, trainers
+tbc.
 
 
 Used technologies:
@@ -26,7 +26,7 @@ Used technologies:
 - Spring Data
 - Hibernate
 - MySQL
-- Front-end: HTML/CSS, JS / Bootstrap 5
+- Front-end: JSP, HTML/CSS, JS / Bootstrap 5 
 
 
 
